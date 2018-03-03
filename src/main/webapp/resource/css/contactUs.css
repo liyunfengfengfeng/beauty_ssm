@@ -1,0 +1,480 @@
+.contactBg {
+  width: 100%;
+  height: auto;
+  background-size: 100% auto;
+  background-position: left top;
+  background-repeat: no-repeat;
+  margin-bottom: 20px;
+}
+.contactBg .bgImg {
+  width: 100%;
+  height: auto;
+}
+.contactBg .contact-content {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 60%;
+}
+.contactBg .contact-content ul li {
+  float: left;
+  font-size: 14px;
+  width: 24%;
+  max-width: 295px;
+  height: 270px;
+  margin: 0 .5%;
+  background-color: rgba(0, 0, 0, 0.79);
+  color: #FFFFFF;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.79);
+}
+.contactBg .contact-content ul li .head {
+  border-bottom: 1px solid rgba(151, 151, 151, 0.44);
+  text-align: center;
+  width: 90%;
+  padding: 28px 10px 18px 10px;
+  font-size: 16px;
+}
+.contactBg .contact-content ul li .content {
+  position: relative;
+  top: 30px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-align: center;
+}
+.contactBg .contact-content ul li .content .pic {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  background-position: left top;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.contactBg .contact-content ul li .content .qq {
+  background-image: url(../img/qq.png);
+}
+.contactBg .contact-content ul li .content .mail {
+  background-image: url(../img/mail.png);
+}
+.contactBg .contact-content ul li .content .tel {
+  background-image: url(../img/phone.png);
+}
+.contactBg .contact-content ul li .content .hezuo {
+  background-image: url(../img/hezuo.png);
+}
+.contactBg .contact-content ul li .content .detail {
+  margin-top: 18px;
+}
+.contactBg .contact-content ul li .content .detail .small {
+  margin-top: 10px;
+  font-size: 12px;
+}
+.contactBg .contact-content ul li:hover .content .qq {
+  background-image: url(../img/qqhover.png);
+}
+.contactBg .contact-content ul li:hover .content .mail {
+  background-image: url(../img/mailhover.png);
+}
+.contactBg .contact-content ul li:hover .content .tel {
+  background-image: url(../img/phonehover.png);
+}
+.contactBg .contact-content ul li:hover .content .hezuo {
+  background-image: url(../img/hezuohover.png);
+}
+.contactBg .contact-content ul li:hover .content .detail {
+  margin-top: 18px;
+}
+.contactBg .contact-content ul li:hover .content .detail .small {
+  margin-top: 10px;
+  font-size: 12px;
+}
+@media screen and (max-width: 1280px) and (min-width: 1000px) {
+  .contactBg {
+    width: 100%;
+    height: auto;
+    background-size: 100% auto;
+    background-position: left top;
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
+  }
+  .contactBg .bgImg {
+    width: 100%;
+    height: auto;
+  }
+  .contactBg .contact-content {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 60%;
+  }
+  .contactBg .contact-content ul li {
+    float: left;
+    font-size: 14px;
+    width: 24%;
+    max-width: 295px;
+    height: 220px;
+    margin: 0 .5%;
+    background-color: rgba(0, 0, 0, 0.79);
+    color: #FFFFFF;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.79);
+  }
+  .contactBg .contact-content ul li .head {
+    border-bottom: 1px solid rgba(151, 151, 151, 0.44);
+    text-align: center;
+    width: 90%;
+    padding: 25px 10px 15px 10px;
+    font-size: 16px;
+  }
+  .contactBg .contact-content ul li .content {
+    position: relative;
+    top: 20px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .contactBg .contact-content ul li .content .pic {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-position: left top;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  .contactBg .contact-content ul li .content .qq {
+    background-image: url(../img/qq.png);
+  }
+  .contactBg .contact-content ul li .content .mail {
+    background-image: url(../img/mail.png);
+  }
+  .contactBg .contact-content ul li .content .tel {
+    background-image: url(../img/phone.png);
+  }
+  .contactBg .contact-content ul li .content .hezuo {
+    background-image: url(../img/hezuo.png);
+  }
+  .contactBg .contact-content ul li .content .detail {
+    margin-top: 15px;
+  }
+  .contactBg .contact-content ul li .content .detail .small {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+}
+.userHeight {
+  height: 432px!important;
+}
+.logincontent {
+  width: 430px;
+  height: 475px;
+  position: absolute;
+  top: 190px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-image: url(../img/frame.png);
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: 100% 100%;
+}
+.logincontent .header {
+  padding: 29px 0;
+  text-align: center;
+}
+.logincontent .header h3 {
+  font-size: 30px;
+  letter-spacing: 2px;
+  color: #333333;
+  font-weight: normal;
+}
+.logincontent .detail ul {
+  margin-left: 45px;
+}
+.logincontent .detail ul li {
+  margin-bottom: 18px;
+}
+.logincontent .detail ul li .input {
+  border: 1px solid #C4C4C4;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background: rgba(225, 225, 225, 0.8042);
+  font-size: 16px;
+  width: 275px;
+  height: 44px;
+  background-size: 18px 20px;
+  background-position: 20px center;
+  background-repeat: no-repeat;
+  padding-left: 60px;
+}
+.logincontent .detail ul li .telNum {
+  background-image: url(../img/telphone.png);
+}
+.logincontent .detail ul li .pwd {
+  background-image: url(../img/pwd.png);
+}
+.logincontent .detail .forgatPwd {
+  width: 337px;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-align: right;
+}
+.logincontent .detail .forgatPwd a {
+  text-decoration: underline;
+  color: #666666;
+  font-size: 14px;
+}
+.logincontent .detail .myBtn {
+  width: 335px;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+.logincontent .detail .myBtn a {
+  width: 100%;
+  display: block;
+  height: 33px;
+  border: 1px solid #FE0000;
+  color: #FE0000;
+  font-size: 24px;
+  letter-spacing: 1.75px;
+  text-align: center;
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+}
+.logincontent .detail .myBtn:hover a {
+  background-color: #FE0000;
+  color: #FFFFFF;
+}
+.logincontent .detail .btn-2 a {
+  background-color: #FE0000;
+  color: #FFFFFF;
+}
+.logincontent .detail .state {
+  margin-top: 50px;
+  text-align: center;
+}
+.logincontent .detail .state span {
+  font-size: 24px;
+  letter-spacing: 1.6px;
+  color: #666666;
+}
+@media screen and (max-width: 1400px) and (min-width: 1100px) {
+  .logincontent {
+    width: 330px;
+    height: 375px;
+    position: absolute;
+    top: 190px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background-image: url(../img/frame.png);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 100% 100%;
+  }
+  .logincontent .header {
+    padding: 25px 0;
+    text-align: center;
+  }
+  .logincontent .header h3 {
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #333333;
+    font-weight: normal;
+  }
+  .logincontent .detail ul {
+    margin-left: 45px;
+  }
+  .logincontent .detail ul li {
+    margin-bottom: 18px;
+  }
+  .logincontent .detail ul li .input {
+    border: 1px solid #C4C4C4;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: rgba(225, 225, 225, 0.8042);
+    font-size: 16px;
+    width: 175px;
+    height: 34px;
+    background-size: 18px 20px;
+    background-position: 20px center;
+    background-repeat: no-repeat;
+    padding-left: 60px;
+  }
+  .logincontent .detail ul li .telNum {
+    background-image: url(../img/telphone.png);
+  }
+  .logincontent .detail ul li .pwd {
+    background-image: url(../img/pwd.png);
+  }
+  .logincontent .detail .forgatPwd {
+    width: 237px;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: right;
+  }
+  .logincontent .detail .forgatPwd a {
+    text-decoration: underline;
+    color: #666666;
+    font-size: 14px;
+  }
+  .logincontent .detail .myBtn {
+    width: 235px;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    margin-top: 15px;
+  }
+  .logincontent .detail .myBtn a {
+    width: 100%;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #FE0000;
+    color: #FE0000;
+    font-size: 18px;
+    letter-spacing: 1.75px;
+    text-align: center;
+    -webkit-border-radius: 100px;
+    border-radius: 100px;
+  }
+  .logincontent .detail .myBtn:hover a {
+    background-color: #FE0000;
+    color: #FFFFFF;
+  }
+  .logincontent .detail .btn-2 a {
+    background-color: #FE0000;
+    color: #FFFFFF;
+  }
+  .logincontent .detail .state {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .logincontent .detail .state span {
+    font-size: 18px;
+    letter-spacing: 1.6px;
+    color: #666666;
+  }
+}
+@media screen and (max-width: 1100px) and (min-width: 800px) {
+  .logincontent {
+    width: 300px;
+    height: 345px;
+    position: absolute;
+    top: 150px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background-image: url(../img/frame.png);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 100% 100%;
+  }
+  .logincontent .header {
+    padding: 23px 0;
+    text-align: center;
+  }
+  .logincontent .header h3 {
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: #333333;
+    font-weight: normal;
+  }
+  .logincontent .detail ul {
+    margin-left: 40px;
+  }
+  .logincontent .detail ul li {
+    margin-bottom: 18px;
+  }
+  .logincontent .detail ul li .input {
+    border: 1px solid #C4C4C4;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: rgba(225, 225, 225, 0.8042);
+    font-size: 16px;
+    width: 150px;
+    height: 30px;
+    background-size: 18px 20px;
+    background-position: 20px center;
+    background-repeat: no-repeat;
+    padding-left: 60px;
+  }
+  .logincontent .detail ul li .telNum {
+    background-image: url(../img/telphone.png);
+  }
+  .logincontent .detail ul li .pwd {
+    background-image: url(../img/pwd.png);
+  }
+  .logincontent .detail .forgatPwd {
+    width: 207px;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: right;
+  }
+  .logincontent .detail .forgatPwd a {
+    text-decoration: underline;
+    color: #666666;
+    font-size: 14px;
+  }
+  .logincontent .detail .myBtn {
+    width: 205px;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    margin-top: 15px;
+  }
+  .logincontent .detail .myBtn a {
+    width: 100%;
+    display: block;
+    height: 25px;
+    line-height: 25px;
+    border: 1px solid #FE0000;
+    color: #FE0000;
+    font-size: 14px;
+    letter-spacing: 1.75px;
+    text-align: center;
+    -webkit-border-radius: 100px;
+    border-radius: 100px;
+  }
+  .logincontent .detail .myBtn:hover a {
+    background-color: #FE0000;
+    color: #FFFFFF;
+  }
+  .logincontent .detail .btn-2 a {
+    background-color: #FE0000;
+    color: #FFFFFF;
+  }
+  .logincontent .detail .state {
+    margin-top: 18px;
+    text-align: center;
+  }
+  .logincontent .detail .state span {
+    font-size: 14px;
+    letter-spacing: 1.6px;
+    color: #666666;
+  }
+}
+.margin-t-15 {
+  margin-top: 15px;
+}
+.redFont {
+  color: #F53218;
+}
