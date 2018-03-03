@@ -1,6 +1,5 @@
 package com.yingjun.ssm.service.impl;
 
-import com.yingjun.ssm.cache.RedisCache;
 import com.yingjun.ssm.dao.GoodsDao;
 import com.yingjun.ssm.dao.OrderDao;
 import com.yingjun.ssm.dao.UserDao;
@@ -30,8 +29,7 @@ public class GoodsServiceImpl implements GoodsService {
 	private OrderDao orderDao;
 	@Autowired
 	private UserDao userDao;
-	@Autowired
-	private RedisCache cache;
+
 
 	@Override
 	public List<Goods> getGoodsList(int offset, int limit) {

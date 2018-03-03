@@ -1,6 +1,5 @@
 package com.yingjun.ssm.service.impl;
 
-import com.yingjun.ssm.cache.RedisCache;
 import com.yingjun.ssm.dao.UserDao;
 import com.yingjun.ssm.entity.User;
 import com.yingjun.ssm.service.UserService;
@@ -17,8 +16,7 @@ public class UserServiceImpl implements UserService {
 	private final Logger LOG = LoggerFactory.getLogger(this.getClass());
 	@Autowired
 	private UserDao userDao;
-	@Autowired
-	private RedisCache cache;
+
 	
 	
 	@Override
