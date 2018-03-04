@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
+import org.springframework.web.bind.annotation.ResponseBody;
 
 
 /**
@@ -25,10 +25,11 @@ public class UserController {
      * 用户登录
      * @return
      */
-	@RequestMapping(value = "/userLogin")
+    @ResponseBody
+	@RequestMapping(value = "/userLogin",produces="text/html;charset=UTF-8")
 	public String userLogin(@ModelAttribute User user) {
 		LOG.info("表单提交的用户信息：" + user.toString());
-		return "/user/userLogin";
+		return "登录成功";
 	}
 
     /**

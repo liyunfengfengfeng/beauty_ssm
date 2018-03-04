@@ -40,7 +40,7 @@
 				<div class="header">
 					<h3>用户登录</h3>
 				</div>
-				<form id="userLogin" action="/user/userLogin" method="post">
+				<form id="userLogin" action="" method="post">
 					<div class="detail">
 						<ul>
 							<li>
@@ -83,9 +83,21 @@
 		</footer>
 	</body>
 <script>
-	//用户登录
+	//用户登录异步提交表单
 	$('#loginBtn').bind("click", function(){
-		$('#userLogin').submit();
+		//$('#userLogin').submit();
+		var uploadFormData = new FormData($('#userLogin')[0]);
+		$.ajax({
+			type: 'POST',
+			data: uploadFormData,
+			url: '/user/userLogin',
+			processData: false,
+			contentType: false,
+			async: false,
+			success: function (data) {
+				console.log(data);
+			}
+		});
 	});
 </script>
 </html>
