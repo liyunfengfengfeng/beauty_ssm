@@ -1,14 +1,14 @@
 package com.yingjun.ssm.web;
 
 
+import com.yingjun.ssm.dto.BaseResult;
 import com.yingjun.ssm.entity.User;
+import com.yingjun.ssm.enums.ResultEnum;
+import com.yingjun.ssm.exception.BizException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 
 /**
@@ -21,15 +21,31 @@ public class UserController {
 
 	private final Logger LOG = LoggerFactory.getLogger(this.getClass());
 
+	/**
+	 * 到达用户登录页面
+	 * @return
+	 */
+	@RequestMapping(value = "/login")
+	public String login() {
+		return "/user/userLogin";
+	}
+
     /**
      * 用户登录
      * @return
      */
     @ResponseBody
-	@RequestMapping(value = "/userLogin",produces="text/html;charset=UTF-8")
-	public String userLogin(@ModelAttribute User user) {
-		LOG.info("表单提交的用户信息：" + user.toString());
-		return "登录成功";
+	@RequestMapping(value = "/userLogin",produces = {"application/json;charset=UTF-8"})
+	public BaseResult<Object> userLogin(User user) {
+		try {
+
+			System.out.println("普通用户正在登录" + user);
+		} catch (BizException e) {
+			return new BaseResult<>(false, e.getMessage());
+		} catch (Exception e) {
+			return new BaseResult<>(false, ResultEnum.INVALID_USER.getMsg());
+		}
+		return new BaseResult<>(true, "登陆成功");
 	}
 
     /**

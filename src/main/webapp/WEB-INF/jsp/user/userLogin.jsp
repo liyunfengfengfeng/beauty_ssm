@@ -85,15 +85,11 @@
 <script>
 	//用户登录异步提交表单
 	$('#loginBtn').bind("click", function(){
-		//$('#userLogin').submit();
-		var uploadFormData = new FormData($('#userLogin')[0]);
 		$.ajax({
 			type: 'POST',
-			data: uploadFormData,
+			data: $('#userLogin').serialize(),
+			dataType: "json",
 			url: '/user/userLogin',
-			processData: false,
-			contentType: false,
-			async: false,
 			success: function (data) {
 				console.log(data);
 			}
