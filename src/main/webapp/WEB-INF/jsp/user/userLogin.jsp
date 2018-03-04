@@ -44,10 +44,10 @@
 					<div class="detail">
 						<ul>
 							<li>
-								<input class="input telNum" type="text" name="" id="" value="" placeholder="请输入邮箱"/>
+								<input class="input telNum" type="text" name="email" id="" value="" placeholder="请输入邮箱"/>
 							</li>
 							<li>
-								<input class="input pwd" type="password" name="" id="pwd" value="" placeholder="请输入密码"/>
+								<input class="input pwd" type="password" name="password" id="pwd" value="" placeholder="请输入密码"/>
 							</li>
 						</ul>
 						<div class="forgatPwd">
