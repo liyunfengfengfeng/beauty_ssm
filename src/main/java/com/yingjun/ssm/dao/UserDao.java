@@ -1,6 +1,10 @@
 package com.yingjun.ssm.dao;
 import com.yingjun.ssm.entity.User;
 import java.util.List;
+/**
+ * @author liyunfeng
+ * 普通用户
+ */
 public interface UserDao {
 	/**
 	 * 获得TUser数据的总行数

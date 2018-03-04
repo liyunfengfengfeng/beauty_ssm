@@ -1,6 +1,10 @@
 package com.yingjun.ssm.service;
 import java.util.List;
 import com.yingjun.ssm.entity.User;
+/**
+ * @author liyunfeng
+ * 增加必要注释
+ */
 public interface UserService {
 	/**
 	 * 获得TUser数据的总行数

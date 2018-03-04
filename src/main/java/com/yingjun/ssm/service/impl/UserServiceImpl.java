@@ -5,6 +5,11 @@ import com.yingjun.ssm.entity.User;
 import com.yingjun.ssm.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+/**
+ * @author liyunfeng
+ * 普通用户
+ */
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired

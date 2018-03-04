@@ -1,9 +1,25 @@
 package com.yingjun.ssm.entity;
+/**
+ * @author liyunfeng
+ * 普通用户
+ */
 public class User {
-    private Long id;//主键id
-    private String password;//密码
-    private String name;//姓名
-    private String email;//手机号码
+    /**
+     * 主键id
+     */
+    private Long id;
+    /**
+     * 密码
+     */
+    private String password;
+    /**
+     * 姓名
+     */
+    private String name;
+    /**
+     * 电子邮箱
+     */
+    private String email;
     public User() {
         super();
     }
@@ -46,4 +62,13 @@ public class User {
         this.email = email;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }
