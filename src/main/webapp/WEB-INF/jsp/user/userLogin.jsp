@@ -40,23 +40,25 @@
 				<div class="header">
 					<h3>用户登录</h3>
 				</div>
-				<div class="detail">
-					<ul>
-						<li>
-							<input class="input telNum" type="text" name="" id="" value="" placeholder="请输入电话号码"/>
-						</li>
-						<li>
-							<input class="input pwd" type="password" name="" id="pwd" value="" placeholder="请输入密码"/>
-						</li>
-					</ul>
-					<div class="forgatPwd">
-						<a href="userResgiter.jsp">新用户注册</a>
-						<a href="findPwd.html">忘记密码</a>
+				<form id="userLogin" action="/user/userLogin" method="post">
+					<div class="detail">
+						<ul>
+							<li>
+								<input class="input telNum" type="text" name="" id="" value="" placeholder="请输入邮箱"/>
+							</li>
+							<li>
+								<input class="input pwd" type="password" name="" id="pwd" value="" placeholder="请输入密码"/>
+							</li>
+						</ul>
+						<div class="forgatPwd">
+							<a href="userResgiter.jsp">新用户注册</a>
+							<a href="findPwd.html">忘记密码</a>
+						</div>
+						<div id="loginBtn" class="myBtn mar-t-30" style="">
+							<a>立即登录</a>
+						</div>
 					</div>
-					<div class="myBtn mar-t-30" style="">
-						<a href="javascript:login()">立即登录</a>
-					</div>
-				</div>
+				</form>
 			</div>
 		</div>
 		
@@ -80,4 +82,10 @@
 			</div>
 		</footer>
 	</body>
+<script>
+	//用户登录
+	$('#loginBtn').bind("click", function(){
+		$('#userLogin').submit();
+	});
+</script>
 </html>

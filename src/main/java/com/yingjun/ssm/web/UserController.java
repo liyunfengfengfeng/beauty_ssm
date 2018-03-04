@@ -23,7 +23,7 @@ public class UserController {
      * 用户登录
      * @return
      */
-	@RequestMapping(value = "/userLogin", method = RequestMethod.GET)
+	@RequestMapping(value = "/userLogin")
 	public String userLogin() {
 		LOG.info("用户登录");
 		return "/user/userLogin";
