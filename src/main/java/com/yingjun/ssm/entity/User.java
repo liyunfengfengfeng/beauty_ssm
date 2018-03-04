@@ -1,13 +1,13 @@
 package com.yingjun.ssm.entity;
-public class TUser {
+public class User {
     private Long id;//主键id
     private String password;//密码
     private String name;//姓名
     private String email;//手机号码
-    public TUser() {
+    public User() {
         super();
     }
-    public TUser(Long id,String password,String name,String email) {
+    public User(Long id, String password, String name, String email) {
         super();
         this.id = id;
         this.password = password;
