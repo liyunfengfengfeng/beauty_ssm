@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -5,14 +6,14 @@
 		<title>首页</title>
 		<script>var pageConfig = {jdfVersion:'2.0.0'};</script>
 		<!--首页样式表-->
-		<link rel="stylesheet" type="text/css" href="css/home.css"/>
+		<link rel="stylesheet" type="text/css" href="/resource/css/home.css"/>
 		<!--其他样式表-->
-		<link rel="stylesheet" type="text/css" href="css/news.css"/>
-		<link rel="stylesheet" type="text/css" href="css/registration.css"/>
-		<link rel="stylesheet" type="text/css" href="css/buyService.css"/>
-		<link rel="stylesheet" type="text/css" href="css/proprietorship.css"/>
-		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/function.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="/resource/css/news.css"/>
+		<link rel="stylesheet" type="text/css" href="/resource/css/registration.css"/>
+		<link rel="stylesheet" type="text/css" href="/resource/css/buyService.css"/>
+		<link rel="stylesheet" type="text/css" href="/resource/css/proprietorship.css"/>
+		<script src="/resource/script/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/resource/script/function.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript" src="http://misc.360buyimg.com/jdf/1.0.0/unit/base/1.0.0/base.js"></script>
 	</head>
 	<body>
@@ -33,13 +34,13 @@
 			<div class="toLogin">
 				<div class="toLoginmine">
 					<a href="userLogin.html">
-						<div class="mine-img"><img src="img/login.png"/></div>
-						<div class="mine-describe"><a href="javascript:void(0)">用户登录</a></div>
+						<div class="mine-img"><img src="/resource/img/login.png"/></div>
+						<div class="mine-describe"><a href="/user/login">用户登录</a></div>
 					</a>
 				</div>
 				<div class="toLoginmine">
 					<a href="secretaryLogin.html">
-						<div class="mine-img"><img src="img/login.png"/></div>
+						<div class="mine-img"><img src="/resource/img/login.png"/></div>
 						<div class="mine-describe"><a href="javascript:void(0)">秘书公司登录</a></div>
 					</a>
 				</div>
@@ -51,15 +52,15 @@
 			<div id="sliderBox" class="slider-box">
 			    <div class="content">
 			        <ul>
-			            <li><img src="img/banner.jpg"/></li>
-			            <li><img src="img/banner.jpg"/></li>
+			            <li><img src="/resource/img/banner.jpg"/></li>
+			            <li><img src="/resource/img/banner.jpg"/></li>
 			        </ul>
 			    </div>
 			</div>
 			<div class="homeList">
 				<div class="list-content">
 					<div class="homeImg">
-						<img src="img/new.png"/>
+						<img src="/resource/img/new.png"/>
 						<div class="homeTit"><span>标题呀</span></div>
 					</div>
 					<div class="list">
@@ -121,72 +122,72 @@
 					</div>
 					<div class="flowStep">
 						<div class="step">
-							<span class="picture"><img src="img/realName.png"/></span>
+							<span class="picture"><img src="/resource/img/realName.png"/></span>
 							<span class="step-tit">实名认证</span>
 						</div>
-						<div class="arrow"><img src="img/arrow.png"/></div>
+						<div class="arrow"><img src="/resource/img/arrow.png"/></div>
 						<div class="step">
-							<span class="picture"><img src="img/secretariesCompany.png"/></span>
+							<span class="picture"><img src="/resource/img/secretariesCompany.png"/></span>
 							<span class="step-tit two">选择秘书公司和服务</span>
 						</div>
-						<div class="arrow"><img src="img/arrow.png"/></div>
+						<div class="arrow"><img src="/resource/img/arrow.png"/></div>
 						<div class="step">
-							<span class="picture"><img src="img/enterpriseName.png"/></span>
+							<span class="picture"><img src="/resource/img/enterpriseName.png"/></span>
 							<span class="step-tit two">企业名称自主申报</span>
 						</div>
-						<div class="arrow"><img src="img/arrow.png"/></div>
+						<div class="arrow"><img src="/resource/img/arrow.png"/></div>
 						<div class="step">
-							<span class="picture"><img src="img/pay.png"/></span>
+							<span class="picture"><img src="/resource/img/pay.png"/></span>
 							<span class="step-tit">付款</span>
 						</div>
 					</div>
 					<div class="flowStep mar-t-10">
-						<div class="arrow-down"><img src="img/arrow.png"/></div>
+						<div class="arrow-down"><img src="/resource/img/arrow.png"/></div>
 						<div class="clear"></div>
 					</div>
 					<div class="flowStep mar-t-10">
 						<div class="step">
-							<span class="picture"><img src="img/signature.png"/></span>
+							<span class="picture"><img src="/resource/img/signature.png"/></span>
 							<span class="step-tit">用户电子签名</span>
 						</div>
-						<div class="arrow-left"><img src="img/arrow.png"/></div>
+						<div class="arrow-left"><img src="/resource/img/arrow.png"/></div>
 						<div class="step">
-							<span class="picture"><img src="img/certificate.png"/></span>
+							<span class="picture"><img src="/resource/img/certificate.png"/></span>
 							<span class="step-tit">领取数字证书</span>
 						</div>
-						<div class="arrow-left"><img src="img/arrow.png"/></div>
+						<div class="arrow-left"><img src="/resource/img/arrow.png"/></div>
 						<div class="step">
-							<span class="picture"><img src="img/audit.png"/></span>
+							<span class="picture"><img src="/resource/img/audit.png"/></span>
 							<span class="step-tit">工商审核</span>
 						</div>
-						<div class="arrow-left"><img src="img/arrow.png"/></div>
+						<div class="arrow-left"><img src="/resource/img/arrow.png"/></div>
 						<div class="step">
-							<span class="picture"><img src="img/writeInfo.png"/></span>
+							<span class="picture"><img src="/resource/img/writeInfo.png"/></span>
 							<span class="step-tit two">企业设立信息填写</span>
 						</div>
 					</div>
 					<div class="flowStep mar-t-10">
-						<div class="arrow-down-left"><img src="img/arrow.png"/></div>
+						<div class="arrow-down-left"><img src="/resource/img/arrow.png"/></div>
 						<div class="clear"></div>
 					</div>
 					<div class="flowStep mar-t-10">
 						<div class="step">
-							<span class="picture"><img src="img/secretariesSign.png"/></span>
+							<span class="picture"><img src="/resource/img/secretariesSign.png"/></span>
 							<span class="step-tit">秘书公司附签</span>
 						</div>
-						<div class="arrow"><img src="img/arrow.png"/></div>
+						<div class="arrow"><img src="/resource/img/arrow.png"/></div>
 						<div class="step">
-							<span class="picture"><img src="img/secretarieswork.png"/></span>
+							<span class="picture"><img src="/resource/img/secretarieswork.png"/></span>
 							<span class="step-tit">秘书公司办照</span>
 						</div>
 						<div class="arrow"><img src="img/arrow.png"/></div>
 						<div class="step">
-							<span class="picture"><img src="img/userGet.png"/></span>
+							<span class="picture"><img src="/resource/img/userGet.png"/></span>
 							<span class="step-tit">用户接收证照</span>
 						</div>
-						<div class="arrow"><img src="img/arrow.png"/></div>
+						<div class="arrow"><img src="/resource/img/arrow.png"/></div>
 						<div class="step">
-							<span class="picture"><img src="img/over.png"/></span>
+							<span class="picture"><img src="/resource/img/over.png"/></span>
 							<span class="step-tit">完成</span>
 						</div>
 					</div>

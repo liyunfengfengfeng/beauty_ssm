@@ -113,4 +113,14 @@
         where id=#{id}
     </update>
 
+    <!--校验用户登录-->
+    <select id="checkUserLogin" parameterType="com.yingjun.ssm.entity.User" resultType="com.yingjun.ssm.entity.User">
+        select
+        <include refid="t_user_Column" />
+        from t_user
+        <where>
+            <if test="email != null "> and t_user.email = #{email}</if>
+            <if test="password != null "> and t_user.password = #{password}</if>
+        </where>
+    </select>
 </mapper>

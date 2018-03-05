@@ -5,8 +5,10 @@ import com.yingjun.ssm.dto.BaseResult;
 import com.yingjun.ssm.entity.User;
 import com.yingjun.ssm.enums.ResultEnum;
 import com.yingjun.ssm.exception.BizException;
+import com.yingjun.ssm.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,7 +22,8 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
 	private final Logger LOG = LoggerFactory.getLogger(this.getClass());
-
+	@Autowired
+	private UserService userService;
 	/**
 	 * 到达用户登录页面
 	 * @return
@@ -38,8 +41,7 @@ public class UserController {
 	@RequestMapping(value = "/userLogin",produces = {"application/json;charset=UTF-8"})
 	public BaseResult<Object> userLogin(User user) {
 		try {
-
-			System.out.println("普通用户正在登录" + user);
+			userService.checkUserLogin(user);
 		} catch (BizException e) {
 			return new BaseResult<>(false, e.getMessage());
 		} catch (Exception e) {
@@ -56,5 +58,13 @@ public class UserController {
 	public String userRegister() {
 		LOG.info("用户注册");
 		return "/user/userResgiter";
+	}
+	/**
+	 * 用户登录成功到达首页
+	 * @return
+	 */
+	@RequestMapping(value = "/home")
+	public String home() {
+		return "/common/home";
 	}
 }
