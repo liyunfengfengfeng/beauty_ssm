@@ -241,6 +241,18 @@
 			<version>1.9.12</version>
 		</dependency>
 		<!--将对象转换为json格式 end -->
+		<!--将邮箱工具类发送邮箱验证码 -->
+		<dependency >
+			<groupId >javax.mail </groupId >
+			<artifactId >mail </artifactId >
+			<version >1.4.5 </version >
+		</dependency >
+		<dependency >
+			<groupId >com.sun.mail </groupId >
+			<artifactId >javax.mail </artifactId >
+			<version >1.5.4 </version >
+		</dependency >
+		<!--将邮箱工具类发送邮箱验证码 end -->
 	</dependencies>
 	<!-- Build Settings -->
 	<!--http://maven.apache.org/pom.html#Build_Settings -->
