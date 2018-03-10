@@ -27,7 +27,7 @@
 						<li><a href="registration.html">工商注册</a></li>
 						<li class="active"><a href="#">个人中心</a></li>
 						<li><a href="enterprise.html">企业中心</a></li>
-						<li><a href="#">技术支持</a></li>
+						<li><a href="/contactUs/connection">联系我们</a></li>
 					</ul>
 				</div>
 			</div>

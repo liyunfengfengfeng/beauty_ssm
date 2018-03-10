@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 用户
- * @author 包
+ * @author liyunfeng
  */
 @Controller
 @RequestMapping("/user")

@@ -23,11 +23,11 @@
 				<div class="logo"><span class="logo-img">京东益世集群注册平台</span></div>
 				<div class="header-menu">
 					<ul>
-						<li class="active"><a href="#">首页</a></li>
+						<li class="active"><a href="/user/home">首页</a></li>
 						<li><a href="registration.html">工商注册</a></li>
 						<li><a href="#">个人中心</a></li>
 						<li><a href="enterprise.html">企业中心</a></li>
-						<li><a href="#">技术支持</a></li>
+						<li><a href="/contactUs/connection">联系我们</a></li>
 					</ul>
 				</div>
 			</div>
@@ -180,7 +180,7 @@
 							<span class="picture"><img src="/resource/img/secretarieswork.png"/></span>
 							<span class="step-tit">秘书公司办照</span>
 						</div>
-						<div class="arrow"><img src="img/arrow.png"/></div>
+						<div class="arrow"><img src="/resource/img/arrow.png"/></div>
 						<div class="step">
 							<span class="picture"><img src="/resource/img/userGet.png"/></span>
 							<span class="step-tit">用户接收证照</span>
@@ -210,7 +210,7 @@
 				</div>
 			</div>
 			<div class="footer-right">
-				<span>Copyright © 2004-2016 <strong>SQYiShi.com</strong> ALL Rights Reserved 苏ICP备15048094号-2</span>
+				<span>Copyright © 2004-2018 <strong>hrbust.com</strong> ALL Rights Reserved 黑ICP备15048094号-2</span>
 			</div>
 		</footer>
 	</body>
