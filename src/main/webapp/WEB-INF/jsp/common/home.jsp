@@ -32,19 +32,9 @@
 				</div>
 			</div>
 			<div class="toLogin">
-				<div class="toLoginmine">
-					<a href="userLogin.html">
-						<div class="mine-img"><img src="/resource/img/login.png"/></div>
-						<div class="mine-describe"><a href="/user/login">用户登录</a></div>
-					</a>
-				</div>
-				<div class="toLoginmine">
-					<a href="secretaryLogin.html">
-						<div class="mine-img"><img src="/resource/img/login.png"/></div>
-						<div class="mine-describe"><a href="javascript:void(0)">秘书公司登录</a></div>
-					</a>
-				</div>
-				
+					<div class="toLoginmine">
+					<div class="mine-img">${email}</div>
+					</div>
 			</div>
 		</header>
 		<div class="home-content">

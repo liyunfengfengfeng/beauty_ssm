@@ -13,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
@@ -44,10 +45,11 @@ public class UserController {
      */
     @ResponseBody
 	@RequestMapping(value = "/userLogin",produces = {"application/json;charset=UTF-8"})
-	public BaseResult<Object> userLogin(User user) {
+	public BaseResult<Object> userLogin(User user,
+										HttpSession session) {
 		try {
 			userService.checkUserLogin(user);
-
+			session.setAttribute("email",user.getEmail());
 		} catch (BizException e) {
 			return new BaseResult<>(false, e.getMessage());
 		} catch (Exception e) {
@@ -104,7 +106,10 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMapping(value = "/home")
-	public String home() {
+	public String home(Model view,
+					   HttpSession session) {
+		String email = (String)session.getAttribute("email");
+		view.addAttribute("email",email);
 		return "/common/home";
 	}
 }
