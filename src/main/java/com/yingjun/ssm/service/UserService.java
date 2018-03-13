@@ -72,4 +72,10 @@ public interface UserService {
 	 * return 当前用户
 	 */
 	public User checkUserLogin(User user);
+
+	/**
+	 * 处理用户注册
+	 * @param user
+	 */
+    public void userRegister(User user);
 }

@@ -27,7 +27,7 @@
 						<li><a href="registration.html">工商注册</a></li>
 						<li class="active"><a href="#">个人中心</a></li>
 						<li><a href="enterprise.html">企业中心</a></li>
-						<li><a href="/contactUs/connection">联系我们</a></li>
+						<li><a href="#">技术支持</a></li>
 					</ul>
 				</div>
 			</div>
@@ -35,12 +35,13 @@
 		
 		<div class="enter-content">
 			<h3 class="tit">用户注册信息</h3>
+			<form id="register" name="register" action="userLogin.jsp" method="post">
 			<div class="findPwd">
 				<div class="contentInfo">
 					<ul class="getInfo margin-t-49 margin-l-40">
 						<li class="margin-b-19">
-							<label class="infoName1 inputDes" for="tel">登录手机号：</label>
-							<input class="info write-n" type="text" name="tel" id="tel" value="139****2345" placeholder="请输入登录手机号码"/>
+							<label class="infoName1 inputDes" for="email">登录邮箱：</label>
+							<input class="info write-n" type="text" name="email" id="email" value="" placeholder="请输入登录邮箱"/>
 						</li>
 						<li class="margin-b-19">
 							<label class="infoName1 inputDes" for="code">验证码：</label>
@@ -49,7 +50,7 @@
 						</li>
 						<li class="margin-b-19">
 							<label class="infoName1 inputDes" for="newPwd">设置登录密码：</label>
-							<input class="info write-n" type="text" name="newPwd" id="newPwd" value="" placeholder="请设置密码"/>
+							<input class="info write-n" type="text" name="password" id="newPwd" value="" placeholder="请设置密码"/>
 						</li>
 						<li class="margin-b-19">
 							<label class="infoName1 inputDes" for="pwd-a">再次输入密码：</label>
@@ -61,6 +62,7 @@
 					</div>
 				</div>
 			</div>
+			</form>
 		</div>
 		
 		<footer>

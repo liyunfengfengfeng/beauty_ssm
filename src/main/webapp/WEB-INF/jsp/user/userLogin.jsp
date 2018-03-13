@@ -51,7 +51,7 @@
 							</li>
 						</ul>
 						<div class="forgatPwd">
-							<a href="userResgiter.jsp">新用户注册</a>
+							<a href="/user/userRegister">新用户注册</a>
 							<a href="findPwd.html">忘记密码</a>
 						</div>
 						<div id="loginBtn" class="myBtn mar-t-30" style="">

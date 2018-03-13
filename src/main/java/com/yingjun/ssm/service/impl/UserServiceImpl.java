@@ -81,6 +81,15 @@ public class UserServiceImpl implements UserService {
 
     }
 
+    /**
+     * 处理用户注册
+     * @param user
+     */
+    @Override
+    public void userRegister(User user) {
+
+    }
+
     public UserDao getTUserDao() {
         return this.userDao;
     }
