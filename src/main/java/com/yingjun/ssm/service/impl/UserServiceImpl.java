@@ -9,6 +9,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpSession;
+
 /**
  * @author liyunfeng
  * 普通用户
@@ -86,8 +88,22 @@ public class UserServiceImpl implements UserService {
      * @param user
      */
     @Override
-    public void userRegister(User user) {
-
+    public void userRegister(User user, String code,HttpSession session) {
+        try{
+            String emailCode = (String)session.getAttribute("code");
+            if(!emailCode.equals(code)){
+                throw new BizException("验证码错误");
+            }
+            if(1 == userDao.insertTUser(user)){
+                throw new Exception("插入数据影响函数不唯一");
+            }
+        }catch (BizException biz){
+            LOG.error("验证码错误",biz);
+            throw new BizException("验证码错误");
+        }catch (Exception e){
+            LOG.error("插入数据影响函数不唯一",e);
+            throw new BizException("插入数据影响函数不唯一");
+        }
     }
 
     public UserDao getTUserDao() {

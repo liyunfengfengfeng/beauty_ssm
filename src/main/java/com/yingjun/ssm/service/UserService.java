@@ -1,6 +1,9 @@
 package com.yingjun.ssm.service;
 import java.util.List;
 import com.yingjun.ssm.entity.User;
+
+import javax.servlet.http.HttpSession;
+
 /**
  * @author liyunfeng
  * 增加必要注释
@@ -77,5 +80,5 @@ public interface UserService {
 	 * 处理用户注册
 	 * @param user
 	 */
-    public void userRegister(User user);
+    public void userRegister(User user, String code, HttpSession session);
 }

@@ -73,9 +73,9 @@ public class UserController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/register",produces = {"application/json;charset=UTF-8"})
-	public BaseResult<Object> register(User user) {
+	public BaseResult<Object> register(User user,String code,HttpSession session) {
 		try {
-			userService.userRegister(user);
+			userService.userRegister(user,code,session);
 		} catch (BizException e) {
 			return new BaseResult<>(false, e.getMessage());
 		} catch (Exception e) {
