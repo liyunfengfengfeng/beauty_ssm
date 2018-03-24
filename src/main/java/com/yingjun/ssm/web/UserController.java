@@ -81,7 +81,7 @@ public class UserController {
 		} catch (Exception e) {
 			return new BaseResult<>(false, ResultEnum.INVALID_USER.getMsg());
 		}
-		return new BaseResult<>(true, "登陆成功");
+		return new BaseResult<>(true, "注册成功");
 	}
 	/**
 	 * 用户注册时获取邮箱验证码

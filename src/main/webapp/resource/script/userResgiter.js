@@ -93,11 +93,7 @@ function sure(){
 			dataType: "json",
 			url: '/user/register',
 			success: function (data) {
-				if (data.success) {
-
-				} else {
-
-				}
+				window.location.href="/user/login";
 			}
 		});
 

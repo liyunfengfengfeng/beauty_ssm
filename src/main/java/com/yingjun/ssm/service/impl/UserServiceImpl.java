@@ -8,6 +8,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.servlet.http.HttpSession;
 
@@ -87,6 +90,7 @@ public class UserServiceImpl implements UserService {
      * 处理用户注册
      * @param user
      */
+    @Transactional(propagation= Propagation.REQUIRED,isolation = Isolation.READ_COMMITTED,rollbackFor=Throwable.class)
     @Override
     public void userRegister(User user, String code,HttpSession session) {
         try{
@@ -94,7 +98,7 @@ public class UserServiceImpl implements UserService {
             if(!emailCode.equals(code)){
                 throw new BizException("验证码错误");
             }
-            if(1 == userDao.insertTUser(user)){
+            if(1 != userDao.insertTUser(user)){
                 throw new Exception("插入数据影响函数不唯一");
             }
         }catch (BizException biz){
