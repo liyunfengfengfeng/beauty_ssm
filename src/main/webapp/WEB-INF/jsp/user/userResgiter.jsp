@@ -86,3 +86,29 @@
 		</footer>
 	</body>
 </html>
+<script>
+	function sure(){
+		var $newPwd = $("#newPwd").val();
+		var $pwda = $("#pwd-a").val();
+		if($pwda != $newPwd) {
+			$("#pwd-a").next().remove();
+			$("#pwd-a").addClass('noPass')
+			$("#pwd-a").after('<span class="noPassImg-bounce"><img src="/resource/img/refuse.png"/>输入不一致</span>')
+			return;
+		}
+		$.ajax({
+			type: 'POST',
+			data: $('#register').serialize(),
+			dataType: "json",
+			url: '/user/register',
+			success: function (data) {
+				if(data.success){
+					alert("注册成功");
+					window.location.href="/user/login";
+				}else{
+					alert("注册失败");
+				}
+			}
+		});
+	}
+</script>

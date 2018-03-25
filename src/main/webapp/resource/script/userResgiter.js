@@ -78,24 +78,3 @@ function settime(val) {
 		},1000)
 	}
 }
-function sure(){
-	var $newPwd = $("#newPwd").val();
-	var $pwda = $("#pwd-a").val();
-	if($pwda != $newPwd) {
-		$("#pwd-a").next().remove();
-		$("#pwd-a").addClass('noPass')
-		$("#pwd-a").after('<span class="noPassImg-bounce"><img src="/resource/img/refuse.png"/>输入不一致</span>')
-		return;
-	}
-		$.ajax({
-			type: 'POST',
-			data: $('#register').serialize(),
-			dataType: "json",
-			url: '/user/register',
-			success: function (data) {
-				window.location.href="/user/login";
-			}
-		});
-
-
-}

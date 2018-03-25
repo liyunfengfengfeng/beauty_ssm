@@ -1,6 +1,7 @@
 package com.yingjun.ssm.web;
 
 
+import com.google.gson.Gson;
 import com.yingjun.ssm.dto.BaseResult;
 import com.yingjun.ssm.entity.User;
 import com.yingjun.ssm.enums.ResultEnum;
@@ -72,16 +73,17 @@ public class UserController {
 	 * @return
 	 */
 	@ResponseBody
-	@RequestMapping(value = "/register",produces = {"application/json;charset=UTF-8"})
-	public BaseResult<Object> register(User user,String code,HttpSession session) {
+	@RequestMapping(value = "/register")
+	public Object register(User user,String code,HttpSession session) {
+		Gson gson = new Gson();
 		try {
 			userService.userRegister(user,code,session);
 		} catch (BizException e) {
-			return new BaseResult<>(false, e.getMessage());
+			return gson.toJson(new BaseResult(false, e.getMessage()));
 		} catch (Exception e) {
-			return new BaseResult<>(false, ResultEnum.INVALID_USER.getMsg());
+			return gson.toJson(new BaseResult(false, ResultEnum.INVALID_USER.getMsg()));
 		}
-		return new BaseResult<>(true, "注册成功");
+		return gson.toJson(new BaseResult(true, ResultEnum.USER_REGISTER_SUCCESS.getMsg()));
 	}
 	/**
 	 * 用户注册时获取邮箱验证码
@@ -92,7 +94,8 @@ public class UserController {
 	public BaseResult<Object> getEmailCode(@RequestParam String email,HttpSession session) {
 		try {
 			String code = CodeUtil.rand();
-			MailUtil.sendMail(email,code);
+			System.out.println("code is " + code);
+			//MailUtil.sendMail(email,code);
 			session.setAttribute("code",code);
 		} catch (BizException e) {
 			return new BaseResult<>(false, e.getMessage());
