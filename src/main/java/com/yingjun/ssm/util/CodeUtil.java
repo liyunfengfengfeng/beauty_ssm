@@ -14,7 +14,5 @@ public class CodeUtil {
     public static String rand(){
        return getRandNum(100000,999999).toString().trim();
     }
-    public static void main(String[]args){
-        rand();
-    }
+    public static void main(String[]args){rand();}
 }

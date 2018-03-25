@@ -25,7 +25,7 @@ public class BindingResultAop {
 
     @Around("aopMethod()")
     public Object  around(ProceedingJoinPoint joinPoint) throws Throwable{
-        LOG.info("采用AOP的方式检查用户是否登录");
+        //LOG.info("采用AOP的方式检查用户是否登录");
 
         return joinPoint.proceed();
     }

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yingjun.ssm.dao.TOpreatorUserDao">
+    <!-- TOpreatorUser的resultMap,column是给数据库列起的别名,它对应property类的属性-->
+    <resultMap id="result_TOpreatorUser_Map" type="com.yingjun.ssm.entity.TOpreatorUser">
+        <id column="id" property="id" />
+        <result column="valid" property="valid" />
+        <result column="operator_name" property="operatorName" />
+        <result column="phone_no" property="phoneNo" />
+        <result column="update_time" property="updateTime" />
+        <result column="create_time" property="createTime" />
+        <result column="role_id" property="roleId" />
+        <result column="operator_password" property="operatorPassword" />
+        <result column="operator_account" property="operatorAccount" />
+        <result column="email" property="email" />
+    </resultMap>
+
+    <!-- 数据库中表名为:t_opreator_user的列名,as前是数据库的列明,as后是列的别名用于映射成实体类中的属性,需要注意的是别名必须与resultMap中的column别名一致 -->
+    <sql id="t_opreator_user_Column">
+        t_opreator_user.id as id
+        ,t_opreator_user.valid as valid
+        ,t_opreator_user.operator_name as operator_name
+        ,t_opreator_user.phone_no as phone_no
+        ,t_opreator_user.update_time as update_time
+        ,t_opreator_user.create_time as create_time
+        ,t_opreator_user.role_id as role_id
+        ,t_opreator_user.operator_password as operator_password
+        ,t_opreator_user.operator_account as operator_account
+        ,t_opreator_user.email as email
+    </sql>
+
+    <!--获得类名为:TOpreatorUser对应的数据库表的数据总行数 -->
+    <select id="getTOpreatorUserRowCount" resultType="java.lang.Long">
+        select count(id) from t_opreator_user
+    </select>
+    <!-- 获得类名为:TOpreatorUser对应数据库中表的数据集合 -->
+    <select id="selectTOpreatorUser" resultMap="result_TOpreatorUser_Map">
+        select 
+        <include refid="t_opreator_user_Column" /> 
+        from t_opreator_user
+    </select> 
+
+    <!-- 获得一个TOpreatorUser对象,以参数TOpreatorUser对象中不为空的属性作为条件进行查询-->
+    <select id="selectTOpreatorUserByObj" parameterType="com.yingjun.ssm.entity.TOpreatorUser" resultMap="result_TOpreatorUser_Map">
+        select 
+            <include refid="t_opreator_user_Column" /> 
+        from t_opreator_user
+        <where>
+            <if test="email != null "> and t_opreator_user.email = #{email}</if>
+            <if test="operatorAccount != null "> and t_opreator_user.operator_account = #{operatorAccount}</if>
+            <if test="operatorPassword != null "> and t_opreator_user.operator_password = #{operatorPassword}</if>
+            <if test="roleId != null "> and t_opreator_user.role_id = #{roleId}</if>
+            <if test="createTime != null "> and t_opreator_user.create_time = #{createTime}</if>
+            <if test="updateTime != null "> and t_opreator_user.update_time = #{updateTime}</if>
+            <if test="phoneNo != null "> and t_opreator_user.phone_no = #{phoneNo}</if>
+            <if test="operatorName != null "> and t_opreator_user.operator_name = #{operatorName}</if>
+            <if test="valid != null "> and t_opreator_user.valid = #{valid}</if>
+            <if test="id != null "> and t_opreator_user.id = #{id}</if>
+        </where>
+    </select> 
+
+    <!-- 通过TOpreatorUser的id获得对应数据库中表的数据对象-->
+    <select id="selectTOpreatorUserById" parameterType="java.lang.Long" resultMap="result_TOpreatorUser_Map">
+        select 
+            <include refid="t_opreator_user_Column" /> 
+        from t_opreator_user
+        where t_opreator_user.id = #{id}
+    </select> 
+
+    <!-- 将TOpreatorUser插入到对应数据库的表中,包括属性值为null的数据-->
+
+    <insert id="insertTOpreatorUser" parameterType="com.yingjun.ssm.entity.TOpreatorUser">
+        insert into t_opreator_user(id,valid,operator_name,phone_no,update_time,create_time,role_id,operator_password,operator_account,email) 
+        values(#{id},#{valid},#{operatorName},#{phoneNo},#{updateTime},#{createTime},#{roleId},#{operatorPassword},#{operatorAccount},#{email})
+    </insert>
+
+    <!-- 将TOpreatorUser中属性值不为null的数据,插入到对应数据库的表中-->
+    <insert id="insertNonEmptyTOpreatorUser" parameterType="com.yingjun.ssm.entity.TOpreatorUser">
+        insert into t_opreator_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="valid != null">valid,</if>
+            <if test="operatorName != null">operator_name,</if>
+            <if test="phoneNo != null">phone_no,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="roleId != null">role_id,</if>
+            <if test="operatorPassword != null">operator_password,</if>
+            <if test="operatorAccount != null">operator_account,</if>
+            <if test="email != null">email,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null"> #{id},</if>
+            <if test="valid != null"> #{valid},</if>
+            <if test="operatorName != null"> #{operatorName},</if>
+            <if test="phoneNo != null"> #{phoneNo},</if>
+            <if test="updateTime != null"> #{updateTime},</if>
+            <if test="createTime != null"> #{createTime},</if>
+            <if test="roleId != null"> #{roleId},</if>
+            <if test="operatorPassword != null"> #{operatorPassword},</if>
+            <if test="operatorAccount != null"> #{operatorAccount},</if>
+            <if test="email != null"> #{email},</if>
+        </trim>
+    </insert>
+
+    <!-- 将TOpreatorUser批量插入到对应数据库的表中-->
+    <insert id="insertTOpreatorUserByBatch" parameterType="ArrayList">
+        insert into t_opreator_user(id,valid,operator_name,phone_no,update_time,create_time,role_id,operator_password,operator_account,email) values
+        <foreach collection="list" item="item" index="index" separator="," >
+            (#{item.id},#{item.valid},#{item.operatorName},#{item.phoneNo},#{item.updateTime},#{item.createTime},#{item.roleId},#{item.operatorPassword},#{item.operatorAccount},#{item.email})
+        </foreach>
+    </insert>
+
+    <!-- 通过TOpreatorUser的id将数据库表中对应的数据删除-->
+    <delete id="deleteTOpreatorUserById" parameterType="java.lang.Long">
+        delete from t_opreator_user
+        where id = #{id}
+    </delete>
+
+    <!-- 通过TOpreatorUser的id将TOpreatorUser的数据更新到数据库中对应的表,包括值null的数据-->
+    <update id="updateTOpreatorUserById" parameterType="com.yingjun.ssm.entity.TOpreatorUser">
+        update t_opreator_user set
+            valid=#{valid}
+            ,operator_name=#{operatorName}
+            ,phone_no=#{phoneNo}
+            ,update_time=#{updateTime}
+            ,create_time=#{createTime}
+            ,role_id=#{roleId}
+            ,operator_password=#{operatorPassword}
+            ,operator_account=#{operatorAccount}
+            ,email=#{email}
+        where id=#{id}
+    </update>
+
+    <!-- 通过TOpreatorUser的id将TOpreatorUser中属性值不为null的数据更新到数据库对应的表中-->
+    <update id="updateNonEmptyTOpreatorUserById" parameterType="com.yingjun.ssm.entity.TOpreatorUser">
+        update t_opreator_user
+        <set>
+            <if test="valid != null">
+                valid=#{valid},
+            </if>
+            <if test="operatorName != null">
+                operator_name=#{operatorName},
+            </if>
+            <if test="phoneNo != null">
+                phone_no=#{phoneNo},
+            </if>
+            <if test="updateTime != null">
+                update_time=#{updateTime},
+            </if>
+            <if test="createTime != null">
+                create_time=#{createTime},
+            </if>
+            <if test="roleId != null">
+                role_id=#{roleId},
+            </if>
+            <if test="operatorPassword != null">
+                operator_password=#{operatorPassword},
+            </if>
+            <if test="operatorAccount != null">
+                operator_account=#{operatorAccount},
+            </if>
+            <if test="email != null">
+                email=#{email},
+            </if>
+        </set>
+        where id=#{id}
+    </update>
+
+
+
+    <!-- 根据邮箱以及密码查询当前管理员信息 -->
+    <select id="queryAdminInfo" parameterType="com.yingjun.ssm.entity.TOpreatorUser" resultType="com.yingjun.ssm.entity.TOpreatorUser">
+        select
+        <include refid="t_opreator_user_Column" />
+        from t_opreator_user
+        where t_opreator_user.email = #{email}
+        and t_opreator_user.operator_password = #{operatorPassword}
+    </select>
+</mapper>
