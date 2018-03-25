@@ -139,4 +139,39 @@ public class UserServiceImpl implements UserService {
         return userDao.queryUserByEmail(email);
     }
 
+    /**
+     * 根据邮箱修改当前登录用户的密码
+     * @param user 用户信息
+     * @param code 验证码
+     * @param session session存储系统发送的验证码
+     */
+    @Transactional(propagation= Propagation.REQUIRED,isolation = Isolation.READ_COMMITTED,rollbackFor=Throwable.class)
+    @Override
+    public void updatePasswordByEmail(User user, String code, HttpSession session) {
+        try{
+            User userFind = queryUserByEmail(user.getEmail());
+            if(userFind == null){
+                throw new BizException("用户不存在");
+            }
+            String emailCode = (String)session.getAttribute("code");
+            if(!emailCode.equals(code)){
+                throw new BizException("验证码错误");
+            }
+            //加密密码
+            if(user!=null){
+                user.setPassword(Md5Util.md5Password(user.getPassword()));
+            }else{
+                return;
+            }
+            user.setId(userFind.getId());
+            if(1 != userDao.updateTUserById(user)){
+                throw new Exception("插入数据影响函数不唯一");
+            }
+        }catch (BizException biz){
+            throw new BizException(biz.getMessage(),biz);
+        }catch (Exception e){
+            throw new RuntimeException("插入数据影响函数不唯一",e);
+        }
+    }
+
 }

@@ -45,19 +45,20 @@
 			</div>
 			<div class="findPwd">
 				<div class="contentInfo">
+					<form action="/find/findPwd" id="findPwdForm" name="findPwdForm">
 					<ul class="getInfo margin-t-49 margin-l-40">
 						<li class="margin-b-19">
-							<label class="infoName1 inputDes" for="tel">登录邮箱号：</label>
-							<input class="info2" type="text" name="email" id="tel" value="" placeholder=""/>
+							<label class="infoName1 inputDes" for="email">登录邮箱号：</label>
+							<input class="info2" type="text" name="email" id="email" value="" placeholder=""/>
 						</li>
 						<li class="margin-b-19">
 							<label class="infoName1 inputDes" for="code">验证码：</label>
 							<input class="info2" type="text" name="code" id="code" value="" placeholder=""/>
-							<span class="bounceBtn" id="getCode" onclick="settime(this)"><a class="count" href="javascript:void(0)">获取验证码</a></span>
+							<span class="bounceBtn" id="getCode" onclick="setTime(this)"><a class="count" href="javascript:void(0)">获取验证码</a></span>
 						</li>
 						<li class="margin-b-19">
 							<label class="infoName1 inputDes" for="newPwd">新登录密码：</label>
-							<input class="info write-n" type="text" name="newPwd" id="newPwd" value="" placeholder=""/>
+							<input class="info write-n" type="text" name="password" id="newPwd" value="" placeholder=""/>
 						</li>
 						<li class="margin-b-19">
 							<label class="infoName1 inputDes" for="pwd-a">再次输入新密码：</label>
@@ -67,6 +68,7 @@
 					<div class="btn-bounce" onclick="sure()">
 						<a class="width-206" href="javascript:void(0)">确定</a>
 					</div>
+					</form>
 				</div>
 			</div>
 		</div>

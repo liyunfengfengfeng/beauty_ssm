@@ -47,14 +47,16 @@ public class FindPwdController {
      */
     @ResponseBody
 	@RequestMapping(value = "/findPwd",produces = {"application/json;charset=UTF-8"})
-	public BaseResult<Object> userLogin() {
+	public BaseResult<Object> userLogin(User user,String code,HttpSession session) {
 		try {
-
+			LOG.info("用户信息  " + user);
+			LOG.info("用户输入的验证码  " + code);
+			userService.updatePasswordByEmail(user,code,session);
 		} catch (BizException e) {
 			return new BaseResult<>(false, e.getMessage());
 		} catch (Exception e) {
 			return new BaseResult<>(false, ResultEnum.INVALID_USER.getMsg());
 		}
-		return new BaseResult<>(true, "登陆成功");
+		return new BaseResult<>(true, "修改成功");
 	}
 }

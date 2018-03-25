@@ -42,25 +42,43 @@ function addReceive(){
 function closeBounce(){
 	$(".bounces").addClass('hide');
 }
-function settime(val) { 
+// 获取验证码
+var countdown = 60;
+function setTime(val) {
 	var $val = $(val);
-	if (countdown == 0) { 
+	if (countdown == 60){
+		//异步发送验证码
+		$.ajax({
+			type: 'POST',
+			data: $('#findPwdForm').serialize(),
+			dataType: "json",
+			url: '/user/getEmailCode',
+			success: function (data) {
+				if (data.success) {
+
+				} else {
+
+				}
+			}
+		});
+	}
+	if (countdown == 0) {
 		$('#getCode').removeClass('countBtn');
 		$('#getCode').addClass('bounceBtn');
-		val.removeAttribute("disabled");    
+		val.removeAttribute("disabled");
 		$val.children().html("获取验证码")
-		countdown = 60; 
-	} else { 
+		countdown = 60;
+	} else {
 		$('#getCode').removeClass('bounceBtn');
 		$('#getCode').addClass('countBtn');
-		val.setAttribute("disabled", true); 
+		val.setAttribute("disabled", true);
 		$val.children().html("重新发送" + countdown + "s")
-		countdown--; 
-		setTimeout(function() { 
-			settime(val) 
-		},1000) 
-	} 
-} 
+		countdown--;
+		setTimeout(function() {
+			settime(val)
+		},1000)
+	}
+}
 function sure(){
 	var $newPwd = $("#newPwd").val();
 	var $pwda = $("#pwd-a").val();
@@ -69,4 +87,19 @@ function sure(){
 		$("#pwd-a").addClass('noPass')
 		$("#pwd-a").after('<span class="noPassImg-bounce"><img src="img/refuse.png"/>输入不一致</span>')
 	}
+
+	$.ajax({
+		type: 'POST',
+		data: $('#findPwdForm').serialize(),
+		dataType: "json",
+		url: '/find/findPwd',
+		success: function (data) {
+			if(data.success){
+				alert("修改成功");
+				window.location.href="/user/login";
+			}else{
+				alert(data.error);
+			}
+		}
+	});
 }

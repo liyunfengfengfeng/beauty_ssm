@@ -88,4 +88,12 @@ public interface UserService {
 	 * @return
 	 */
 	public User queryUserByEmail(String email);
+
+	/**
+	 * 根据邮箱修改用户密码
+	 * @param user 用户信息
+	 * @param code 验证码
+	 * @param session 存储系统发送的验证码
+	 */
+    public void updatePasswordByEmail(User user, String code, HttpSession session);
 }
