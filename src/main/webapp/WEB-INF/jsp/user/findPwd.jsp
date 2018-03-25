@@ -4,23 +4,23 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>个人中心-找回密码</title>
-		<link rel="stylesheet" type="text/css" href="css/safety.css"/>
+		<link rel="stylesheet" type="text/css" href="/resource/css/safety.css"/>
 		<!--其他样式-->
-		<link rel="stylesheet" type="text/css" href="css/enterpriseInfo.css"/>
-		<link rel="stylesheet" type="text/css" href="css/proprietorship.css"/>
-		<link rel="stylesheet" type="text/css" href="css/buyService.css"/>
-		<link rel="stylesheet" type="text/css" href="css/home.css"/>
-		<link rel="stylesheet" type="text/css" href="css/news.css"/>
-		<link rel="stylesheet" type="text/css" href="css/registration.css"/>
-		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/findPwd.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/function.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="/resource/css/enterpriseInfo.css"/>
+		<link rel="stylesheet" type="text/css" href="/resource/css/proprietorship.css"/>
+		<link rel="stylesheet" type="text/css" href="/resource/css/buyService.css"/>
+		<link rel="stylesheet" type="text/css" href="/resource/css/home.css"/>
+		<link rel="stylesheet" type="text/css" href="/resource/css/news.css"/>
+		<link rel="stylesheet" type="text/css" href="/resource/css/registration.css"/>
+		<script src="/resource/script/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/resource/script/findPwd.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/resource/script/function.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body class="grayBg">
 		<!--首页头部-->
 		<header>
 			<div class="header-content">
-				<div class="logo"><span class="logo-img">京东益世集群注册平台</span></div>
+				<div class="logo"><span class="logo-img">益世集群注册平台</span></div>
 				<div class="header-menu">
 					<ul>
 						<li><a href="home.html">首页</a></li>
@@ -33,7 +33,7 @@
 			</div>
 			<div class="mine">
 				<a href="secretaryLogin.html">
-					<div class="mine-img"><img src="img/login.png"/></div>
+					<div class="mine-img"><img src="/resource/img/login.png"/></div>
 					<div class="mine-describe"><a href="javascript:void(0)">秘书公司登录</a></div>
 				</a>
 			</div>
@@ -47,8 +47,8 @@
 				<div class="contentInfo">
 					<ul class="getInfo margin-t-49 margin-l-40">
 						<li class="margin-b-19">
-							<label class="infoName1 inputDes" for="tel">登录手机号：</label>
-							<input class="showInfo" type="text" name="tel" id="tel" readonly="readonly" value="139****2345" placeholder=""/>
+							<label class="infoName1 inputDes" for="tel">登录邮箱号：</label>
+							<input class="info2" type="text" name="email" id="tel" value="" placeholder=""/>
 						</li>
 						<li class="margin-b-19">
 							<label class="infoName1 inputDes" for="code">验证码：</label>

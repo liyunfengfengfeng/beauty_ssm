@@ -52,7 +52,7 @@
 						</ul>
 						<div class="forgatPwd">
 							<a href="/user/userRegister">新用户注册</a>
-							<a href="findPwd.html">忘记密码</a>
+							<a href="/find/toFindPwd">忘记密码</a>
 						</div>
 						<div id="loginBtn" class="myBtn mar-t-30" style="">
 							<a>立即登录</a>
