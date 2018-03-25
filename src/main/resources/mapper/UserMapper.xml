@@ -123,4 +123,13 @@
             <if test="password != null "> and t_user.password = #{password}</if>
         </where>
     </select>
+
+    <!--查询用户是否已经注册-->
+    <select id="queryUserByEmail" parameterType="com.yingjun.ssm.entity.User" resultType="com.yingjun.ssm.entity.User">
+        select
+        <include refid="t_user_Column" />
+        from t_user
+        where
+            t_user.email = #{email}
+    </select>
 </mapper>

@@ -81,4 +81,11 @@ public interface UserService {
 	 * @param user
 	 */
     public void userRegister(User user, String code, HttpSession session);
+
+	/**
+	 * 检查用户是否已经注册
+	 * @param email
+	 * @return
+	 */
+	public User queryUserByEmail(String email);
 }

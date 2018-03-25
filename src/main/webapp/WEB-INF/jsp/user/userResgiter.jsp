@@ -106,7 +106,7 @@
 					alert("注册成功");
 					window.location.href="/user/login";
 				}else{
-					alert("注册失败");
+					alert(data.error);
 				}
 			}
 		});

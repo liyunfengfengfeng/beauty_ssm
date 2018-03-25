@@ -71,4 +71,11 @@ public interface UserDao {
 	 * @return
 	 */
     public User checkUserLogin(User user);
+
+	/**
+	 * 根据邮箱查询当前登录用户
+	 * @param email
+	 * @return
+	 */
+    public User queryUserByEmail(String email);
 }

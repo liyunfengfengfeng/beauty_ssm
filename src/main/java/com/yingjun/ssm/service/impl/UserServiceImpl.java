@@ -4,6 +4,7 @@ import com.yingjun.ssm.dao.UserDao;
 import com.yingjun.ssm.entity.User;
 import com.yingjun.ssm.exception.BizException;
 import com.yingjun.ssm.service.UserService;
+import com.yingjun.ssm.util.Md5Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,6 +72,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public User checkUserLogin(User user) {
         try{
+            //加密密码
+            user.setPassword(Md5Util.md5Password(user.getPassword()));
             User loginUser = userDao.checkUserLogin(user);
             if(loginUser == null){
                 throw new BizException("用户不存在");
@@ -94,19 +97,27 @@ public class UserServiceImpl implements UserService {
     @Override
     public void userRegister(User user, String code,HttpSession session) {
         try{
+            User user1 = queryUserByEmail(user.getEmail());
+            if(user1 != null){
+                throw new BizException("用户已经注册");
+            }
             String emailCode = (String)session.getAttribute("code");
             if(!emailCode.equals(code)){
                 throw new BizException("验证码错误");
+            }
+            //加密密码
+            if(user!=null){
+                user.setPassword(Md5Util.md5Password(user.getPassword()));
+            }else{
+                return;
             }
             if(1 != userDao.insertTUser(user)){
                 throw new Exception("插入数据影响函数不唯一");
             }
         }catch (BizException biz){
-            LOG.error("验证码错误",biz);
-            throw new BizException("验证码错误");
+            throw new BizException(biz.getMessage(),biz);
         }catch (Exception e){
-            LOG.error("插入数据影响函数不唯一",e);
-            throw new BizException("插入数据影响函数不唯一");
+            throw new RuntimeException("插入数据影响函数不唯一",e);
         }
     }
 
@@ -116,6 +127,16 @@ public class UserServiceImpl implements UserService {
 
     public void setTUserDao(UserDao userDao) {
         this.userDao = userDao;
+    }
+
+    /**
+     * 检查用户是否已经注册
+     * @param email
+     * @return
+     */
+    @Override
+    public User queryUserByEmail(String email){
+        return userDao.queryUserByEmail(email);
     }
 
 }
