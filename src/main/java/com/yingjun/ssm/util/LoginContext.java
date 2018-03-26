@@ -7,11 +7,11 @@ package com.yingjun.ssm.util;
  */
 public class LoginContext {
 
-    private ThreadLocal<LoginContext> threadLocal = new ThreadLocal<>();
+    private static final ThreadLocal<LoginContext> holder = new ThreadLocal<>();
     /**
      * 主键id
      */
-    private Long id;
+    private final long id;
     /**
      * 密码
      */
@@ -25,19 +25,24 @@ public class LoginContext {
      */
     private String email;
 
-    /**
-     * 移除当前线程中的变量值
-     */
-    public void remove(){
-        threadLocal.remove();
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
+    public LoginContext(long id){
+        super();
         this.id = id;
+    }
+
+    public static LoginContext getHolder() {
+        return holder.get();
+    }
+
+    public static void setHolder(LoginContext loginContext) {
+        holder.set(loginContext);
+    }
+    public static void remove(){
+        holder.remove();
+    }
+
+    public long getId() {
+        return id;
     }
 
     public String getPassword() {
