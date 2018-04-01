@@ -44,7 +44,7 @@
 					<div class="detail">
 						<ul>
 							<li>
-								<input class="input telNum" type="text" name="email" id="" value="" placeholder="请输入邮箱"/>
+								<input class="input telNum" type="text" name="email" id="" value="" placeholder="请输入用户名"/>
 							</li>
 							<li>
 								<input class="input pwd" type="password" name="password" id="pwd" value="" placeholder="请输入密码"/>
@@ -92,7 +92,6 @@
 			url: '/user/userLogin',
 			success: function (data) {
 				if(data.success){
-					alert(data.error);
 					window.location.href = "/user/home";
 				}else{
 					alert(data.error);

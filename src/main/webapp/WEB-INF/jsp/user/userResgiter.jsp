@@ -40,6 +40,10 @@
 				<div class="contentInfo">
 					<ul class="getInfo margin-t-49 margin-l-40">
 						<li class="margin-b-19">
+							<label class="infoName1 inputDes" for="email">用户名：</label>
+							<input class="info write-n" type="text" name="name" id="name" value="" placeholder="请输入用户名称"/>
+						</li>
+						<li class="margin-b-19">
 							<label class="infoName1 inputDes" for="email">登录邮箱：</label>
 							<input class="info write-n" type="text" name="email" id="email" value="" placeholder="请输入登录邮箱"/>
 						</li>
@@ -50,11 +54,11 @@
 						</li>
 						<li class="margin-b-19">
 							<label class="infoName1 inputDes" for="newPwd">设置登录密码：</label>
-							<input class="info write-n" type="text" name="password" id="newPwd" value="" placeholder="请设置密码"/>
+							<input class="info write-n" type="password" name="password" id="newPwd" value="" placeholder="请设置密码"/>
 						</li>
 						<li class="margin-b-19">
 							<label class="infoName1 inputDes" for="pwd-a">再次输入密码：</label>
-							<input class="info write-n" type="text" name="pwd-a" id="pwd-a" value="" placeholder="请再次输入密码"/>
+							<input class="info write-n" type="password" name="pwd-a" id="pwd-a" value="" placeholder="请再次输入密码"/>
 						</li>
 					</ul>
 					<div class="btn-bounce" onclick="sure()">
