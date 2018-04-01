@@ -44,7 +44,7 @@
 					<div class="detail">
 						<ul>
 							<li>
-								<input class="input telNum" type="text" name="email" id="email" value="" placeholder="请输入邮箱"/>
+								<input class="input telNum" type="text" name="operatorName" id="operatorName" value="" placeholder="请输入用户名"/>
 							</li>
 							<li>
 								<input class="input pwd" type="password" name="operatorPassword" id="password" value="" placeholder="请输入密码"/>
@@ -85,7 +85,7 @@
 <script>
 	//用户登录异步提交表单
 	$('#loginBtn').bind("click", function(){
-		alert("2123");
+
 		$.ajax({
 			type: 'POST',
 			data: $('#adminLogin').serialize(),
@@ -93,7 +93,6 @@
 			url: '/admin/adminLogin',
 			success: function (data) {
 				if(data.success){
-					alert(data.error);
 					window.location.href = "/admin/adminLoginSuccess";
 				}else{
 					alert(data.error);

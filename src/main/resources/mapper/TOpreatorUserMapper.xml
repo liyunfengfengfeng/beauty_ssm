@@ -174,7 +174,7 @@
         select
         <include refid="t_opreator_user_Column" />
         from t_opreator_user
-        where t_opreator_user.email = #{email}
+        where t_opreator_user.operator_name = #{operatorName}
         and t_opreator_user.operator_password = #{operatorPassword}
     </select>
 </mapper>
