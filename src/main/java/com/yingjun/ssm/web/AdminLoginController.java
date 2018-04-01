@@ -67,7 +67,32 @@ public class AdminLoginController {
 	 */
 	@RequestMapping(value = "/adminLoginSuccess")
 	public String adminLoginSuccess() {
-		return "/admin/success";
+		return "/admin/main";
+	}
+
+	/**
+	 * 引入相关页面 index.jsp
+	 * @return
+	 */
+	@RequestMapping(value = "/index")
+	public String index() {
+		return "/admin/index";
+	}
+	/**
+	 * 引入相关页面 top.jsp
+	 * @return
+	 */
+	@RequestMapping(value = "/top")
+	public String top() {
+		return "/admin/top";
+	}
+	/**
+	 * 引入相关页面 left.jsp
+	 * @return
+	 */
+	@RequestMapping(value = "/left")
+	public String left() {
+		return "/admin/left";
 	}
 
 }

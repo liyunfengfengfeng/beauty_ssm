@@ -72,11 +72,11 @@ public class TOpreatorUserServiceImpl implements TOpreatorUserService{
             opreatorUser.setOperatorPassword(Md5Util.md5Password(opreatorUser.getOperatorPassword()));
             TOpreatorUser tOpreatorUser = tOpreatorUserDao.queryAdminInfo(opreatorUser);
             if(tOpreatorUser == null){
-                throw new BizException("邮箱或密码错误");
+                throw new BizException("用户名或密码错误");
             }
             return tOpreatorUser;
         }catch (BizException biz){
-            throw new BizException("邮箱或密码错误",biz);
+            throw new BizException("用户名或密码错误",biz);
         }catch (Exception e){
             throw new RuntimeException("登录出现异常",e);
         }
