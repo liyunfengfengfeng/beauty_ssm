@@ -102,5 +102,12 @@ public interface UserService {
 	 * @param user
 	 * @return
 	 */
-    public List<User> searchUserListByCondition(User user);
+    public List<User> searchUserListByConditionLimit(User user);
+
+	/**
+	 * 不加limit查询符合条件的总记录数
+	 * @param user
+	 * @return
+	 */
+	public List<User> searchUserListByCondition(User user);
 }

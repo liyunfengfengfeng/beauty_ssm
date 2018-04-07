@@ -174,15 +174,27 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+
+
+
     /**
      * 根据条件查询普通用户信息
      * @param user
      * @return
      */
     @Override
-    public List<User> searchUserListByCondition(User user) {
+    public List<User> searchUserListByConditionLimit(User user) {
 
         return userDao.selectUsersByCondition(user);
+    }
+    /**
+     * 不加limit查询符合条件的总记录数
+     * @param user
+     * @return
+     */
+    @Override
+    public List<User> searchUserListByCondition(User user) {
+        return userDao.selectUsersByConditionNoLimit(user);
     }
 
 }

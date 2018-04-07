@@ -85,4 +85,10 @@ public interface UserDao {
 	 * @return
 	 */
 	public List<User> selectUsersByCondition(User user);
+	/**
+	 * 不加limit查询符合条件的总记录数
+	 * @param user
+	 * @return
+	 */
+	public List<User> selectUsersByConditionNoLimit(User user);
 }

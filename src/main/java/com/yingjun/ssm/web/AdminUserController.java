@@ -45,13 +45,16 @@ public class AdminUserController {
 					   Model view) {
 		try {
 			LOG.info("接受到的数据是    ：" + user);
+			List<User> pageList = userService.searchUserListByCondition(user);
 			//分页需要的起始与终止位置
 			int pageSize = 9;
 			int start = (pno-1)* pageSize;
 			int end = pageSize;
-			List<User> userList = userService.searchUserListByCondition(user);
+			user.setStart(start);
+			user.setEnd(end);
+			List<User> userList = userService.searchUserListByConditionLimit(user);
 			Page page = new Page();
-			int totalRecord = userList.size();
+			int totalRecord = pageList.size();
 			//设置当前页
 			page.setPageNo(pno);
 			//每页容量
