@@ -142,5 +142,6 @@
             <if test="email != null and email!=''"> and t_user.email = #{email}</if>
             <if test="name != null and name!=''"> and t_user.name = #{name}</if>
         </where>
+        LIMIT #{start},#{end}
     </select>
 </mapper>

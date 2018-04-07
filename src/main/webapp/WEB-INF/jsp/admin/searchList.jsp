@@ -6,9 +6,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>无标题文档</title>
     <link href="/resource/css/style.css" rel="stylesheet" type="text/css"/>
-    <link href="/resource/js/3rd/select/select.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="/resource/js/jquery/jquery.1.11.2.min.js"></script>
-    <script type="text/javascript" src="/resource/js/3rd/select/select-ui.min.js"></script>
+    <%--<link href="/resource/js/3rd/select/select.css" rel="stylesheet" type="text/css"/>--%>
+    <script type="text/javascript" src="/resource/js/kkpaper/kkpager.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/resource/css/kkpaper/kkpager_blue.css" />
+    <%--<script type="text/javascript" src="/resource/js/jquery/jquery.1.11.2.min.js"></script>--%>
+    <%--<script type="text/javascript" src="/resource/js/3rd/select/select-ui.min.js"></script>--%>
+    <script src="/resource/js/jquery/jquery-2.1.1.min.js"></script>
+    <script src="/resource/js/bootstrap/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -55,38 +59,37 @@
         </c:forEach>
         </tbody>
     </table>
-
-    <div class="pagin">
-        <div class="message">共<i class="blue">1256</i>条记录，当前显示第&nbsp;<i class="blue">2&nbsp;</i>页</div>
-        <ul class="paginList">
-            <li class="paginItem"><a href="javascript:;"><span class="pagepre"></span></a></li>
-            <li class="paginItem"><a href="javascript:;">1</a></li>
-            <li class="paginItem current"><a href="javascript:;">2</a></li>
-            <li class="paginItem"><a href="javascript:;">3</a></li>
-            <li class="paginItem"><a href="javascript:;">4</a></li>
-            <li class="paginItem"><a href="javascript:;">5</a></li>
-            <li class="paginItem more"><a href="javascript:;">...</a></li>
-            <li class="paginItem"><a href="javascript:;">10</a></li>
-            <li class="paginItem"><a href="javascript:;"><span class="pagenxt"></span></a></li>
-        </ul>
+    <div style="text-align: center;margin:auto">
+        <div id="kkpager"></div>
     </div>
 </div>
-
+</body>
+</html>
 <script type="text/javascript">
+    //init
     $(function(){
-        $('.tablelist tbody tr:odd').addClass('odd');
-        //下拉框的样式设置
-        $(".select1").uedSelect({
-            width: 345
-        });
-        $(".select2").uedSelect({
-            width: 167
-        });
-        $(".select3").uedSelect({
-            width: 100
+        var totalPage = ${page.getTotalPage()};
+        var totalRecords = ${page.getTotalRecord()};
+        var pageNo = ${page.getPageNo()};
+        if(!pageNo){
+            pageNo = 1;
+        }
+        //生成分页
+        //有些参数是可选的，比如lang，若不传有默认值
+        kkpager.generPageHtml({
+            pno : pageNo,
+            //总页码
+            total : totalPage,
+            //总数据条数
+            totalRecords : totalRecords,
+            //链接前部
+            hrefFormer : '/adminUser/list',
+            isGoPage : false,
+            isShowTotalPage : false,
+            isShowTotalRecords : false,
+            getLink : function(n){
+                return this.hrefFormer + "?pno="+n;
+            }
         });
     });
 </script>
-
-</body>
-</html>

@@ -20,6 +20,15 @@ public class User {
      * 电子邮箱
      */
     private String email;
+    /**
+     * 分页起始位置
+     */
+    private int start;
+    /**
+     * 分页结束位置
+     */
+    private int end;
+
     public User() {
         super();
     }
@@ -60,6 +69,22 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public int getStart() {
+        return start;
+    }
+
+    public void setStart(int start) {
+        this.start = start;
+    }
+
+    public int getEnd() {
+        return end;
+    }
+
+    public void setEnd(int end) {
+        this.end = end;
     }
 
     @Override
