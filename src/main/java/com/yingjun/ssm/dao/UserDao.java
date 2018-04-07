@@ -78,4 +78,11 @@ public interface UserDao {
 	 * @return
 	 */
     public User queryUserByEmail(String email);
+
+	/**
+	 * 根据条件查询普通用户信息
+	 * @param user
+	 * @return
+	 */
+	public List<User> selectUsersByCondition(User user);
 }

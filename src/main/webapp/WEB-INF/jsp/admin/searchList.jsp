@@ -1,170 +1,58 @@
 ﻿<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>无标题文档</title>
-    <link href="css/style.css" rel="stylesheet" type="text/css"/>
-    <link href="js/3rd/select/select.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="js/jquery/jquery.1.11.2.min.js"></script>
-    <script type="text/javascript" src="js/3rd/select/select-ui.min.js"></script>
+    <link href="/resource/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="/resource/js/3rd/select/select.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="/resource/js/jquery/jquery.1.11.2.min.js"></script>
+    <script type="text/javascript" src="/resource/js/3rd/select/select-ui.min.js"></script>
 </head>
 
 <body>
 
 
 <div class="rightinfo">
+    <form action="/adminUser/list" method="post" id="queryForm">
     <ul class="seachform">
         <li>
-            <label>综合查询</label>
-            <input name="" type="text" class="scinput"/>
+            <label>姓名</label>
+            <input name="name" type="text" class="scinput"/>
         </li>
         <li>
-            <label>指派</label>
-            <div class="vocation">
-                <select class="select3">
-                    <option>全部</option>
-                    <option>其他</option>
-                </select>
-            </div>
-        </li>
-        <li>
-            <label>重点客户</label>
-            <div class="vocation">
-                <select class="select3">
-                    <option>全部</option>
-                    <option>其他</option>
-                </select>
-            </div>
-        </li>
-        <li>
-            <label>客户状态</label>
-            <div class="vocation">
-                <select class="select3">
-                    <option>全部</option>
-                    <option>其他</option>
-                </select>
-            </div>
+            <label>邮箱</label>
+            <input name="email" type="text" class="scinput"/>
         </li>
         <li>
             <label>&nbsp;</label>
-            <input name="" type="button" class="scbtn" value="查询"/>
+            <input name="adminQueryButton" type="submit" id="adminQueryButton" class="scbtn" value="查询"/>
         </li>
     </ul>
+    </form>
 
 
     <table class="tablelist">
         <thead>
             <tr>
                 <th><input name="" type="checkbox" value="" checked="checked"/></th>
-                <th>编号<i class="sort"><img src="images/px.png"/></i></th>
-                <th>标题</th>
-                <th>用户</th>
-                <th>籍贯</th>
-                <th>发布时间</th>
-                <th>是否审核</th>
+                <th>编号<i class="sort"><img src="/resource/images/px.png"/></i></th>
+                <th>姓名</th>
+                <th>邮箱</th>
                 <th>操作</th>
             </tr>
         </thead>
         <tbody>
+        <c:forEach items="${userList}" var="user">
             <tr>
                 <td><input name="" type="checkbox" value=""/></td>
-                <td>20130908</td>
-                <td>王金平幕僚：马英九声明字字见血 人活着没意思</td>
-                <td>admin</td>
-                <td>江苏南京</td>
-                <td>2013-09-09 15:05</td>
-                <td>已审核</td>
+                <td>${user.id}</td>
+                <td>${user.name}</td>
+                <td>${user.email}</td>
                 <td><a href="#" class="tablelink">查看</a> <a href="#" class="tablelink"> 删除</a></td>
             </tr>
-
-            <tr>
-                <td><input name="" type="checkbox" value=""/></td>
-                <td>20130907</td>
-                <td>温州19名小学生中毒流鼻血续：周边部分企业关停</td>
-                <td>uimaker</td>
-                <td>山东济南</td>
-                <td>2013-09-08 14:02</td>
-                <td>未审核</td>
-                <td><a href="#" class="tablelink">查看</a> <a href="#" class="tablelink">删除</a></td>
-            </tr>
-
-            <tr>
-                <td><input name="" type="checkbox" value=""/></td>
-                <td>20130906</td>
-                <td>社科院:电子商务促进了农村经济结构和社会转型</td>
-                <td>user</td>
-                <td>江苏无锡</td>
-                <td>2013-09-07 13:16</td>
-                <td>未审核</td>
-                <td><a href="#" class="tablelink">查看</a> <a href="#" class="tablelink">删除</a></td>
-            </tr>
-
-            <tr>
-                <td><input name="" type="checkbox" value=""/></td>
-                <td>20130905</td>
-                <td>江西&quot;局长违规建豪宅&quot;：局长检讨</td>
-                <td>admin</td>
-                <td>北京市</td>
-                <td>2013-09-06 10:36</td>
-                <td>已审核</td>
-                <td><a href="#" class="tablelink">查看</a> <a href="#" class="tablelink">删除</a></td>
-            </tr>
-
-            <tr>
-                <td><input name="" type="checkbox" value=""/></td>
-                <td>20130904</td>
-                <td>中国2020年或迈入高收入国家行列</td>
-                <td>uimaker</td>
-                <td>江苏南京</td>
-                <td>2013-09-05 13:25</td>
-                <td>已审核</td>
-                <td><a href="#" class="tablelink">查看</a> <a href="#" class="tablelink">删除</a></td>
-            </tr>
-
-            <tr>
-                <td><input name="" type="checkbox" value=""/></td>
-                <td>20130903</td>
-                <td>深圳地铁车门因乘客拉闸打开 3人被挤入隧道</td>
-                <td>user</td>
-                <td>广东深圳</td>
-                <td>2013-09-04 12:00</td>
-                <td>已审核</td>
-                <td><a href="#" class="tablelink">查看</a> <a href="#" class="tablelink">删除</a></td>
-            </tr>
-
-            <tr>
-                <td><input name="" type="checkbox" value=""/></td>
-                <td>20130902</td>
-                <td>33次地表塌陷 村民不敢下地劳作(图)</td>
-                <td>admin</td>
-                <td>湖南长沙</td>
-                <td>2013-09-03 00:05</td>
-                <td>未审核</td>
-                <td><a href="#" class="tablelink">查看</a> <a href="#" class="tablelink">删除</a></td>
-            </tr>
-
-            <tr>
-                <td><input name="" type="checkbox" value=""/></td>
-                <td>20130901</td>
-                <td>医患关系：医生在替改革不彻底背黑锅</td>
-                <td>admin</td>
-                <td>江苏南京</td>
-                <td>2013-09-02 15:05</td>
-                <td>未审核</td>
-                <td><a href="#" class="tablelink">查看</a> <a href="#" class="tablelink">删除</a></td>
-            </tr>
-
-            <tr>
-                <td><input name="" type="checkbox" value=""/></td>
-                <td>20130900</td>
-                <td>山东章丘公车进饭店景点将自动向监控系统报警</td>
-                <td>uimaker</td>
-                <td>山东滨州</td>
-                <td>2013-09-01 10:26</td>
-                <td>已审核</td>
-                <td><a href="#" class="tablelink">查看</a> <a href="#" class="tablelink">删除</a></td>
-            </tr>
+        </c:forEach>
         </tbody>
     </table>
 

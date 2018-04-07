@@ -132,4 +132,15 @@
         where
             t_user.email = #{email}
     </select>
+
+    <!-- 获得一个TUser对象,以参数TUser对象中不为空的属性作为条件进行查询-->
+    <select id="selectUsersByCondition" parameterType="com.yingjun.ssm.entity.User" resultType="com.yingjun.ssm.entity.User">
+        select
+        <include refid="t_user_Column" />
+        from t_user
+        <where>
+            <if test="email != null and email!=''"> and t_user.email = #{email}</if>
+            <if test="name != null and name!=''"> and t_user.name = #{name}</if>
+        </where>
+    </select>
 </mapper>

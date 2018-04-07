@@ -96,4 +96,11 @@ public interface UserService {
 	 * @param session 存储系统发送的验证码
 	 */
     public void updatePasswordByEmail(User user, String code, HttpSession session);
+
+	/**
+	 * 根据条件查询普通用户信息
+	 * @param user
+	 * @return
+	 */
+    public List<User> searchUserListByCondition(User user);
 }

@@ -174,4 +174,15 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    /**
+     * 根据条件查询普通用户信息
+     * @param user
+     * @return
+     */
+    @Override
+    public List<User> searchUserListByCondition(User user) {
+
+        return userDao.selectUsersByCondition(user);
+    }
+
 }
