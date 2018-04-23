@@ -93,4 +93,18 @@ public class AdminUserController {
         }
         return "/admin/searchList";
     }
+	/**
+	 * 删除普通用户
+	 * @return
+	 */
+	@RequestMapping(value = "/deleteUser")
+	public String deleteUser(@RequestParam Integer userId,Model view) {
+		try {
+			LOG.info("接受到的用户ID是    ：" + userId);
+			userService.deleteUser(userId);
+		} catch (Exception e) {
+			throw new RuntimeException("");
+		}
+		return list(new User(), 1, view);
+	}
 }

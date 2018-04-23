@@ -208,4 +208,15 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    /**
+     * 通过用户ID删除用户信息
+     * @param userId
+     */
+    @Override
+    public void deleteUser(Integer userId) {
+        if(1 != userDao.deleteTUserById(Long.valueOf(userId))){
+            throw new RuntimeException("删除用户影响行数不唯一");
+        }
+    }
+
 }

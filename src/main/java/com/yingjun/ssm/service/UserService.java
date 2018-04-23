@@ -116,4 +116,10 @@ public interface UserService {
 	 * @param user
 	 */
     public void saveUser(User user);
+
+	/**
+	 * 通过用户ID删除用户信息
+	 * @param userId
+	 */
+    public void deleteUser(Integer userId);
 }

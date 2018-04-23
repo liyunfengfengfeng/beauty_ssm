@@ -58,7 +58,7 @@
                 <td>${user.id}</td>
                 <td>${user.name}</td>
                 <td>${user.email}</td>
-                <td><a href="#" class="tablelink">查看</a> <a href="#" class="tablelink"> 删除</a></td>
+                <td><a href="#" class="tablelink">查看</a> <a href="/adminUser/deleteUser?userId=${user.id}" class="tablelink"> 删除</a></td>
             </tr>
         </c:forEach>
         </tbody>
