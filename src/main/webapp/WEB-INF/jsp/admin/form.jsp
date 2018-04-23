@@ -25,14 +25,14 @@
             <label>邮箱<b>*</b></label>
             <input name="email" type="text"/><i>多个关键字用,隔开</i>
         </li>
-        <li>
-            <label>是否审核</label>
-            <cite>
-                <input name="" type="radio" value="" checked="checked"/>&nbsp;是&nbsp;&nbsp;&nbsp;&nbsp;
-                <input name="" type="radio" value=""/>&nbsp;否
-            </cite>
-            </li>
-        <li>
+        <%--<li>--%>
+            <%--<label>是否审核</label>--%>
+            <%--<cite>--%>
+                <%--<input name="" type="radio" value="" checked="checked"/>&nbsp;是&nbsp;&nbsp;&nbsp;&nbsp;--%>
+                <%--<input name="" type="radio" value=""/>&nbsp;否--%>
+            <%--</cite>--%>
+            <%--</li>--%>
+        <%--<li>--%>
             <label>密码</label>
             <input name="password" type="password" class="short-input" value=""/>
         </li>
