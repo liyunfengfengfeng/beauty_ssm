@@ -15,22 +15,19 @@
 <div class="formbody">
 
     <div class="formtitle"><span>基本信息</span></div>
-    <form action="/adminUser/addUser" method="post" id="addUser">
+    <form action="/adminUser/list" method="post">
     <ul class="forminfo short">
         <li>
             <label>用户姓名<b>*</b></label>
-            <input name="name" type="text"/><i>标题不能超过30个字符</i>
+            ${user.name}
         </li>
         <li>
             <label>邮箱<b>*</b></label>
-            <input name="email" type="text"/><i>多个关键字用,隔开</i>
-        </li>
-            <label>密码</label>
-            <input name="password" type="password" class="short-input" value=""/>
+            ${user.email}
         </li>
         <li style="width: 100%">
             <label>&nbsp;</label>
-            <input name="" type="submit" class="btn" value="确认保存"/>
+            <input name="" type="submit" class="btn" value="返回"/>
         </li>
     </ul>
     </form>

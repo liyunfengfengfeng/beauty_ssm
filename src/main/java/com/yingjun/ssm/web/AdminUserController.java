@@ -114,7 +114,7 @@ public class AdminUserController {
 	@RequestMapping(value = "/seeUser")
 	public String seeUser(@RequestParam String userEmail,Model view) {
 		try {
-			LOG.info("接受到的用户邮箱是    ：" + userEmail);
+			LOG.info("查看普通用户    ：" + userEmail);
 			User user = userService.queryUserById(userEmail);
 			view.addAttribute("user",user);
 		} catch (Exception e) {
