@@ -58,7 +58,7 @@
                 <td>${user.id}</td>
                 <td>${user.name}</td>
                 <td>${user.email}</td>
-                <td><a href="/adminUser/seeUser?userEmail=${user.email}" class="tablelink">查看</a> <a href="/adminUser/deleteUser?userId=${user.id}" class="tablelink"> 删除</a></td>
+                <td><a href="/adminUser/seeUser?userEmail=${user.email}" class="tablelink">查看</a> <a onclick="deleteUser(${user.id});" class="tablelink"> 删除</a></td>
             </tr>
         </c:forEach>
         </tbody>
@@ -96,8 +96,14 @@
             }
         });
     });
-
+//    到达新增用户页面
     $('#adminAddButton').bind("click", function(){
         window.location.href = "/adminUser/toAddUser";
     });
+//    删除用户信息
+    function deleteUser(userId) {
+        if(confirm("确定要删除么？")){
+            window.location.href = "/adminUser/deleteUser?userId="+userId;
+        }
+    }
 </script>
