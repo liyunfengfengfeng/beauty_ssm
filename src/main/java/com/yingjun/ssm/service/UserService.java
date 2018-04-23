@@ -122,4 +122,11 @@ public interface UserService {
 	 * @param userId
 	 */
     public void deleteUser(Integer userId);
+
+	/**
+	 * 通过用户ID查询用户信息
+	 * @param userEmail
+	 * @return
+	 */
+	public User queryUserById(String userEmail);
 }

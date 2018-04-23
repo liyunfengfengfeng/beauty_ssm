@@ -107,4 +107,19 @@ public class AdminUserController {
 		}
 		return list(new User(), 1, view);
 	}
+	/**
+	 * 查看普通用户
+	 * @return
+	 */
+	@RequestMapping(value = "/seeUser")
+	public String seeUser(@RequestParam String userEmail,Model view) {
+		try {
+			LOG.info("接受到的用户邮箱是    ：" + userEmail);
+			User user = userService.queryUserById(userEmail);
+			view.addAttribute("user",user);
+		} catch (Exception e) {
+			throw new RuntimeException("查看普通用户信息");
+		}
+		return "/admin/userDetail";
+	}
 }

@@ -219,4 +219,14 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    /**
+     * 通过用户ID查询用户信息
+     * @param userEmail
+     * @return
+     */
+    @Override
+    public User queryUserById(String userEmail) {
+        return userDao.queryUserByEmail(userEmail);
+    }
+
 }
