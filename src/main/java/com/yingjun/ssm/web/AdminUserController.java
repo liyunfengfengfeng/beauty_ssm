@@ -71,4 +71,26 @@ public class AdminUserController {
 		}
 		return "/admin/searchList";
 	}
+    /**
+     * 到达新增普通用户页面
+     * @return
+     */
+    @RequestMapping(value = "/toAddUser")
+    public String toAddUser() {
+        return "/admin/form";
+    }
+    /**
+     * 新增普通用户
+     * @return
+     */
+    @RequestMapping(value = "/addUser")
+    public String list(User user) {
+        try {
+            LOG.info("接受到的数据是    ：" + user);
+            userService.saveUser(user);
+        } catch (Exception e) {
+            throw new RuntimeException("依据条件查询普通用户出现的异常");
+        }
+        return "/admin/searchList";
+    }
 }

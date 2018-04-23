@@ -110,4 +110,10 @@ public interface UserService {
 	 * @return
 	 */
 	public List<User> searchUserListByCondition(User user);
+
+	/**
+	 * 保存用户
+	 * @param user
+	 */
+    public void saveUser(User user);
 }

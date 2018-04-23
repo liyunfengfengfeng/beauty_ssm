@@ -197,4 +197,15 @@ public class UserServiceImpl implements UserService {
         return userDao.selectUsersByConditionNoLimit(user);
     }
 
+    /**
+     * 保存用户
+     * @param user
+     */
+    @Override
+    public void saveUser(User user) {
+        if(1 != userDao.insertNonEmptyTUser(user)){
+            throw new RuntimeException("新增用户影响行数不唯一");
+        }
+    }
+
 }

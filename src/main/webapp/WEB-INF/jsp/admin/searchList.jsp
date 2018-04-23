@@ -33,6 +33,10 @@
             <label>&nbsp;</label>
             <input name="adminQueryButton" type="submit" id="adminQueryButton" class="scbtn" value="查询"/>
         </li>
+        <li>
+            <label>&nbsp;</label>
+            <input name="adminAddButton" type="button" id="adminAddButton" class="scbtn" value="新增"/>
+        </li>
     </ul>
     </form>
 
@@ -91,5 +95,9 @@
                 return this.hrefFormer + "?pno="+n;
             }
         });
+    });
+
+    $('#adminAddButton').bind("click", function(){
+        window.location.href = "/adminUser/toAddUser";
     });
 </script>
