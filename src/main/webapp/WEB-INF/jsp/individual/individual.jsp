@@ -23,7 +23,7 @@
 					<ul>
 						<li class="active"><a href="/user/home">首页</a></li>
 						<li><a href="/limitCompany/toLimitCompany">有限公司</a></li>
-						<li><a href="/individual/toIndividual">个人独资</a></li>
+						<li class="active"><a href="/individual/toIndividual">个人独资</a></li>
 						<li><a href="/partnerShip/toPartnerShip">合伙企业</a></li>
 						<li><a href="#">个人中心</a></li>
 						<li><a href="enterprise.html">企业中心</a></li>

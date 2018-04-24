@@ -21,8 +21,8 @@
 				<div class="logo"><span class="logo-img">京东益世集群注册平台</span></div>
 				<div class="header-menu">
 					<ul>
-						<li class="active"><a href="/user/home">首页</a></li>
-						<li><a href="/limitCompany/toLimitCompany">有限公司</a></li>
+						<li><a href="/user/home">首页</a></li>
+						<li class="active"><a href="/limitCompany/toLimitCompany">有限公司</a></li>
 						<li><a href="/individual/toIndividual">个人独资</a></li>
 						<li><a href="/partnerShip/toPartnerShip">合伙企业</a></li>
 						<li><a href="#">个人中心</a></li>
