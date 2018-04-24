@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -43,7 +44,7 @@
 			<!--页面导航-->
 			<ul class="list-page">
 				<li class="page-title">
-					<a href="limitCompany.html">1.基本信息填写</a>
+					<a href="limitCompany.jsp">1.基本信息填写</a>
 				</li>
 				<li class="page-title active">
 					<a href="#">2.负责人信息填写</a>

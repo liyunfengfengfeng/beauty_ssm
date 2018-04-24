@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -121,7 +122,7 @@
 				</form>
 				<div class="btnGroup margin-t-30 margin-l-130 padding-b-20">
 					<a href="#" class="">返回</a>
-					<a href="partnership_principal.html" class="">下一步</a>
+					<a href="partnership_principal.jsp" class="">下一步</a>
 				</div>
 			</div>
 		</div>

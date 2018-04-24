@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -46,7 +47,7 @@
 					<a href="#">1.个人实名认证</a>
 				</li>
 				<li class="page-title ">
-					<a href="partnership.html">2.基本信息填写</a>
+					<a href="partnership.jsp">2.基本信息填写</a>
 				</li>
 				<li class="page-title">
 					<a href="#">3.负责人信息填写</a>
