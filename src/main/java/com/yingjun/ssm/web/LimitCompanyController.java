@@ -46,6 +46,6 @@ public class LimitCompanyController {
 		} catch (Exception e) {
 			throw new RuntimeException("LimitCompanyController.deleteUser.Exception",e);
 		}
-		return null;
+		return "/limitCompany/limitCompany_principal";
 	}
 }

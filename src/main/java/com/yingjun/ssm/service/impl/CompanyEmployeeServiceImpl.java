@@ -3,7 +3,12 @@ import java.util.List;
 import com.yingjun.ssm.dao.CompanyEmployeeDao;
 import com.yingjun.ssm.entity.CompanyEmployee;
 import com.yingjun.ssm.service.CompanyEmployeeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
 public class CompanyEmployeeServiceImpl implements CompanyEmployeeService{
+    @Autowired
     private CompanyEmployeeDao companyEmployeeDao;
     @Override
     public long getCompanyEmployeeRowCount(){

@@ -63,7 +63,7 @@
 					<ul class="list-info">
 						<li>
 							<label class="info-title" for="">企业类型：</label>
-							<input type="" class="infoList-put read-only" name="companyType" id="companyType" value="有限公司" />
+							<input type="" class="infoList-put read-only" name="limitCompanyType" id="limitCompanyType" value="有限公司" />
 						</li>
 						<li>
 							<label class="info-title" for="">注册区域：</label>

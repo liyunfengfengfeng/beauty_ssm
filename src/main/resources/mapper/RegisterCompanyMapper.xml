@@ -351,8 +351,18 @@
     <!-- 有限公司注册-->
     <insert id="insertLimitCompanyInfo" parameterType="com.yingjun.ssm.entity.RegisterCompany">
         insert into t_register_company
-        (id)
+        (id,
+        company_type,
+        register_area,
+        company_name,
+        register_amount,
+        business_scope)
         values
-        (#{id})
+        (#{id},
+        1,
+        #{registerArea},
+        #{companyName},
+        #{registerAmount},
+        #{businessScope})
     </insert>
 </mapper>

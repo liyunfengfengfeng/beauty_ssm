@@ -37,6 +37,7 @@ public class RegisterCompany {
     private String registerArea;//新增 注册区域字段
     private String companyBusiness;//新增从事业务字段
     private String businessScope;//新增经营范围字段
+    private String limitCompanyType;
     public RegisterCompany() {
         super();
     }
@@ -335,5 +336,13 @@ public class RegisterCompany {
 
     public void setBusinessScope(String businessScope) {
         this.businessScope = businessScope;
+    }
+
+    public String getLimitCompanyType() {
+        return limitCompanyType;
+    }
+
+    public void setLimitCompanyType(String limitCompanyType) {
+        this.limitCompanyType = limitCompanyType;
     }
 }
