@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yingjun.ssm.dao.CompanyEmployeeDao">
+    <!-- CompanyEmployee的resultMap,column是给数据库列起的别名,它对应property类的属性-->
+    <resultMap id="result_CompanyEmployee_Map" type="com.yingjun.ssm.entity.CompanyEmployee">
+        <id column="id" property="id" />
+        <result column="identity_card_img_pdf" property="identityCardImgPdf" />
+        <result column="address" property="address" />
+        <result column="create_time" property="createTime" />
+        <result column="identity_id" property="identityId" />
+        <result column="secretary_company_count" property="secretaryCompanyCount" />
+        <result column="identity_time" property="identityTime" />
+        <result column="password" property="password" />
+        <result column="update_time" property="updateTime" />
+        <result column="identity_check" property="identityCheck" />
+        <result column="id_card_opposite_img" property="idCardOppositeImg" />
+        <result column="user_id" property="userId" />
+        <result column="id_card_positive_img" property="idCardPositiveImg" />
+        <result column="receive_ca_certificate" property="receiveCaCertificate" />
+        <result column="name" property="name" />
+        <result column="phone_number" property="phoneNumber" />
+        <result column="identity_type" property="identityType" />
+        <result column="register_company_count" property="registerCompanyCount" />
+        <result column="email" property="email" />
+        <result column="person_id" property="personId" />
+        <result column="status" property="status" />
+    </resultMap>
+
+    <!-- 数据库中表名为:t_company_employee的列名,as前是数据库的列明,as后是列的别名用于映射成实体类中的属性,需要注意的是别名必须与resultMap中的column别名一致 -->
+    <sql id="t_company_employee_Column">
+        t_company_employee.id as id
+        ,t_company_employee.identity_card_img_pdf as identity_card_img_pdf
+        ,t_company_employee.address as address
+        ,t_company_employee.create_time as create_time
+        ,t_company_employee.identity_id as identity_id
+        ,t_company_employee.secretary_company_count as secretary_company_count
+        ,t_company_employee.identity_time as identity_time
+        ,t_company_employee.password as password
+        ,t_company_employee.update_time as update_time
+        ,t_company_employee.identity_check as identity_check
+        ,t_company_employee.id_card_opposite_img as id_card_opposite_img
+        ,t_company_employee.user_id as user_id
+        ,t_company_employee.id_card_positive_img as id_card_positive_img
+        ,t_company_employee.receive_ca_certificate as receive_ca_certificate
+        ,t_company_employee.name as name
+        ,t_company_employee.phone_number as phone_number
+        ,t_company_employee.identity_type as identity_type
+        ,t_company_employee.register_company_count as register_company_count
+        ,t_company_employee.email as email
+        ,t_company_employee.person_id as person_id
+        ,t_company_employee.status as status
+    </sql>
+
+    <!--获得类名为:CompanyEmployee对应的数据库表的数据总行数 -->
+    <select id="getCompanyEmployeeRowCount" resultType="java.lang.Long">
+        select count(id) from t_company_employee
+    </select>
+    <!-- 获得类名为:CompanyEmployee对应数据库中表的数据集合 -->
+    <select id="selectCompanyEmployee" resultMap="result_CompanyEmployee_Map">
+        select 
+        <include refid="t_company_employee_Column" /> 
+        from t_company_employee
+    </select> 
+
+    <!-- 获得一个CompanyEmployee对象,以参数CompanyEmployee对象中不为空的属性作为条件进行查询-->
+    <select id="selectCompanyEmployeeByObj" parameterType="com.yingjun.ssm.entity.CompanyEmployee" resultMap="result_CompanyEmployee_Map">
+        select 
+            <include refid="t_company_employee_Column" /> 
+        from t_company_employee
+        <where>
+            <if test="status != null "> and t_company_employee.status = #{status}</if>
+            <if test="personId != null "> and t_company_employee.person_id = #{personId}</if>
+            <if test="email != null "> and t_company_employee.email = #{email}</if>
+            <if test="registerCompanyCount != null "> and t_company_employee.register_company_count = #{registerCompanyCount}</if>
+            <if test="identityType != null "> and t_company_employee.identity_type = #{identityType}</if>
+            <if test="phoneNumber != null "> and t_company_employee.phone_number = #{phoneNumber}</if>
+            <if test="name != null "> and t_company_employee.name = #{name}</if>
+            <if test="receiveCaCertificate != null "> and t_company_employee.receive_ca_certificate = #{receiveCaCertificate}</if>
+            <if test="idCardPositiveImg != null "> and t_company_employee.id_card_positive_img = #{idCardPositiveImg}</if>
+            <if test="userId != null "> and t_company_employee.user_id = #{userId}</if>
+            <if test="idCardOppositeImg != null "> and t_company_employee.id_card_opposite_img = #{idCardOppositeImg}</if>
+            <if test="identityCheck != null "> and t_company_employee.identity_check = #{identityCheck}</if>
+            <if test="updateTime != null "> and t_company_employee.update_time = #{updateTime}</if>
+            <if test="password != null "> and t_company_employee.password = #{password}</if>
+            <if test="identityTime != null "> and t_company_employee.identity_time = #{identityTime}</if>
+            <if test="secretaryCompanyCount != null "> and t_company_employee.secretary_company_count = #{secretaryCompanyCount}</if>
+            <if test="identityId != null "> and t_company_employee.identity_id = #{identityId}</if>
+            <if test="createTime != null "> and t_company_employee.create_time = #{createTime}</if>
+            <if test="address != null "> and t_company_employee.address = #{address}</if>
+            <if test="identityCardImgPdf != null "> and t_company_employee.identity_card_img_pdf = #{identityCardImgPdf}</if>
+            <if test="id != null "> and t_company_employee.id = #{id}</if>
+        </where>
+    </select> 
+
+    <!-- 通过CompanyEmployee的id获得对应数据库中表的数据对象-->
+    <select id="selectCompanyEmployeeById" parameterType="java.lang.Long" resultMap="result_CompanyEmployee_Map">
+        select 
+            <include refid="t_company_employee_Column" /> 
+        from t_company_employee
+        where t_company_employee.id = #{id}
+    </select> 
+
+    <!-- 将CompanyEmployee插入到对应数据库的表中,包括属性值为null的数据-->
+
+    <insert id="insertCompanyEmployee" parameterType="com.yingjun.ssm.entity.CompanyEmployee">
+        insert into t_company_employee(id,identity_card_img_pdf,address,create_time,identity_id,secretary_company_count,identity_time,password,update_time,identity_check,id_card_opposite_img,user_id,id_card_positive_img,receive_ca_certificate,name,phone_number,identity_type,register_company_count,email,person_id,status) 
+        values(#{id},#{identityCardImgPdf},#{address},#{createTime},#{identityId},#{secretaryCompanyCount},#{identityTime},#{password},#{updateTime},#{identityCheck},#{idCardOppositeImg},#{userId},#{idCardPositiveImg},#{receiveCaCertificate},#{name},#{phoneNumber},#{identityType},#{registerCompanyCount},#{email},#{personId},#{status})
+    </insert>
+
+    <!-- 将CompanyEmployee中属性值不为null的数据,插入到对应数据库的表中-->
+    <insert id="insertNonEmptyCompanyEmployee" parameterType="com.yingjun.ssm.entity.CompanyEmployee">
+        insert into t_company_employee
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="identityCardImgPdf != null">identity_card_img_pdf,</if>
+            <if test="address != null">address,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="identityId != null">identity_id,</if>
+            <if test="secretaryCompanyCount != null">secretary_company_count,</if>
+            <if test="identityTime != null">identity_time,</if>
+            <if test="password != null">password,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="identityCheck != null">identity_check,</if>
+            <if test="idCardOppositeImg != null">id_card_opposite_img,</if>
+            <if test="userId != null">user_id,</if>
+            <if test="idCardPositiveImg != null">id_card_positive_img,</if>
+            <if test="receiveCaCertificate != null">receive_ca_certificate,</if>
+            <if test="name != null">name,</if>
+            <if test="phoneNumber != null">phone_number,</if>
+            <if test="identityType != null">identity_type,</if>
+            <if test="registerCompanyCount != null">register_company_count,</if>
+            <if test="email != null">email,</if>
+            <if test="personId != null">person_id,</if>
+            <if test="status != null">status,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null"> #{id},</if>
+            <if test="identityCardImgPdf != null"> #{identityCardImgPdf},</if>
+            <if test="address != null"> #{address},</if>
+            <if test="createTime != null"> #{createTime},</if>
+            <if test="identityId != null"> #{identityId},</if>
+            <if test="secretaryCompanyCount != null"> #{secretaryCompanyCount},</if>
+            <if test="identityTime != null"> #{identityTime},</if>
+            <if test="password != null"> #{password},</if>
+            <if test="updateTime != null"> #{updateTime},</if>
+            <if test="identityCheck != null"> #{identityCheck},</if>
+            <if test="idCardOppositeImg != null"> #{idCardOppositeImg},</if>
+            <if test="userId != null"> #{userId},</if>
+            <if test="idCardPositiveImg != null"> #{idCardPositiveImg},</if>
+            <if test="receiveCaCertificate != null"> #{receiveCaCertificate},</if>
+            <if test="name != null"> #{name},</if>
+            <if test="phoneNumber != null"> #{phoneNumber},</if>
+            <if test="identityType != null"> #{identityType},</if>
+            <if test="registerCompanyCount != null"> #{registerCompanyCount},</if>
+            <if test="email != null"> #{email},</if>
+            <if test="personId != null"> #{personId},</if>
+            <if test="status != null"> #{status},</if>
+        </trim>
+    </insert>
+
+    <!-- 将CompanyEmployee批量插入到对应数据库的表中-->
+    <insert id="insertCompanyEmployeeByBatch" parameterType="ArrayList">
+        insert into t_company_employee(id,identity_card_img_pdf,address,create_time,identity_id,secretary_company_count,identity_time,password,update_time,identity_check,id_card_opposite_img,user_id,id_card_positive_img,receive_ca_certificate,name,phone_number,identity_type,register_company_count,email,person_id,status) values
+        <foreach collection="list" item="item" index="index" separator="," >
+            (#{item.id},#{item.identityCardImgPdf},#{item.address},#{item.createTime},#{item.identityId},#{item.secretaryCompanyCount},#{item.identityTime},#{item.password},#{item.updateTime},#{item.identityCheck},#{item.idCardOppositeImg},#{item.userId},#{item.idCardPositiveImg},#{item.receiveCaCertificate},#{item.name},#{item.phoneNumber},#{item.identityType},#{item.registerCompanyCount},#{item.email},#{item.personId},#{item.status})
+        </foreach>
+    </insert>
+
+    <!-- 通过CompanyEmployee的id将数据库表中对应的数据删除-->
+    <delete id="deleteCompanyEmployeeById" parameterType="java.lang.Long">
+        delete from t_company_employee
+        where id = #{id}
+    </delete>
+
+    <!-- 通过CompanyEmployee的id将CompanyEmployee的数据更新到数据库中对应的表,包括值null的数据-->
+    <update id="updateCompanyEmployeeById" parameterType="com.yingjun.ssm.entity.CompanyEmployee">
+        update t_company_employee set
+            identity_card_img_pdf=#{identityCardImgPdf}
+            ,address=#{address}
+            ,create_time=#{createTime}
+            ,identity_id=#{identityId}
+            ,secretary_company_count=#{secretaryCompanyCount}
+            ,identity_time=#{identityTime}
+            ,password=#{password}
+            ,update_time=#{updateTime}
+            ,identity_check=#{identityCheck}
+            ,id_card_opposite_img=#{idCardOppositeImg}
+            ,user_id=#{userId}
+            ,id_card_positive_img=#{idCardPositiveImg}
+            ,receive_ca_certificate=#{receiveCaCertificate}
+            ,name=#{name}
+            ,phone_number=#{phoneNumber}
+            ,identity_type=#{identityType}
+            ,register_company_count=#{registerCompanyCount}
+            ,email=#{email}
+            ,person_id=#{personId}
+            ,status=#{status}
+        where id=#{id}
+    </update>
+
+    <!-- 通过CompanyEmployee的id将CompanyEmployee中属性值不为null的数据更新到数据库对应的表中-->
+    <update id="updateNonEmptyCompanyEmployeeById" parameterType="com.yingjun.ssm.entity.CompanyEmployee">
+        update t_company_employee
+        <set>
+            <if test="identityCardImgPdf != null">
+                identity_card_img_pdf=#{identityCardImgPdf},
+            </if>
+            <if test="address != null">
+                address=#{address},
+            </if>
+            <if test="createTime != null">
+                create_time=#{createTime},
+            </if>
+            <if test="identityId != null">
+                identity_id=#{identityId},
+            </if>
+            <if test="secretaryCompanyCount != null">
+                secretary_company_count=#{secretaryCompanyCount},
+            </if>
+            <if test="identityTime != null">
+                identity_time=#{identityTime},
+            </if>
+            <if test="password != null">
+                password=#{password},
+            </if>
+            <if test="updateTime != null">
+                update_time=#{updateTime},
+            </if>
+            <if test="identityCheck != null">
+                identity_check=#{identityCheck},
+            </if>
+            <if test="idCardOppositeImg != null">
+                id_card_opposite_img=#{idCardOppositeImg},
+            </if>
+            <if test="userId != null">
+                user_id=#{userId},
+            </if>
+            <if test="idCardPositiveImg != null">
+                id_card_positive_img=#{idCardPositiveImg},
+            </if>
+            <if test="receiveCaCertificate != null">
+                receive_ca_certificate=#{receiveCaCertificate},
+            </if>
+            <if test="name != null">
+                name=#{name},
+            </if>
+            <if test="phoneNumber != null">
+                phone_number=#{phoneNumber},
+            </if>
+            <if test="identityType != null">
+                identity_type=#{identityType},
+            </if>
+            <if test="registerCompanyCount != null">
+                register_company_count=#{registerCompanyCount},
+            </if>
+            <if test="email != null">
+                email=#{email},
+            </if>
+            <if test="personId != null">
+                person_id=#{personId},
+            </if>
+            <if test="status != null">
+                status=#{status},
+            </if>
+        </set>
+        where id=#{id}
+    </update>
+
+</mapper>

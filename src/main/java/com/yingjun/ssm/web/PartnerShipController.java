@@ -26,6 +26,6 @@ public class PartnerShipController {
 	 */
 	@RequestMapping(value = "/toPartnerShip")
 	public String toPartnerShip() {
-		return "/partnership/parntership";
+		return "/partnership/partnership";
 	}
 }
