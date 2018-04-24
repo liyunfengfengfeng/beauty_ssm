@@ -10,9 +10,9 @@
 		<link rel="stylesheet" type="text/css" href="/resource/css/home.css"/>
 		<link rel="stylesheet" type="text/css" href="/resource/css/news.css"/>
 		<link rel="stylesheet" type="text/css" href="/resource/css/registration.css"/>
-		<script src="/resource/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="/resource/js/limitCompany.js" type="text/javascript" charset="utf-8"></script>
-		<script src="/resource/js/function.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/resource/script/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/resource/script/limitCompany.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/resource/script/function.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body class="grayBg">
 		<!--首页头部-->
@@ -32,19 +32,6 @@
 				</div>
 			</div>
 			<div class="toLogin">
-				<%--<div class="toLoginmine">--%>
-					<%--<a href="userLogin.html">--%>
-						<%--<div class="mine-img"><img src="img/login.png"/></div>--%>
-						<%--<div class="mine-describe"><a href="javascript:void(0)">用户登录</a></div>--%>
-					<%--</a>--%>
-				<%--</div>--%>
-				<%--<div class="toLoginmine">--%>
-					<%--<a href="secretaryLogin.html">--%>
-						<%--<div class="mine-img"><img src="img/login.png"/></div>--%>
-						<%--<div class="mine-describe"><a href="javascript:void(0)">秘书公司登录</a></div>--%>
-					<%--</a>--%>
-				<%--</div>--%>
-				
 			</div>
 		</header>
 		
@@ -72,19 +59,19 @@
 				</li>
 			</ul>
 			<div class="info-content">
-				<form action="" method="post">
+				<form action="/limitCompany/saveLimitCompany" method="post" id="limitCompanyForm">
 					<ul class="list-info">
 						<li>
 							<label class="info-title" for="">企业类型：</label>
-							<input type="" class="infoList-put read-only" name="" id="" value="有限公司" />
+							<input type="" class="infoList-put read-only" name="companyType" id="companyType" value="有限公司" />
 						</li>
 						<li>
 							<label class="info-title" for="">注册区域：</label>
-							<input type="" class="infoList-put read-only" name="" id="" value="江苏省 宿迁市 宿豫区" />
+							<input type="" class="infoList-put read-only" name="registerArea" id="registerArea" value="江苏省 宿迁市 宿豫区" />
 						</li>
 						<li>
 							<label class="info-title" for="">公司名称：</label>
-							<input type="" class="infoList-put needCheck noPass whrite" name="" id="" value="京东尚科信息技术有限公司" /><span class="checkName"><a href="javascript:void(0)">去核名</a></span>
+							<input type="" class="infoList-put needCheck noPass whrite" name="companyName" id="companyName" value="京东尚科信息技术有限公司" /><span class="checkName"><a href="javascript:void(0)">去核名</a></span>
 							<!--
 								*点击“去核名”判断，如果核实不对则加底下代码片段，在input标签中增加类名“noPass”，如果核实正确，则加对号代码片段
 							-->
@@ -92,13 +79,13 @@
 							<span class="passImg"><img src="/resource/img/pass.png"/></span>
 						</li>
 						<li>
-							<label class="info-title" for="capital">注册资本：</label>
-							<input type="text" class="infoList-put needCheck write-n" name="capital" id="capital" value="" placeholder="请输入注册资本"/><span class="yuan">万元</span>
+							<label class="info-title" for="registerAmount">注册资本：</label>
+							<input type="text" class="infoList-put needCheck write-n" name="registerAmount" id="registerAmount" value="" placeholder="请输入注册资本"/><span class="yuan">万元</span>
 						</li>
 						<li>
 							<label class="info-title" for="">计划从事业务：</label>
-							<select class="infor-put-select">
-								<option value="0">文化交流、媒体宣传</option>
+							<select class="infor-put-select" id="companyBusiness" name="companyBusiness">
+								<option value="文化交流、媒体宣传">文化交流、媒体宣传</option>
 							</select>
 						</li>
 						<li>
@@ -109,8 +96,8 @@
 					</ul>
 				</form>
 				<div class="btnGroup margin-t-30 margin-l-130">
-					<a href="#" class="">返回</a>
-					<a href="limitCompany_principal.jsp" class="">下一步</a>
+					<a href="/user/home" class="">返回</a>
+					<a id="limitCompanyNext" class="">下一步</a>
 				</div>
 			</div>
 		</div>
@@ -136,3 +123,9 @@
 		</footer>
 	</body>
 </html>
+<script>
+	//提交有限公司信息表单
+	$('#limitCompanyNext').bind("click", function(){
+		$("#limitCompanyForm").submit();
+	});
+</script>

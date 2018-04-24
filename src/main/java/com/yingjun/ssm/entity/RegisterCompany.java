@@ -1,7 +1,11 @@
 package com.yingjun.ssm.entity;
+/**
+ * 注册公司信息
+ * @author liyunfeng
+ */
 public class RegisterCompany {
     private Long id;
-    private Integer companyType;//公司注册类型
+    private Integer companyType;//公司注册类型 1 有限公司 2 个人独资公司 3 合伙企业
     private Integer hasDirectorate;//是否有董事会（0:没有；1：有）
     private String secretaryApproveUserId;//秘书公司审核
     private Integer approveStatus;//审核状态（1：待审核；2：审核通过；3：驳回）
@@ -30,6 +34,9 @@ public class RegisterCompany {
     private String orderId;//订单号
     private String secretaryApproveUserName;//秘书公司审核人名
     private java.util.Date secretaryApproveTime;//秘书公司审核时间
+    private String registerArea;//新增 注册区域字段
+    private String companyBusiness;//新增从事业务字段
+    private String businessScope;//新增经营范围字段
     public RegisterCompany() {
         super();
     }
@@ -306,4 +313,27 @@ public class RegisterCompany {
         this.secretaryApproveTime = secretaryApproveTime;
     }
 
+    public String getRegisterArea() {
+        return registerArea;
+    }
+
+    public void setRegisterArea(String registerArea) {
+        this.registerArea = registerArea;
+    }
+
+    public String getCompanyBusiness() {
+        return companyBusiness;
+    }
+
+    public void setCompanyBusiness(String companyBusiness) {
+        this.companyBusiness = companyBusiness;
+    }
+
+    public String getBusinessScope() {
+        return businessScope;
+    }
+
+    public void setBusinessScope(String businessScope) {
+        this.businessScope = businessScope;
+    }
 }
