@@ -1,6 +1,7 @@
 package com.yingjun.ssm.service.impl;
 import java.util.List;
 import com.yingjun.ssm.dao.RegisterCompanyDao;
+import com.yingjun.ssm.entity.LimitCompanyEmployee;
 import com.yingjun.ssm.entity.RegisterCompany;
 import com.yingjun.ssm.service.RegisterCompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,6 +62,15 @@ public class RegisterCompanyServiceImpl implements RegisterCompanyService{
         if(1 != registerCompanyDao.insertLimitCompanyInfo(registerCompany)){
             throw new RuntimeException("添加有限公司信息时影响行数不唯一");
         }
+    }
+
+    /**
+     * 保存有限公司人员信息
+     * @param limitCompanyEmployee
+     */
+    @Override
+    public void saveLimitCompanyEmployeeInfo(LimitCompanyEmployee limitCompanyEmployee) {
+
     }
 
     public RegisterCompanyDao getRegisterCompanyDao() {

@@ -1,5 +1,7 @@
 package com.yingjun.ssm.service;
 import java.util.List;
+
+import com.yingjun.ssm.entity.LimitCompanyEmployee;
 import com.yingjun.ssm.entity.RegisterCompany;
 import org.springframework.stereotype.Service;
 
@@ -68,4 +70,6 @@ public interface RegisterCompanyService{
 	 * @param registerCompany
 	 */
 	public void saveLimitCompanyInfo(RegisterCompany registerCompany);
+
+	public void saveLimitCompanyEmployeeInfo(LimitCompanyEmployee limitCompanyEmployee);
 }

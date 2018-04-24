@@ -63,15 +63,15 @@
 				</li>
 			</ul>
 			<div class="info-content">
-				<form action="" method="post">
+				<form action="/limitCompany/saveLimitCompanyEmployeeInfos" method="post" id="limitCompanyEmployeeForm">
 					<div class="form-tit"><span>1.法人信息填写</span></div>
 					<ul class="list-info">
 						<li>
-							<label class="info-title case" for="">姓名：</label>
+							<label class="info-title case" for="legalPersonName">姓名：</label>
 							<input type="" class="infoList-put read-only" name="legalPersonName" id="legalPersonName" readonly="readonly" value="" />
 						</li>
 						<li>
-							<label class="info-title case" for="">身份证号：</label>
+							<label class="info-title case" for="legalPersonCard">身份证号：</label>
 							<input type="" class="infoList-put read-only" name="legalPersonCard" id="legalPersonCard" readonly="readonly" value="1422821821****2133" />
 						</li>
 						<li>
@@ -191,7 +191,7 @@
 				</form>
 				<div class="btnGroup margin-t-30 margin-l-130 padding-b-47">
 					<a href="#" class="">返回</a>
-					<a href="inquiry.html" class="">下一步</a>
+					<a id="limitCompanyEmployeeNext" class="">下一步</a>
 				</div>
 			</div>
 		</div>
@@ -217,3 +217,9 @@
 		</footer>
 	</body>
 </html>
+<script>
+	//提交有限公司信息表单
+	$('#limitCompanyEmployeeNext').bind("click", function(){
+		$("#limitCompanyEmployeeForm").submit();
+	});
+</script>

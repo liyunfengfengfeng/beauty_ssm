@@ -1,6 +1,7 @@
 package com.yingjun.ssm.web;
 
 
+import com.yingjun.ssm.entity.LimitCompanyEmployee;
 import com.yingjun.ssm.entity.RegisterCompany;
 import com.yingjun.ssm.entity.User;
 import com.yingjun.ssm.service.RegisterCompanyService;
@@ -42,7 +43,20 @@ public class LimitCompanyController {
 		try {
 			LOG.info("接受到的用户ID是    ：" + registerCompany);
 			registerCompanyService.saveLimitCompanyInfo(registerCompany);
-			view.addAttribute("view",view);
+		} catch (Exception e) {
+			throw new RuntimeException("LimitCompanyController.deleteUser.Exception",e);
+		}
+		return "/limitCompany/limitCompany_principal";
+	}
+	/**
+	 * 保存有限公司人员信息
+	 * @return
+	 */
+	@RequestMapping(value = "/saveLimitCompanyEmployeeInfos")
+	public String saveLimitCompanyEmployeeInfos(LimitCompanyEmployee limitCompanyEmployee, Model view) {
+		try {
+			LOG.info("接受到的用户ID是    ：" + limitCompanyEmployee);
+			registerCompanyService.saveLimitCompanyEmployeeInfo(limitCompanyEmployee);
 		} catch (Exception e) {
 			throw new RuntimeException("LimitCompanyController.deleteUser.Exception",e);
 		}
