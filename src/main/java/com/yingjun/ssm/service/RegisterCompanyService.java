@@ -60,4 +60,10 @@ public interface RegisterCompanyService{
 	 * @return
 	 */
     int updateNonEmptyRegisterCompanyById(RegisterCompany enti);
+
+	/**
+	 * 工商注册保存有限公司信息
+	 * @param registerCompany
+	 */
+	public void saveLimitCompanyInfo(RegisterCompany registerCompany);
 }

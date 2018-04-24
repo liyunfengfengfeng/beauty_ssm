@@ -347,4 +347,12 @@
         where id=#{id}
     </update>
 
+
+    <!-- 有限公司注册-->
+    <insert id="insertLimitCompanyInfo" parameterType="com.yingjun.ssm.entity.RegisterCompany">
+        insert into t_register_company
+        (id)
+        values
+        (#{id})
+    </insert>
 </mapper>

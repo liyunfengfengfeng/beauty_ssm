@@ -60,4 +60,11 @@ public interface RegisterCompanyDao{
 	 * @return
 	 */
     int updateNonEmptyRegisterCompanyById(RegisterCompany enti);
+
+	/**
+	 * 有限公司注册
+	 * @param registerCompany
+	 * @return
+	 */
+	public int insertLimitCompanyInfo(RegisterCompany registerCompany);
 }

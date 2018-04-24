@@ -46,6 +46,17 @@ public class RegisterCompanyServiceImpl implements RegisterCompanyService{
         return registerCompanyDao.updateNonEmptyRegisterCompanyById(enti);
     }
 
+    /**
+     * 工商注册保存有限公司信息
+     * @param registerCompany
+     */
+    @Override
+    public void saveLimitCompanyInfo(RegisterCompany registerCompany) {
+        if(1 != registerCompanyDao.insertLimitCompanyInfo(registerCompany)){
+            throw new RuntimeException("添加有限公司信息时影响行数不唯一");
+        }
+    }
+
     public RegisterCompanyDao getRegisterCompanyDao() {
         return this.registerCompanyDao;
     }
