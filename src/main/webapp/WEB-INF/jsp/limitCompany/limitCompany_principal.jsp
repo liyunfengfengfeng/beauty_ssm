@@ -68,42 +68,42 @@
 					<ul class="list-info">
 						<li>
 							<label class="info-title case" for="">姓名：</label>
-							<input type="" class="infoList-put read-only" name="" id="" readonly="readonly" value="王不动" />
+							<input type="" class="infoList-put read-only" name="legalPersonName" id="legalPersonName" readonly="readonly" value="" />
 						</li>
 						<li>
 							<label class="info-title case" for="">身份证号：</label>
-							<input type="" class="infoList-put read-only" name="" id="" readonly="readonly" value="1422821821****2133" />
+							<input type="" class="infoList-put read-only" name="legalPersonCard" id="legalPersonCard" readonly="readonly" value="1422821821****2133" />
 						</li>
 						<li>
-							<label class="info-title case" for="mobile">移动电话：</label>
-							<input type="text" class="infoList-put needCheck write-n" name="mobile" id="mobile" value="18238948223" placeholder="请输入移动电话"/>
+							<label class="info-title case" for="legalPersonMobile">移动电话：</label>
+							<input type="text" class="infoList-put needCheck write-n" name="legalPersonMobile" id="legalPersonMobile" value="" placeholder="请输入移动电话"/>
 						</li>
 						<li>
-							<label class="info-title case" for="idAddress">身份证住址：</label>
-							<input type="text" class="infoList-put needCheck write-n" name="idAddress" id="idAddress" value="" placeholder="请输入身份证住址"/>
+							<label class="info-title case" for="legalPersonAddress">身份证住址：</label>
+							<input type="text" class="infoList-put needCheck write-n" name="legalPersonAddress" id="legalPersonAddress" value="" placeholder="请输入身份证住址"/>
 						</li>
 						<li>
-							<label class="info-title case" for="mail">电子邮箱：</label>
-							<input type="text" class="infoList-put needCheck write-n" name="mail" id="mail" value="" placeholder="请输入电子邮箱"/>
+							<label class="info-title case" for="legalPersonMail">电子邮箱：</label>
+							<input type="text" class="infoList-put needCheck write-n" name="legalPersonMail" id="legalPersonMail" value="" placeholder="请输入电子邮箱"/>
 						</li>
 					</ul>
 					<div class="form-tit"><span>2.财务负责人信息填写</span></div>
 					<ul class="list-info">
 						<li>
-							<label class="info-title case" for="name">姓名：</label>
-							<input type="text" class="infoList-put needCheck write-n" name="name" id="name" value="" placeholder="请输入姓名"/>
+							<label class="info-title case" for="financePersonName">姓名：</label>
+							<input type="text" class="infoList-put needCheck write-n" name="financePersonName" id="financePersonName" value="" placeholder="请输入姓名"/>
 						</li>
 						<li>
-							<label class="info-title case" for="idNum">身份证号：</label>
-							<input type="text" class="infoList-put needCheck write-n" name="idNum" id="idNum" value="" placeholder="请输入身份证号码"/>
+							<label class="info-title case" for="financePersonIdNum">身份证号：</label>
+							<input type="text" class="infoList-put needCheck write-n" name="financePersonIdNum" id="financePersonIdNum" value="" placeholder="请输入身份证号码"/>
 						</li>
 						<li>
-							<label class="info-title case" for="mobilePhone">移动电话：</label>
-							<input type="text" class="infoList-put needCheck write-n" name="mobilePhone" id="mobilePhone" value="" placeholder="请输入电话号码"/>
+							<label class="info-title case" for="financePersonMobilePhone">移动电话：</label>
+							<input type="text" class="infoList-put needCheck write-n" name="financePersonMobilePhone" id="financePersonMobilePhone" value="" placeholder="请输入电话号码"/>
 						</li>
 						<li>
-							<label class="info-title case" for="email">电子邮箱：</label>
-							<input type="text" class="infoList-put needCheck write-n" name="email" id="email" value="" placeholder="请输入电子邮箱"/>
+							<label class="info-title case" for="financePersonEmail">电子邮箱：</label>
+							<input type="text" class="infoList-put needCheck write-n" name="financePersonEmail" id="financePersonEmail" value="" placeholder="请输入电子邮箱"/>
 						</li>
 					</ul>
 					<div class="form-tit"><span>3.股东及出资人信息填写</span></div>
@@ -111,15 +111,11 @@
 						<div class="margin-l-40">
 							<input checked type="radio" id="radio-1" name="radio-1-set" class="regular-radio"/>  
 							<label for="radio-1"></label>  
-							<label class="inputlabel margin-r-50" for="radio-1">一人（法人独资）公司</label> 
-							
-							<input  type="radio" id="radio-2" name="radio-1-set" class="regular-radio"/>  
-							<label for="radio-2"></label>  
-							<label class="inputlabel" for="radio-2">2个及以上股东公司</label>  
+							<label class="inputlabel margin-r-50" for="radio-1" spellcheck="true">一人（法人独资）公司</label>
 						</div>
-						<div class="principal-button margin-t-30 mar-l-37">
-							<a href="javascript:addStockholder()">增加股东</a>
-						</div>
+						<%--<div class="principal-button margin-t-30 mar-l-37">--%>
+							<%--&lt;%&ndash;<a href="javascript:addStockholder()">增加股东</a>&ndash;%&gt;--%>
+						<%--</div>--%>
 						<div class="stockholder-table mar-t-10">
 							<table border="0" cellspacing="0" cellpadding="0" id="1">
 								<tr>
@@ -127,62 +123,27 @@
 									<th>证件类型</th>
 									<th>证件号码</th>
 									<th>实缴出资数额（万元）</th>
-									<th>出资时间</th>
 									<th>认缴出资数额（万元）</th>
-									<th>认缴出资时间</th>
 									<th>出资方式</th>
 								</tr>
 								<tr>
+									<td><input type="text" class="this-input input-name" name="gdName" id="gdName" value="" /></td>
 									<td>
-										张三
-									</td>
-									<td>身份证</td>
-									<td>123412346618944816</td>
-									<td>500</td>
-									<td>2017-10-10</td>
-									<td>100</td>
-									<td>2017-10-10</td>
-									<td>实物出资</td>
-								</tr>
-								<tr>
-									<td>**投资管理公司</td>
-									<td>营业执照</td>
-									<td>123412346618944816</td>
-									<td>500</td>
-									<td>2017-10-10</td>
-									<td>100</td>
-									<td>2017-10-10</td>
-									<td>实物出资</td>
-								</tr>
-								<tr>
-									<td><input type="text" class="this-input input-name" name="" id="" value="" /></td>
-									<td>
-										<select name="" class="this-input credentials">
+										<select name="gdCardType" class="this-input credentials">
 											<option value="0">身份证</option>
 											<option value="1">营业执照</option>
 										</select>
 									</td>
-									<td><input type="text" class="this-input number" name="" id="" value="" /></td>
-									<td><input type="text" class="this-input factMoney" name="" id="" value="" /></td>
-									<td><input type="text" class="this-input fundDate" name="" id="" value="" /></td>
-									<td><input type="text" class="this-input factMoney" name="" id="" value="" /></td>
-									<td><input type="text" class="this-input fundDate" name="" id="" value="" /></td>
-									<td><input type="text" class="this-input fundType" name="" id="" value="" /></td>
+									<td><input type="text" class="this-input number" name="gdCardNum" id="gdCardNum" value="" /></td>
+									<td><input type="text" class="this-input factMoney" name="gdRealPay" id="gdRealPay" value="" /></td>
+									<td><input type="text" class="this-input factMoney" name="gdConfirmPay" id="gdConfirmPay" value="" /></td>
+									<td><input type="text" class="this-input fundType" name="gdPayWay" id="gdPayWay" value="" /></td>
 								</tr>
 							</table>
 						</div>
 					</div>
 					<div class="form-tit"><span>4.是否设立董事会</span></div>
 					<div class="table-info">
-						<div class="margin-l-40">
-							<input checked type="radio" id="yes" name="director" class="regular-radio"/>  
-							<label for="yes"></label>  
-							<label class="inputlabel margin-r-50" for="yes">是</label> 
-							
-							<input  type="radio" id="no" name="director" class="regular-radio"/>  
-							<label for="no"></label>  
-							<label class="inputlabel" for="no">否</label>  
-						</div>
 						<div class="stockholder-table mar-t-10">
 							<table border="0" cellspacing="0" cellpadding="0">
 								<tr>
@@ -193,36 +154,36 @@
 								</tr>
 								<tr>
 									<td><span class="duty">经理</span></td>
-									<td><input type="text" class="this-input input-name4" name="" id="" value="" /></td>
+									<td><input type="text" class="this-input input-name4" name="managerName" id="managerName" value="" /></td>
 									<td>
-										<select name="" class="this-input credentials4">
+										<select name="managerCardType" class="this-input credentials4">
 											<option value="0">身份证</option>
 											<option value="1">营业执照</option>
 										</select>
 									</td>
-									<td><input type="text" class="this-input number4" name="" id="" value="" /></td>
+									<td><input type="text" class="this-input number4" name="managerIdNum" id="managerIdNum" value="" /></td>
 								</tr>
 								<tr>
 									<td><span class="duty">董事</span></td>
-									<td><input type="text" class="this-input input-name4" name="" id="" value="" /></td>
+									<td><input type="text" class="this-input input-name4" name="dsName" id="dsName" value="" /></td>
 									<td>
-										<select name="" class="this-input credentials4">
+										<select name="dsCardType" class="this-input credentials4">
 											<option value="0">身份证</option>
 											<option value="1">营业执照</option>
 										</select>
 									</td>
-									<td><input type="text" class="this-input number4" name="" id="" value="" /></td>
+									<td><input type="text" class="this-input number4" name="dsIdNum" id="dsIdNum" value="" /></td>
 								</tr>
 								<tr>
 									<td><span class="duty">监事（不能兼任）</span></td>
-									<td><input type="text" class="this-input input-name4" name="" id="" value="" /></td>
+									<td><input type="text" class="this-input input-name4" name="jsName" id="jsName" value="" /></td>
 									<td>
-										<select name="" class="this-input credentials4">
+										<select name="jsCardType" class="this-input credentials4">
 											<option value="0">身份证</option>
 											<option value="1">营业执照</option>
 										</select>
 									</td>
-									<td><input type="text" class="this-input number4" name="" id="" value="" /></td>
+									<td><input type="text" class="this-input number4" name="jsIdNum" id="jsIdNum" value="" /></td>
 								</tr>
 							</table>
 						</div>
