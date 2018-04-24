@@ -31,12 +31,12 @@
 					</ul>
 				</div>
 			</div>
-			<div class="mine">
-				<a href="secretaryLogin.html">
-					<div class="mine-img"><img src="img/login.png"/></div>
-					<div class="mine-describe"><a href="javascript:void(0)">秘书公司登录</a></div>
-				</a>
-			</div>
+			<%--<div class="mine">--%>
+				<%--<a href="secretaryLogin.html">--%>
+					<%--<div class="mine-img"><img src="img/login.png"/></div>--%>
+					<%--<div class="mine-describe"><a href="javascript:void(0)">秘书公司登录</a></div>--%>
+				<%--</a>--%>
+			<%--</div>--%>
 		</header>
 		
 		<div class="proprietorship-content">
@@ -79,8 +79,8 @@
 							<!--
 								*点击“去核名”判断，如果核实不对则加底下代码片段，在input标签中增加类名“noPass”，如果核实正确，则加对号代码片段
 							-->
-							<span class="noPassImg-bounce"><img src="img/refuse.png"/>名称不可用</span>
-							<span class="passImg"><img src="img/pass.png"/></span>
+							<span class="noPassImg-bounce"><img src="/resource/img/refuse.png"/>名称不可用</span>
+							<span class="passImg"><img src="/resource/img/pass.png"/></span>
 						</li>
 						<li>
 							<label class="info-title" for="capital">注册资本：</label>

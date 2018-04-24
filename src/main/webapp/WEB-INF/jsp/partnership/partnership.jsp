@@ -4,15 +4,15 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>合伙企业-基本信息</title>
-		<link rel="stylesheet" type="text/css" href="css/proprietorship.css"/>
+		<link rel="stylesheet" type="text/css" href="/resource/css/proprietorship.css"/>
 		<!--其他样式-->
-		<link rel="stylesheet" type="text/css" href="css/buyService.css"/>
-		<link rel="stylesheet" type="text/css" href="css/home.css"/>
-		<link rel="stylesheet" type="text/css" href="css/news.css"/>
-		<link rel="stylesheet" type="text/css" href="css/registration.css"/>
-		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/partnership.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/function.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="/resource/css/buyService.css"/>
+		<link rel="stylesheet" type="text/css" href="/resource/css/home.css"/>
+		<link rel="stylesheet" type="text/css" href="/resource/css/news.css"/>
+		<link rel="stylesheet" type="text/css" href="/resource/css/registration.css"/>
+		<script src="/resource/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/resource/js/partnership.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/resource/js/function.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body class="grayBg">
 		<!--首页头部-->
@@ -32,18 +32,18 @@
 				</div>
 			</div>
 			<div class="toLogin">
-				<div class="toLoginmine">
-					<a href="userLogin.html">
-						<div class="mine-img"><img src="img/login.png"/></div>
-						<div class="mine-describe"><a href="javascript:void(0)">用户登录</a></div>
-					</a>
-				</div>
-				<div class="toLoginmine">
-					<a href="secretaryLogin.html">
-						<div class="mine-img"><img src="img/login.png"/></div>
-						<div class="mine-describe"><a href="javascript:void(0)">秘书公司登录</a></div>
-					</a>
-				</div>
+				<%--<div class="toLoginmine">--%>
+					<%--<a href="userLogin.html">--%>
+						<%--<div class="mine-img"><img src="/resource/img/login.png"/></div>--%>
+						<%--<div class="mine-describe"><a href="javascript:void(0)">用户登录</a></div>--%>
+					<%--</a>--%>
+				<%--</div>--%>
+				<%--<div class="toLoginmine">--%>
+					<%--<a href="secretaryLogin.html">--%>
+						<%--<div class="mine-img"><img src="/resource/img/login.png"/></div>--%>
+						<%--<div class="mine-describe"><a href="javascript:void(0)">秘书公司登录</a></div>--%>
+					<%--</a>--%>
+				<%--</div>--%>
 				
 			</div>
 		</header>
@@ -88,8 +88,8 @@
 							<!--
 								*点击“去核名”判断，如果核实不对则加底下代码片段，在input标签中增加类名“noPass”，如果核实正确，则加对号代码片段
 							-->
-							<span class="noPassImg-bounce"><img src="img/refuse.png"/>名称不可用</span>
-							<span class="passImg"><img src="img/pass.png"/></span>
+							<span class="noPassImg-bounce"><img src="/resource/img/refuse.png"/>名称不可用</span>
+							<span class="passImg"><img src="/resource/img/pass.png"/></span>
 						</li>
 						<li>
 							<label class="info-title" for="capital">注册资本：</label>
