@@ -37,13 +37,13 @@
 			<h3 class="tit">公司注册</h3>
 			<!--页面导航-->
 			<ul class="list-page">
-				<li class="page-title active">
+				<li class="page-title ">
 					<a href="#">1.个人实名认证</a>
 				</li>
 				<li class="page-title ">
 					<a href="partnership.jsp">2.基本信息填写</a>
 				</li>
-				<li class="page-title">
+				<li class="page-title active">
 					<a href="#">3.负责人信息填写</a>
 				</li>
 				<li class="page-title">
