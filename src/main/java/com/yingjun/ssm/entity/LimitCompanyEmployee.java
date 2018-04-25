@@ -108,6 +108,8 @@ public class LimitCompanyEmployee {
      */
     private String jsIdNum;
 
+    private String company_id;
+
     public String getLegalPersonName() {
         return legalPersonName;
     }
@@ -298,6 +300,14 @@ public class LimitCompanyEmployee {
 
     public void setJsIdNum(String jsIdNum) {
         this.jsIdNum = jsIdNum;
+    }
+
+    public String getCompany_id() {
+        return company_id;
+    }
+
+    public void setCompany_id(String company_id) {
+        this.company_id = company_id;
     }
 
     public LimitCompanyEmployee() {

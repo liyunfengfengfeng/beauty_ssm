@@ -266,4 +266,14 @@
         where id=#{id}
     </update>
 
+
+    <!-- 有限公司保存法人信息 -->
+    <insert id="saveLegalPersonInfo" parameterType="com.yingjun.ssm.entity.CompanyEmployee">
+        insert into t_company_employee
+        (id,
+        status)
+        values
+        (#{id},
+        #{status})
+    </insert>
 </mapper>

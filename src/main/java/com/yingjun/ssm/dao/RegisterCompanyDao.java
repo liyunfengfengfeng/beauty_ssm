@@ -76,4 +76,11 @@ public interface RegisterCompanyDao{
 	 * @return
 	 */
     public int checkCompanyNameRepeat(@Param("companyName") String companyName);
+
+	/**
+	 * 查询注册公司信息通过公司名称
+	 * @param limitCompanyName
+	 * @return
+	 */
+    public RegisterCompany selectRegisterCompanyByName(@Param("companyName") String limitCompanyName);
 }

@@ -1,5 +1,7 @@
 package com.yingjun.ssm.dao;
 import com.yingjun.ssm.entity.CompanyEmployee;
+import com.yingjun.ssm.entity.LimitCompanyEmployee;
+
 import java.util.List;
 public interface CompanyEmployeeDao{
 	/**
@@ -60,4 +62,11 @@ public interface CompanyEmployeeDao{
 	 * @return
 	 */
     int updateNonEmptyCompanyEmployeeById(CompanyEmployee enti);
+
+	/**
+	 * 有限公司保存法人信息
+	 * @param limitCompanyEmployee
+	 * @return
+	 */
+    public int saveLegalPersonInfo(LimitCompanyEmployee limitCompanyEmployee);
 }

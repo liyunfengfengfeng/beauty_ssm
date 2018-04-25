@@ -1,5 +1,7 @@
 package com.yingjun.ssm.service.impl;
 import java.util.List;
+
+import com.yingjun.ssm.dao.CompanyEmployeeDao;
 import com.yingjun.ssm.dao.RegisterCompanyDao;
 import com.yingjun.ssm.entity.LimitCompanyEmployee;
 import com.yingjun.ssm.entity.RegisterCompany;
@@ -13,6 +15,8 @@ import org.springframework.transaction.annotation.Transactional;
 public class RegisterCompanyServiceImpl implements RegisterCompanyService{
     @Autowired
     private RegisterCompanyDao registerCompanyDao;
+    @Autowired
+    private CompanyEmployeeDao companyEmployeeDao;
     @Override
     public long getRegisterCompanyRowCount(){
         return registerCompanyDao.getRegisterCompanyRowCount();
@@ -74,14 +78,21 @@ public class RegisterCompanyServiceImpl implements RegisterCompanyService{
     @Transactional(propagation = Propagation.REQUIRED,rollbackFor = RuntimeException.class)
     public void saveLimitCompanyEmployeeInfo(LimitCompanyEmployee limitCompanyEmployee,String limitCompanyName) {
         //查询当前公司的信息
-
+        RegisterCompany registerCompany = registerCompanyDao.selectRegisterCompanyByName(limitCompanyName);
+        limitCompanyEmployee.setCompany_id(registerCompany.getCompanyId());
         //保存法人信息
+        if(1 != companyEmployeeDao.saveLegalPersonInfo(limitCompanyEmployee)){
 
+        }
         //保存财务负责人信息
 
         //保存股东信息
 
-        //保存董事会信息
+        //保存董事会信息 经理信息
+
+        //保存董事会信息 董事信息
+
+        //保存董事会信息 监事信息
 
     }
 
