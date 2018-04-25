@@ -375,7 +375,7 @@
     </select>
 
     <!-- 通过公司名称查询注册公司信息-->
-    <select id="checkCompanyNameRepeat" resultType="com.yingjun.ssm.entity.RegisterCompany">
+    <select id="selectRegisterCompanyByName" resultType="com.yingjun.ssm.entity.RegisterCompany">
         select
         id as id
         from t_register_company
