@@ -86,23 +86,23 @@ public class RegisterCompanyServiceImpl implements RegisterCompanyService{
         }
         //保存财务负责人信息
         if(1 != companyEmployeeDao.saveFinancePersonInfo(limitCompanyEmployee)){
-            throw new RuntimeException("保存有限公司法人信息影响行数不唯一");
+            throw new RuntimeException("保存有限公司财务负责人信息影响行数不唯一");
         }
         //保存股东信息
         if(1 != companyEmployeeDao.saveGdPersonInfo(limitCompanyEmployee)){
-            throw new RuntimeException("保存有限公司法人信息影响行数不唯一");
+            throw new RuntimeException("保存有限公司股东信息影响行数不唯一");
         }
         //保存董事会信息 经理信息
         if(1 != companyEmployeeDao.saveJlPersonInfo(limitCompanyEmployee)){
-            throw new RuntimeException("保存有限公司法人信息影响行数不唯一");
+            throw new RuntimeException("保存有限公司经理信息影响行数不唯一");
         }
         //保存董事会信息 董事信息
         if(1 != companyEmployeeDao.saveDsPersonInfo(limitCompanyEmployee)){
-            throw new RuntimeException("保存有限公司法人信息影响行数不唯一");
+            throw new RuntimeException("保存有限公司董事信息影响行数不唯一");
         }
         //保存董事会信息 监事信息
         if(1 != companyEmployeeDao.saveJsPersonInfo(limitCompanyEmployee)){
-            throw new RuntimeException("保存有限公司法人信息影响行数不唯一");
+            throw new RuntimeException("保存有限公司监事信息影响行数不唯一");
         }
     }
 
