@@ -293,7 +293,6 @@
         company_id,
         name,
         identity_id,
-        identity_id,
         phone_number,
         email)
         values
