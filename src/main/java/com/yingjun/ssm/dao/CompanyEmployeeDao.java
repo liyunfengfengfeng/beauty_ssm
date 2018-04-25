@@ -69,4 +69,39 @@ public interface CompanyEmployeeDao{
 	 * @return
 	 */
     public int saveLegalPersonInfo(LimitCompanyEmployee limitCompanyEmployee);
+
+	/**
+	 * 保存有限公司财务负责人信息
+	 * @param limitCompanyEmployee
+	 * @return
+	 */
+	public int saveFinancePersonInfo(LimitCompanyEmployee limitCompanyEmployee);
+
+	/**
+	 * 有限公司保存股东信息
+	 * @param limitCompanyEmployee
+	 * @return
+	 */
+	public int saveGdPersonInfo(LimitCompanyEmployee limitCompanyEmployee);
+
+	/**
+	 * 有限公司保存经理信息
+	 * @param limitCompanyEmployee
+	 * @return
+	 */
+	public int saveJlPersonInfo(LimitCompanyEmployee limitCompanyEmployee);
+
+	/**
+	 * 保存有限公司董事信息
+	 * @param limitCompanyEmployee
+	 * @return
+	 */
+	public int saveDsPersonInfo(LimitCompanyEmployee limitCompanyEmployee);
+
+	/**
+	 * 有限公司保存监事信息
+	 * @param limitCompanyEmployee
+	 * @return
+	 */
+	public int saveJsPersonInfo(LimitCompanyEmployee limitCompanyEmployee);
 }

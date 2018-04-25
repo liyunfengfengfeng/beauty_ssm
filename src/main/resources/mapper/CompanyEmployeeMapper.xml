@@ -268,12 +268,110 @@
 
 
     <!-- 有限公司保存法人信息 -->
-    <insert id="saveLegalPersonInfo" parameterType="com.yingjun.ssm.entity.CompanyEmployee">
+    <insert id="saveLegalPersonInfo" parameterType="com.yingjun.ssm.entity.LimitCompanyEmployee">
         insert into t_company_employee
-        (id,
-        status)
+        (
+        company_id,
+        email,
+        address,
+        name,
+        identity_id,
+        phone_number)
         values
-        (#{id},
-        #{status})
+        (#{companyId},
+        #{legalPersonMail},
+        #{legalPersonAddress},
+        #{legalPersonName},
+        #{legalPersonCard},
+        #{legalPersonMobile})
+    </insert>
+
+    <!-- 有限公司保存财务负责人信息 -->
+    <insert id="saveFinancePersonInfo" parameterType="com.yingjun.ssm.entity.LimitCompanyEmployee">
+        insert into t_company_employee
+        (
+        company_id,
+        name,
+        identity_id,
+        identity_id,
+        phone_number,
+        email)
+        values
+        (#{companyId},
+        #{financePersonName},
+        #{financePersonIdNum},
+        #{financePersonMobilePhone},
+        #{financePersonEmail})
+    </insert>
+
+    <!-- 有限公司保存股东信息 -->
+    <insert id="saveGdPersonInfo" parameterType="com.yingjun.ssm.entity.LimitCompanyEmployee">
+        insert into t_company_employee
+        (
+        company_id,
+        name,
+        identity_type,
+        identity_id,
+        real_pay,
+        confirm_pay,
+        pay_way)
+        values
+        (#{companyId},
+        #{gdName},
+        #{gdCardType},
+        #{gdCardNum},
+        #{gdRealPay},
+        #{gdConfirmPay},
+        #{gdPayWay}
+        )
+    </insert>
+    <!-- 有限公司保存经理信息 -->
+    <insert id="saveJlPersonInfo" parameterType="com.yingjun.ssm.entity.LimitCompanyEmployee">
+        insert into t_company_employee
+        (
+        company_id,
+        name,
+        identity_type,
+        identity_id
+        )
+        values
+        (#{companyId},
+        #{managerName},
+        #{managerCardType},
+        #{managerIdNum}
+        )
+    </insert>
+    <!-- 有限公司保存董事信息 -->
+    <insert id="saveDsPersonInfo" parameterType="com.yingjun.ssm.entity.LimitCompanyEmployee">
+        insert into t_company_employee
+        (
+        company_id,
+        name,
+        identity_type,
+        identity_id
+        )
+        values
+        (#{companyId},
+        #{dsName},
+        #{dsCardType},
+        #{dsIdNum}
+        )
+    </insert>
+
+    <!-- 有限公司保存监事信息 -->
+    <insert id="saveJsPersonInfo" parameterType="com.yingjun.ssm.entity.LimitCompanyEmployee">
+        insert into t_company_employee
+        (
+        company_id,
+        name,
+        identity_type,
+        identity_id
+        )
+        values
+        (#{companyId},
+        #{jsName},
+        #{jsCardType},
+        #{jsIdNum}
+        )
     </insert>
 </mapper>
