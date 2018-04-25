@@ -1,5 +1,6 @@
 package com.yingjun.ssm.dao;
 import com.yingjun.ssm.entity.CompanyEmployee;
+import com.yingjun.ssm.entity.IndividualCompanyEmployee;
 import com.yingjun.ssm.entity.LimitCompanyEmployee;
 
 import java.util.List;
@@ -104,4 +105,11 @@ public interface CompanyEmployeeDao{
 	 * @return
 	 */
 	public int saveJsPersonInfo(LimitCompanyEmployee limitCompanyEmployee);
+
+	/**
+	 * 保存个人独资公司的人员信息
+	 * @param individualCompanyEmployee
+	 * @return
+	 */
+    public int saveIndividualPersonInfo(IndividualCompanyEmployee individualCompanyEmployee);
 }

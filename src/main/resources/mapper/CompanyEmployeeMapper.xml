@@ -373,4 +373,23 @@
         #{jsIdNum}
         )
     </insert>
+
+    <!-- 个人独资公司保存职员信息 -->
+    <insert id="saveIndividualPersonInfo" parameterType="com.yingjun.ssm.entity.IndividualCompanyEmployee">
+        insert into t_company_employee
+        (
+        company_id,
+        email,
+        address,
+        name,
+        identity_id,
+        phone_number)
+        values
+        (#{companyId},
+        #{legalMail},
+        #{legalIdAddress},
+        #{legalName},
+        #{legalIdNum},
+        #{legalMobile})
+    </insert>
 </mapper>

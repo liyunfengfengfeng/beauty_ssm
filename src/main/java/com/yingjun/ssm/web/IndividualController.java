@@ -1,6 +1,8 @@
 package com.yingjun.ssm.web;
 
 
+import com.yingjun.ssm.entity.IndividualCompanyEmployee;
+import com.yingjun.ssm.entity.LimitCompanyEmployee;
 import com.yingjun.ssm.entity.RegisterCompany;
 import com.yingjun.ssm.service.RegisterCompanyService;
 import com.yingjun.ssm.service.UserService;
@@ -45,6 +47,22 @@ public class IndividualController {
 		} catch (Exception e) {
 			throw new RuntimeException("LimitCompanyController.deleteUser.Exception",e);
 		}
-		return "/limitCompany/limitCompany_principal";
+		return "/individual/individual_principal";
+	}
+	/**
+	 * 保存个人独资公司人员信息
+	 * @return
+	 */
+	@RequestMapping(value = "/saveIndividualCompanyEmployeeInfos")
+	public String saveLimitCompanyEmployeeInfos(String companyName,
+												IndividualCompanyEmployee individualCompanyEmployee,
+												Model view) {
+		try {
+			LOG.info("接受到的用户ID是    ：" + individualCompanyEmployee);
+			registerCompanyService.saveIndividualCompanyEmployeeInfo(individualCompanyEmployee,companyName);
+		} catch (Exception e) {
+			throw new RuntimeException("LimitCompanyController.saveLimitCompanyEmployeeInfos.Exception",e);
+		}
+		return "/individual/inquiry";
 	}
 }

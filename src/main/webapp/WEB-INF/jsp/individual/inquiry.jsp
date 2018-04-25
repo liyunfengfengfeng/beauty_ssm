@@ -4,14 +4,14 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>材料预审</title>
-		<link rel="stylesheet" type="text/css" href="css/proprietorship.css"/>
+		<link rel="stylesheet" type="text/css" href="/resource/css/proprietorship.css"/>
 		<!--其他样式-->
-		<link rel="stylesheet" type="text/css" href="css/buyService.css"/>
-		<link rel="stylesheet" type="text/css" href="css/home.css"/>
-		<link rel="stylesheet" type="text/css" href="css/news.css"/>
-		<link rel="stylesheet" type="text/css" href="css/registration.css"/>
-		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/function.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="/resource/css/buyService.css"/>
+		<link rel="stylesheet" type="text/css" href="/resource/css/home.css"/>
+		<link rel="stylesheet" type="text/css" href="/resource/css/news.css"/>
+		<link rel="stylesheet" type="text/css" href="/resource/css/registration.css"/>
+		<script src="/resource/script/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/resource/script/function.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body class="grayBg">
 		<!--首页头部-->
@@ -20,9 +20,9 @@
 				<div class="logo"><span class="logo-img">京东益世集群注册平台</span></div>
 				<div class="header-menu">
 					<ul>
-						<li class="active"><a href="/user/home">首页</a></li>
+						<li><a href="/user/home">首页</a></li>
 						<li><a href="/limitCompany/toLimitCompany">有限公司</a></li>
-						<li><a href="/individual/toIndividual">个人独资</a></li>
+						<li class="active"><a href="/individual/toIndividual">个人独资</a></li>
 						<li><a href="/partnerShip/toPartnerShip">合伙企业</a></li>
 						<li><a href="#">个人中心</a></li>
 						<li><a href="enterprise.html">企业中心</a></li>
@@ -30,12 +30,12 @@
 					</ul>
 				</div>
 			</div>
-			<div class="mine">
-				<a href="secretaryLogin.html">
-					<div class="mine-img"><img src="img/login.png"/></div>
-					<div class="mine-describe"><a href="javascript:void(0)">秘书公司登录</a></div>
-				</a>
-			</div>
+			<%--<div class="mine">--%>
+				<%--<a href="secretaryLogin.html">--%>
+					<%--<div class="mine-img"><img src="/resource/img/login.png"/></div>--%>
+					<%--<div class="mine-describe"><a href="javascript:void(0)">秘书公司登录</a></div>--%>
+				<%--</a>--%>
+			<%--</div>--%>
 		</header>
 		
 		<div class="proprietorship-content">
@@ -63,7 +63,7 @@
 			</ul>
 			<div class="tip-pic">
 				<div class="inquiry-pic">
-					<img src="img/check1.png"/>
+					<img src="/resource/img/check1.png"/>
 				</div>
 				<div class="inquiry-info">
 					<span>您的材料已经提交预审，预计一个工作日左右审核完成， 审核通过后，请您下载APP进行电子签名。</span>

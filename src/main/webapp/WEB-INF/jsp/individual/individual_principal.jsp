@@ -63,35 +63,36 @@
 				</li>
 			</ul>
 			<div class="info-content">
-				<form action="" method="post">
+				<form action="/individual/saveIndividualCompanyEmployeeInfos" method="post" id="individualCompanyEmployeeForm" name="individualCompanyEmployeeForm">
+					<input type="hidden" id="companyName" name="companyName" value="${companyName}"/>
 					<div class="form-tit"><span>法人信息填写</span></div>
 					<ul class="list-info">
 						<li>
-							<label class="info-title case" for="">姓名：</label>
-							<input type="" class="infoList-put write-n" name="" id="" value="王不动" />
+							<label class="info-title case" for="legalName">姓名：</label>
+							<input type="text" class="infoList-put write-n" name="legalName" id="legalName" value="" />
 						</li>
 						<li>
-							<label class="info-title case" for="">身份证号：</label>
-							<input type="" class="infoList-put write-n" name="" id="" value="1422821821****2133" />
+							<label class="info-title case" for="legalIdNum">身份证号：</label>
+							<input type="" class="infoList-put write-n" name="legalIdNum" id="legalIdNum" value="" />
 						</li>
 						<li>
-							<label class="info-title case" for="mobile">移动电话：</label>
-							<input type="text" class="infoList-put needCheck write-n" name="mobile" id="mobile" value="18238948223" placeholder="请输入移动电话"/>
+							<label class="info-title case" for="legalMobile">移动电话：</label>
+							<input type="text" class="infoList-put needCheck write-n" name="legalMobile" id="legalMobile" value="" placeholder="请输入移动电话"/>
 						</li>
 						<li>
-							<label class="info-title case" for="idAddress">身份证住址：</label>
-							<input type="text" class="infoList-put needCheck write-n" name="idAddress" id="idAddress" value="" placeholder="请输入身份证住址"/>
+							<label class="info-title case" for="legalIdAddress">身份证住址：</label>
+							<input type="text" class="infoList-put needCheck write-n" name="legalIdAddress" id="legalIdAddress" value="" placeholder="请输入身份证住址"/>
 						</li>
 						<li>
-							<label class="info-title case" for="mail">电子邮箱：</label>
-							<input type="text" class="infoList-put needCheck write-n" name="mail" id="mail" value="" placeholder="请输入电子邮箱"/>
+							<label class="info-title case" for="legalMail">电子邮箱：</label>
+							<input type="text" class="infoList-put needCheck write-n" name="legalMail" id="legalMail" value="" placeholder="请输入电子邮箱"/>
 						</li>
 					</ul>
 					</div>
 				</form>
 				<div class="btnGroup margin-t-30 margin-l-270 padding-b-47">
 					<a href="#" class="">返回</a>
-					<a href="inquiry.jsp" class="">下一步</a>
+					<a id="individualCompanyEmployeeNext" class="">下一步</a>
 				</div>
 			</div>
 		</div>
@@ -117,3 +118,9 @@
 		</footer>
 	</body>
 </html>
+<script>
+	//提交个人独资公司信息表单
+	$('#individualCompanyEmployeeNext').bind("click", function(){
+		$("#individualCompanyEmployeeForm").submit();
+	});
+</script>
