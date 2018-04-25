@@ -23,10 +23,10 @@
 				<div class="logo"><span class="logo-img">集群注册平台</span></div>
 				<div class="header-menu">
 					<ul>
-						<li class="active"><a href="/user/home">首页</a></li>
-						<li><a href="registration.html">有限公司</a></li>
-						<li><a href="registration.html">个人独资</a></li>
-						<li><a href="registration.html">合伙企业</a></li>
+						<li><a href="/user/home">首页</a></li>
+						<li><a href="/limitCompany/toLimitCompany">有限公司</a></li>
+						<li><a href="/individual/toIndividual">个人独资</a></li>
+						<li class="active"><a href="/partnerShip/toPartnerShip">合伙企业</a></li>
 						<li><a href="#">个人中心</a></li>
 						<li><a href="enterprise.html">企业中心</a></li>
 						<li><a href="/contactUs/connection">联系我们</a></li>

@@ -57,7 +57,7 @@
 				</li>
 			</ul>
 			<div class="info-content">
-				<form action="" method="post">
+				<form action="" method="post" id="" name="">
 					<div class="form-tit"><span>1.执行事务合伙人信息填写</span></div>
 					<ul class="list-info">
 						<li>
@@ -198,7 +198,7 @@
 				</form>
 				<div class="btnGroup margin-t-30 margin-l-130 padding-b-47">
 					<a href="#" class="">返回</a>
-					<a href="inquiry.html" class="">下一步</a>
+					<a href="" class="">下一步</a>
 				</div>
 			</div>
 		</div>
