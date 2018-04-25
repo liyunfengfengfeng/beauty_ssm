@@ -10,9 +10,9 @@
 		<link rel="stylesheet" type="text/css" href="/resource/css/home.css"/>
 		<link rel="stylesheet" type="text/css" href="/resource/css/news.css"/>
 		<link rel="stylesheet" type="text/css" href="/resource/css/registration.css"/>
-		<script src="/resource/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="/resource/js/partnership.js" type="text/javascript" charset="utf-8"></script>
-		<script src="/resource/js/function.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/resource/script/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/resource/script/partnership.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/resource/script/function.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body class="grayBg">
 		<!--首页头部-->
@@ -30,21 +30,6 @@
 						<li><a href="/contactUs/connection">联系我们</a></li>
 					</ul>
 				</div>
-			</div>
-			<div class="toLogin">
-				<%--<div class="toLoginmine">--%>
-					<%--<a href="userLogin.html">--%>
-						<%--<div class="mine-img"><img src="/resource/img/login.png"/></div>--%>
-						<%--<div class="mine-describe"><a href="javascript:void(0)">用户登录</a></div>--%>
-					<%--</a>--%>
-				<%--</div>--%>
-				<%--<div class="toLoginmine">--%>
-					<%--<a href="secretaryLogin.html">--%>
-						<%--<div class="mine-img"><img src="/resource/img/login.png"/></div>--%>
-						<%--<div class="mine-describe"><a href="javascript:void(0)">秘书公司登录</a></div>--%>
-					<%--</a>--%>
-				<%--</div>--%>
-				
 			</div>
 		</header>
 		
@@ -72,19 +57,19 @@
 				</li>
 			</ul>
 			<div class="info-content">
-				<form action="" method="post">
+				<form action="/partnerShip/savePartnerCompany" method="post" id="partnerCompanyForm" name="partnerCompanyForm">
 					<ul class="list-info">
 						<li>
-							<label class="info-title" for="">企业类型：</label>
-							<input type="" class="infoList-put read-only" name="" id="" value="合伙企业" />
+							<label class="info-title" for="limitCompanyType">企业类型：</label>
+							<input type="" class="infoList-put read-only" name="limitCompanyType" id="limitCompanyType" value="合伙企业" />
 						</li>
 						<li>
-							<label class="info-title" for="">注册区域：</label>
-							<input type="" class="infoList-put read-only" name="" id="" value="江苏省 宿迁市 宿豫区" />
+							<label class="info-title" for="registerArea">注册区域：</label>
+							<input type="" class="infoList-put read-only" name="registerArea" id="registerArea" value="江苏省 宿迁市 宿豫区" />
 						</li>
 						<li>
-							<label class="info-title" for="">公司名称：</label>
-							<input type="" class="infoList-put needCheck noPass whrite" name="" id="" value="京东尚科信息技术有限公司" /><span class="checkName"><a href="javascript:void(0)">去核名</a></span>
+							<label class="info-title" for="companyName">公司名称：</label>
+							<input type="" class="infoList-put needCheck noPass whrite" name="companyName" id="companyName" value="" /><span class="checkName"><a href="javascript:void(0)">去核名</a></span>
 							<!--
 								*点击“去核名”判断，如果核实不对则加底下代码片段，在input标签中增加类名“noPass”，如果核实正确，则加对号代码片段
 							-->
@@ -92,8 +77,8 @@
 							<span class="passImg"><img src="/resource/img/pass.png"/></span>
 						</li>
 						<li>
-							<label class="info-title" for="capital">注册资本：</label>
-							<input type="text" class="infoList-put needCheck write-n" name="capital" id="capital" value="" placeholder="请输入注册资本"/><span class="yuan">万元（投资类合伙企业要求注册资金不低于1000万元）</span>
+							<label class="info-title" for="registerAmount">注册资本：</label>
+							<input type="text" class="infoList-put needCheck write-n" name="registerAmount" id="registerAmount" value="" placeholder="请输入注册资本"/><span class="yuan">万元（投资类合伙企业要求注册资金不低于1000万元）</span>
 						</li>
 						<li>
 							<label class="info-title" for="limitTime">合伙期限：</label>
@@ -108,21 +93,21 @@
 							<input type="text" class="infoList-put needCheck write-n" name="validityNum" id="validityNum" value="" placeholder="请输入有效合伙人数"/><span class="yuan">人</span>
 						</li>
 						<li>
-							<label class="info-title" for="">计划从事业务：</label>
-							<select class="infor-put-select">
+							<label class="info-title" for="companyBusiness">计划从事业务：</label>
+							<select class="infor-put-select" id="companyBusiness" name="companyBusiness">
 								<option value="0">文化交流、媒体宣传</option>
 							</select>
 						</li>
 						<li>
-							<label class="info-title float-l" for="">经营范围：</label>
-							<span class="text-tip">提供住所服务，场所租赁，代理企业工商登记，代理企业年报申报、税务申报，代理收递各类法律文件及代理申办其他各项法律手续，商务咨询服务，互联网技术咨询服务，网站建设技术服务，会务服务及其他商务秘书服务。代理记账；会计咨询；税务咨询；经济信息咨询（依法须经批准的项目，经相关部门批准后方可开展经营活动）</span>
+							<label class="info-title float-l" for="businessScope">经营范围：</label>
+							<span class="text-tip" name="businessScope" id="businessScope">提供住所服务，场所租赁，代理企业工商登记，代理企业年报申报、税务申报，代理收递各类法律文件及代理申办其他各项法律手续，商务咨询服务，互联网技术咨询服务，网站建设技术服务，会务服务及其他商务秘书服务。代理记账；会计咨询；税务咨询；经济信息咨询（依法须经批准的项目，经相关部门批准后方可开展经营活动）</span>
 							<div class="clear"></div>
 						</li>
 					</ul>
 				</form>
 				<div class="btnGroup margin-t-30 margin-l-130 padding-b-20">
 					<a href="#" class="">返回</a>
-					<a href="partnership_principal.jsp" class="">下一步</a>
+					<a id="partnerCompanyNext" class="">下一步</a>
 				</div>
 			</div>
 		</div>
@@ -148,3 +133,27 @@
 		</footer>
 	</body>
 </html>
+<script>
+	//提交有限公司信息表单
+	$('#partnerCompanyNext').bind("click", function(){
+		$("#partnerCompanyForm").submit();
+	});
+	//异步检查公司名称是否为空
+	$('#companyName').bind("blur", function(){
+		var companyName = $("#companyName").val();
+		$.ajax({
+			type: 'POST',
+			data: {"companyName":companyName} ,
+			dataType: "json",
+			url: '/limitCompany/checkCompanyName',
+			success: function (data) {
+				if(data.success){
+					return;
+				}else{
+					alert(data.error);
+					return false;
+				}
+			}
+		});
+	});
+</script>
