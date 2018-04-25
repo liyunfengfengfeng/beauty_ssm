@@ -72,4 +72,10 @@ public interface RegisterCompanyService{
 	public void saveLimitCompanyInfo(RegisterCompany registerCompany);
 
 	public void saveLimitCompanyEmployeeInfo(LimitCompanyEmployee limitCompanyEmployee);
+
+	/**
+	 * 检查公司名称是否重复
+	 * @param companyName
+	 */
+    public void checkCompanyNameRepeat(String companyName);
 }

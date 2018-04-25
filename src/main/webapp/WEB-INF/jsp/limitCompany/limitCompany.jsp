@@ -71,7 +71,7 @@
 						</li>
 						<li>
 							<label class="info-title" for="">公司名称：</label>
-							<input type="" class="infoList-put needCheck noPass whrite" name="companyName" id="companyName" value="京东尚科信息技术有限公司" /><span class="checkName"><a href="javascript:void(0)">去核名</a></span>
+							<input type="" class="infoList-put needCheck noPass whrite" name="companyName" id="companyName" value="" /><span class="checkName"><a href="javascript:void(0)">去核名</a></span>
 							<!--
 								*点击“去核名”判断，如果核实不对则加底下代码片段，在input标签中增加类名“noPass”，如果核实正确，则加对号代码片段
 							-->
@@ -127,5 +127,23 @@
 	//提交有限公司信息表单
 	$('#limitCompanyNext').bind("click", function(){
 		$("#limitCompanyForm").submit();
+	});
+	//异步检查公司名称是否为空
+	$('#companyName').bind("blur", function(){
+		var companyName = $("#companyName").val();
+		$.ajax({
+			type: 'POST',
+			data: {"companyName":companyName} ,
+			dataType: "json",
+			url: '/limitCompany/checkCompanyName',
+			success: function (data) {
+				if(data.success){
+					return;
+				}else{
+					alert(data.error);
+					return false;
+				}
+			}
+		});
 	});
 </script>

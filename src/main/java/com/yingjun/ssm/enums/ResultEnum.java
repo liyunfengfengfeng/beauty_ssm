@@ -21,7 +21,9 @@ public enum ResultEnum {
 
 	// 用户相关异常
 	INVALID_USER(1001001, "无效用户"),
-	USER_REGISTER_SUCCESS(1001002, "注册成功");
+	USER_REGISTER_SUCCESS(1001002, "注册成功"),
+	//工商注册
+	REPEATE_USER(10123456, "用户名重复");
 
 	private int state;
 

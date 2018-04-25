@@ -1,5 +1,7 @@
 package com.yingjun.ssm.dao;
 import com.yingjun.ssm.entity.RegisterCompany;
+import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
 public interface RegisterCompanyDao{
 	/**
@@ -67,4 +69,11 @@ public interface RegisterCompanyDao{
 	 * @return
 	 */
 	public int insertLimitCompanyInfo(RegisterCompany registerCompany);
+
+	/**
+	 * 检查公司名称是否重复
+	 * @param companyName
+	 * @return
+	 */
+    public int checkCompanyNameRepeat(@Param("companyName") String companyName);
 }

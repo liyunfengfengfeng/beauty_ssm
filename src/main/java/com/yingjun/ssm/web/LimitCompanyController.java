@@ -1,9 +1,14 @@
 package com.yingjun.ssm.web;
 
 
+import com.google.gson.Gson;
+import com.yingjun.ssm.dto.BaseResult;
 import com.yingjun.ssm.entity.LimitCompanyEmployee;
 import com.yingjun.ssm.entity.RegisterCompany;
+import com.yingjun.ssm.entity.TOpreatorUser;
 import com.yingjun.ssm.entity.User;
+import com.yingjun.ssm.enums.ResultEnum;
+import com.yingjun.ssm.exception.BizException;
 import com.yingjun.ssm.service.RegisterCompanyService;
 import com.yingjun.ssm.service.UserService;
 import org.slf4j.Logger;
@@ -13,6 +18,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.servlet.http.HttpSession;
 
 
 /**
@@ -61,5 +69,21 @@ public class LimitCompanyController {
 			throw new RuntimeException("LimitCompanyController.deleteUser.Exception",e);
 		}
 		return "/limitCompany/limitCompany_principal";
+	}
+
+	/**
+	 * 用户登录
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value = "/checkCompanyName",produces = {"application/json;charset=UTF-8"})
+	public BaseResult<Object> checkCompanyName(String companyName) {
+		try {
+			Gson gson = new Gson();
+			registerCompanyService.checkCompanyNameRepeat(companyName);
+		}catch (Exception e) {
+			return new BaseResult<>(false, ResultEnum.REPEATE_USER.getMsg());
+		}
+		return new BaseResult<>(true, "公司名称可以使用");
 	}
 }

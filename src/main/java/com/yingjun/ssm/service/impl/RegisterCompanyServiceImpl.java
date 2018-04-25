@@ -73,6 +73,18 @@ public class RegisterCompanyServiceImpl implements RegisterCompanyService{
 
     }
 
+    /**
+     * 检查公司名称是否重复
+     * @param companyName
+     */
+    @Override
+    public void checkCompanyNameRepeat(String companyName) {
+       int count = registerCompanyDao.checkCompanyNameRepeat(companyName);
+        if(count != 0){
+            throw new RuntimeException("公司名称重复");
+        }
+    }
+
     public RegisterCompanyDao getRegisterCompanyDao() {
         return this.registerCompanyDao;
     }

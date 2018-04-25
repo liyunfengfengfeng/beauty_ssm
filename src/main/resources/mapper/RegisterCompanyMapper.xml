@@ -365,4 +365,12 @@
         #{registerAmount},
         #{businessScope})
     </insert>
+
+    <!-- 获得一个RegisterCompany对象,以参数RegisterCompany对象中不为空的属性作为条件进行查询-->
+    <select id="checkCompanyNameRepeat" resultType="java.lang.Integer">
+        select count(*)
+        from t_register_company
+        where
+        company_name = #{companyName}
+    </select>
 </mapper>
