@@ -83,4 +83,11 @@ public interface RegisterCompanyDao{
 	 * @return
 	 */
     public RegisterCompany selectRegisterCompanyByName(@Param("companyName") String limitCompanyName);
+
+	/**
+	 * 添加个人独资公司
+	 * @param registerCompany
+	 * @return
+	 */
+    public int insertIndividualCompanyInfo(RegisterCompany registerCompany);
 }

@@ -382,4 +382,21 @@
         where
         company_name = #{companyName}
     </select>
+    <!-- 个人独资公司注册-->
+    <insert id="insertIndividualCompanyInfo" parameterType="com.yingjun.ssm.entity.RegisterCompany">
+        insert into t_register_company
+        (id,
+        company_type,
+        register_area,
+        company_name,
+        register_amount,
+        business_scope)
+        values
+        (#{id},
+        2,
+        #{registerArea},
+        #{companyName},
+        #{registerAmount},
+        #{businessScope})
+    </insert>
 </mapper>

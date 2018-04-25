@@ -78,4 +78,10 @@ public interface RegisterCompanyService{
 	 * @param companyName
 	 */
     public void checkCompanyNameRepeat(String companyName);
+
+	/**
+	 * 保存个人独资公司信息
+	 * @param registerCompany
+	 */
+    public void saveIndividualCompanyInfo(RegisterCompany registerCompany);
 }
