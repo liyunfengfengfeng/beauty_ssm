@@ -32,7 +32,7 @@
 			</div>
 			<div class="mine">
 				<a href="secretaryLogin.html">
-					<div class="mine-img"><img src="img/login.png"/></div>
+					<div class="mine-img"><img src="/resource/img/login.png"/></div>
 					<div class="mine-describe"><a href="javascript:void(0)">秘书公司登录</a></div>
 				</a>
 			</div>
@@ -63,7 +63,7 @@
 			</ul>
 			<div class="tip-pic">
 				<div class="inquiry-pic">
-					<img src="img/check1.png"/>
+					<img src="/resource/img/check1.png"/>
 				</div>
 				<div class="inquiry-info">
 					<span>您的材料已经提交预审，预计一个工作日左右审核完成， 审核通过后，请您下载APP进行电子签名。</span>

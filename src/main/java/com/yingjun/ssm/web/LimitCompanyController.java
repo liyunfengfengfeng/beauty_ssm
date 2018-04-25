@@ -69,7 +69,7 @@ public class LimitCompanyController {
 			LOG.info("接受到的用户ID是    ：" + limitCompanyEmployee);
 			registerCompanyService.saveLimitCompanyEmployeeInfo(limitCompanyEmployee,limitCompanyName);
 		} catch (Exception e) {
-			throw new RuntimeException("LimitCompanyController.deleteUser.Exception",e);
+			throw new RuntimeException("LimitCompanyController.saveLimitCompanyEmployeeInfos.Exception",e);
 		}
 		return "/limitCompany/inquiry";
 	}
