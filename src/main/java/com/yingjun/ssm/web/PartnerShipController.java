@@ -47,6 +47,6 @@ public class PartnerShipController {
 		} catch (Exception e) {
 			throw new RuntimeException("LimitCompanyController.saveLimitCompanyEmployeeInfos.Exception",e);
 		}
-		return "/limitCompany/inquiry";
+		return "/partnership/partnership_principal";
 	}
 }
