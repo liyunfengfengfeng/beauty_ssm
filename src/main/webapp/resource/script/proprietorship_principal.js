@@ -8,11 +8,11 @@ $(function(){
 				$this.next().remove();
 				$this.removeClass('noPass')
 			}
-			$this.after('<span class="passImg"><img src="img/pass.png"/></span>')
+			$this.after('<span class="passImg"><img src="/resource/img/pass.png"/></span>')
 		} else{
 			$this.next().remove();
 			$this.addClass('noPass')
-			$this.after('<span class="noPassImg-bounce"><img src="img/refuse.png"/>不能为空</span>')
+			$this.after('<span class="noPassImg-bounce"><img src="/resource/img/refuse.png"/>不能为空</span>')
 		}
 	})
 })

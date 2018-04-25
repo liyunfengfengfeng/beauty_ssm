@@ -68,11 +68,11 @@
 					<ul class="list-info">
 						<li>
 							<label class="info-title case" for="legalPersonName">姓名：</label>
-							<input type="" class="infoList-put read-only" name="legalPersonName" id="legalPersonName" readonly="readonly" value="" />
+							<input type="text" class="infoList-put needCheck write-n"  name="legalPersonName" id="legalPersonName"  value="" />
 						</li>
 						<li>
 							<label class="info-title case" for="legalPersonCard">身份证号：</label>
-							<input type="" class="infoList-put read-only" name="legalPersonCard" id="legalPersonCard" readonly="readonly" value="1422821821****2133" />
+							<input type="text" class="infoList-put needCheck write-n"  name="legalPersonCard" id="legalPersonCard" value="" />
 						</li>
 						<li>
 							<label class="info-title case" for="legalPersonMobile">移动电话：</label>
