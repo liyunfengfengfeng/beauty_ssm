@@ -4,14 +4,14 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>材料预审</title>
-		<link rel="stylesheet" type="text/css" href="css/proprietorship.css"/>
+		<link rel="stylesheet" type="text/css" href="/resource/css/proprietorship.css"/>
 		<!--其他样式-->
-		<link rel="stylesheet" type="text/css" href="css/buyService.css"/>
-		<link rel="stylesheet" type="text/css" href="css/home.css"/>
-		<link rel="stylesheet" type="text/css" href="css/news.css"/>
-		<link rel="stylesheet" type="text/css" href="css/registration.css"/>
-		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/function.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="/resource/css/buyService.css"/>
+		<link rel="stylesheet" type="text/css" href="/resource/css/home.css"/>
+		<link rel="stylesheet" type="text/css" href="/resource/css/news.css"/>
+		<link rel="stylesheet" type="text/css" href="/resource/css/registration.css"/>
+		<script src="/resource/script/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/resource/script/function.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body class="grayBg">
 		<!--首页头部-->

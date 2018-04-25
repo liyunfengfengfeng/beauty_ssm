@@ -64,6 +64,7 @@
 			</ul>
 			<div class="info-content">
 				<form action="/limitCompany/saveLimitCompanyEmployeeInfos" method="post" id="limitCompanyEmployeeForm">
+					<input type="hidden" id="limitCompanyName" name="limitCompanyName" value="${companyName}">
 					<div class="form-tit"><span>1.法人信息填写</span></div>
 					<ul class="list-info">
 						<li>

@@ -6,6 +6,8 @@ import com.yingjun.ssm.entity.RegisterCompany;
 import com.yingjun.ssm.service.RegisterCompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class RegisterCompanyServiceImpl implements RegisterCompanyService{
@@ -69,7 +71,17 @@ public class RegisterCompanyServiceImpl implements RegisterCompanyService{
      * @param limitCompanyEmployee
      */
     @Override
-    public void saveLimitCompanyEmployeeInfo(LimitCompanyEmployee limitCompanyEmployee) {
+    @Transactional(propagation = Propagation.REQUIRED,rollbackFor = RuntimeException.class)
+    public void saveLimitCompanyEmployeeInfo(LimitCompanyEmployee limitCompanyEmployee,String limitCompanyName) {
+        //查询当前公司的信息
+
+        //保存法人信息
+
+        //保存财务负责人信息
+
+        //保存股东信息
+
+        //保存董事会信息
 
     }
 

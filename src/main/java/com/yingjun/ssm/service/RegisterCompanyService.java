@@ -71,7 +71,7 @@ public interface RegisterCompanyService{
 	 */
 	public void saveLimitCompanyInfo(RegisterCompany registerCompany);
 
-	public void saveLimitCompanyEmployeeInfo(LimitCompanyEmployee limitCompanyEmployee);
+	public void saveLimitCompanyEmployeeInfo(LimitCompanyEmployee limitCompanyEmployee,String limitCompanyName);
 
 	/**
 	 * 检查公司名称是否重复

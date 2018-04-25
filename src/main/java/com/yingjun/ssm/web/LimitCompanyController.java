@@ -51,6 +51,7 @@ public class LimitCompanyController {
 		try {
 			LOG.info("接受到的用户ID是    ：" + registerCompany);
 			registerCompanyService.saveLimitCompanyInfo(registerCompany);
+			view.addAttribute("companyName",registerCompany.getCompanyName());
 		} catch (Exception e) {
 			throw new RuntimeException("LimitCompanyController.deleteUser.Exception",e);
 		}
@@ -61,14 +62,16 @@ public class LimitCompanyController {
 	 * @return
 	 */
 	@RequestMapping(value = "/saveLimitCompanyEmployeeInfos")
-	public String saveLimitCompanyEmployeeInfos(LimitCompanyEmployee limitCompanyEmployee, Model view) {
+	public String saveLimitCompanyEmployeeInfos(String limitCompanyName,
+												LimitCompanyEmployee limitCompanyEmployee,
+												Model view) {
 		try {
 			LOG.info("接受到的用户ID是    ：" + limitCompanyEmployee);
-			registerCompanyService.saveLimitCompanyEmployeeInfo(limitCompanyEmployee);
+			registerCompanyService.saveLimitCompanyEmployeeInfo(limitCompanyEmployee,limitCompanyName);
 		} catch (Exception e) {
 			throw new RuntimeException("LimitCompanyController.deleteUser.Exception",e);
 		}
-		return "/limitCompany/limitCompany_principal";
+		return "/limitCompany/inquiry";
 	}
 
 	/**
