@@ -5,6 +5,7 @@ import com.yingjun.ssm.dao.CompanyEmployeeDao;
 import com.yingjun.ssm.dao.RegisterCompanyDao;
 import com.yingjun.ssm.entity.IndividualCompanyEmployee;
 import com.yingjun.ssm.entity.LimitCompanyEmployee;
+import com.yingjun.ssm.entity.PartnerCompany;
 import com.yingjun.ssm.entity.RegisterCompany;
 import com.yingjun.ssm.service.RegisterCompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -144,6 +145,18 @@ public class RegisterCompanyServiceImpl implements RegisterCompanyService{
         //保存法人信息
         if(1 != companyEmployeeDao.saveIndividualPersonInfo(individualCompanyEmployee)){
             throw new RuntimeException("保存有限公司法人信息影响行数不唯一");
+        }
+    }
+
+    /**
+     * 保存合伙企业公司信息
+     * @param partnerCompany
+     */
+    @Override
+    public void savePartnerCompany(PartnerCompany partnerCompany) {
+        partnerCompany.setBusinessScope("提供住所服务，场所租赁，代理企业工商登记，代理企业年报申报、税务申报，代理收递各类法律文件及代理申办其他各项法律手续，商务咨询服务，互联网技术咨询服务，网站建设技术服务，会务服务及其他商务秘书服务。代理记账；会计咨询；税务咨询；经济信息咨询（依法须经批准的项目，经相关部门批准后方可开展经营活动）");
+        if(1 != registerCompanyDao.insertPartnerCompanyInfo(partnerCompany)){
+            throw new RuntimeException("添加合伙企业公司信息时影响行数不唯一");
         }
     }
 

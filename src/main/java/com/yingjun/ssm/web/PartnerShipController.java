@@ -3,6 +3,7 @@ package com.yingjun.ssm.web;
 
 import com.yingjun.ssm.entity.LimitCompanyEmployee;
 import com.yingjun.ssm.entity.PartnerCompany;
+import com.yingjun.ssm.service.RegisterCompanyService;
 import com.yingjun.ssm.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,7 +23,7 @@ public class PartnerShipController {
 
 	private final Logger LOG = LoggerFactory.getLogger(this.getClass());
 	@Autowired
-	private UserService userService;
+	private RegisterCompanyService registerCompanyService;
 	/**
 	 * 到达合伙企业注册页面
 	 * @return
@@ -41,7 +42,8 @@ public class PartnerShipController {
 												Model view) {
 		try {
 			LOG.info("接受到的用户ID是    ：" + partnerCompany);
-
+			registerCompanyService.savePartnerCompany(partnerCompany);
+			view.addAttribute("companyName",partnerCompany.getCompanyName());
 		} catch (Exception e) {
 			throw new RuntimeException("LimitCompanyController.saveLimitCompanyEmployeeInfos.Exception",e);
 		}

@@ -1,4 +1,5 @@
 package com.yingjun.ssm.dao;
+import com.yingjun.ssm.entity.PartnerCompany;
 import com.yingjun.ssm.entity.RegisterCompany;
 import org.apache.ibatis.annotations.Param;
 
@@ -90,4 +91,11 @@ public interface RegisterCompanyDao{
 	 * @return
 	 */
     public int insertIndividualCompanyInfo(RegisterCompany registerCompany);
+
+	/**
+	 * 添加合伙企业公司信息
+	 * @param partnerCompany
+	 * @return
+	 */
+    public int insertPartnerCompanyInfo(PartnerCompany partnerCompany);
 }

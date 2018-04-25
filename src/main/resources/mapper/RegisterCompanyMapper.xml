@@ -399,4 +399,23 @@
         #{registerAmount},
         #{businessScope})
     </insert>
+
+    <!-- 合伙企业公司注册-->
+    <insert id="insertPartnerCompanyInfo" parameterType="com.yingjun.ssm.entity.PartnerCompany">
+        insert into t_register_company
+        (id,
+        company_type,
+        register_area,
+        company_name,
+        register_amount,
+        business_scope
+        )
+        values
+        (#{id},
+        3,
+        #{registerArea},
+        #{companyName},
+        #{registerAmount},
+        #{businessScope})
+    </insert>
 </mapper>
