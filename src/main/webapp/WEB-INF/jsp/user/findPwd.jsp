@@ -20,7 +20,7 @@
 		<!--首页头部-->
 		<header>
 			<div class="header-content">
-				<div class="logo"><span class="logo-img">益世集群注册平台</span></div>
+				<div class="logo"><span class="logo-img">集群注册平台</span></div>
 				<div class="header-menu">
 					<ul>
 						<li class="active"><a href="/user/home">首页</a></li>

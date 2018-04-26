@@ -20,22 +20,18 @@
 		<!--首页头部-->
 		<header>
 			<div class="header-content">
-				<div class="logo"><span class="logo-img">京东益世集群注册平台</span></div>
+				<div class="logo"><span class="logo-img">集群注册平台</span></div>
 				<div class="header-menu">
 					<ul>
-						<li><a href="home.html">首页</a></li>
-						<li><a href="registration.html">工商注册</a></li>
-						<li class="active"><a href="#">个人中心</a></li>
-						<li><a href="enterprise.jsp">企业中心</a></li>
-						<li><a href="#">技术支持</a></li>
+						<li class="active"><a href="/user/home">首页</a></li>
+						<li><a href="/limitCompany/toLimitCompany">有限公司</a></li>
+						<li><a href="/individual/toIndividual">个人独资</a></li>
+						<li><a href="/partnerShip/toPartnerShip">合伙企业</a></li>
+						<li><a href="/personalCenter/toPersonalCenter">个人中心</a></li>
+						<li><a href="/enterpriseCenter/toEnterpriseCenter">企业中心</a></li>
+						<li><a href="/contactUs/connection">联系我们</a></li>
 					</ul>
 				</div>
-			</div>
-			<div class="mine">
-				<a href="secretaryLogin.html">
-					<div class="mine-img"><img src="img/login.png"/></div>
-					<div class="mine-describe"><a href="javascript:void(0)">秘书公司登录</a></div>
-				</a>
 			</div>
 		</header>
 		
