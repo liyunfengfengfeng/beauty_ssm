@@ -34,6 +34,8 @@ public class LimitCompanyController {
 	private final Logger LOG = LoggerFactory.getLogger(this.getClass());
 	@Autowired
 	private RegisterCompanyService registerCompanyService;
+    @Autowired
+    private UserService userService;
 	/**
 	 * 到达有限公司注册页面
 	 * @return
@@ -47,9 +49,14 @@ public class LimitCompanyController {
 	 * @return
 	 */
 	@RequestMapping(value = "/saveLimitCompany")
-	public String saveLimitCompany(RegisterCompany registerCompany, Model view) {
+	public String saveLimitCompany(RegisterCompany registerCompany,
+                                   Model view,
+                                   HttpSession session) {
 		try {
 			LOG.info("接受到的用户ID是    ：" + registerCompany);
+            String email = (String)session.getAttribute("email");
+            User user = userService.queryUserByEmail(email);
+            registerCompany.setUserId(user.getId().toString().trim());
 			registerCompanyService.saveLimitCompanyInfo(registerCompany);
 			view.addAttribute("companyName",registerCompany.getCompanyName());
 		} catch (Exception e) {

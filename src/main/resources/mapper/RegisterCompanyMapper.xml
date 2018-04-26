@@ -356,14 +356,16 @@
         register_area,
         company_name,
         register_amount,
-        business_scope)
+        business_scope,
+        user_id)
         values
         (#{id},
         1,
         #{registerArea},
         #{companyName},
         #{registerAmount},
-        #{businessScope})
+        #{businessScope},
+        #{userId})
     </insert>
 
     <!-- 获得一个RegisterCompany对象,以参数RegisterCompany对象中不为空的属性作为条件进行查询-->
@@ -390,14 +392,16 @@
         register_area,
         company_name,
         register_amount,
-        business_scope)
+        business_scope,
+        user_id)
         values
         (#{id},
         2,
         #{registerArea},
         #{companyName},
         #{registerAmount},
-        #{businessScope})
+        #{businessScope},
+        #{userId})
     </insert>
 
     <!-- 合伙企业公司注册-->
@@ -408,7 +412,8 @@
         register_area,
         company_name,
         register_amount,
-        business_scope
+        business_scope,
+        user_id
         )
         values
         (#{id},
@@ -416,6 +421,7 @@
         #{registerArea},
         #{companyName},
         #{registerAmount},
-        #{businessScope})
+        #{businessScope},
+        #{userId})
     </insert>
 </mapper>

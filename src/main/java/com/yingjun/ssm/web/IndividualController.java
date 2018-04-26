@@ -4,6 +4,7 @@ package com.yingjun.ssm.web;
 import com.yingjun.ssm.entity.IndividualCompanyEmployee;
 import com.yingjun.ssm.entity.LimitCompanyEmployee;
 import com.yingjun.ssm.entity.RegisterCompany;
+import com.yingjun.ssm.entity.User;
 import com.yingjun.ssm.service.RegisterCompanyService;
 import com.yingjun.ssm.service.UserService;
 import org.slf4j.Logger;
@@ -12,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpSession;
 
 
 /**
@@ -25,6 +28,8 @@ public class IndividualController {
 	private final Logger LOG = LoggerFactory.getLogger(this.getClass());
 	@Autowired
 	private RegisterCompanyService registerCompanyService;
+	@Autowired
+	private UserService userService;
 	/**
 	 * 到达个人独资注册页面
 	 * @return
@@ -39,9 +44,14 @@ public class IndividualController {
 	 * @return
 	 */
 	@RequestMapping(value = "/saveIndividualCompany")
-	public String saveLimitCompany(RegisterCompany registerCompany, Model view) {
+	public String saveLimitCompany(RegisterCompany registerCompany,
+								   Model view,
+								   HttpSession session) {
 		try {
 			LOG.info("接受到的用户ID是    ：" + registerCompany);
+			String email = (String)session.getAttribute("email");
+			User user = userService.queryUserByEmail(email);
+			registerCompany.setUserId(user.getId().toString().trim());
 			registerCompanyService.saveIndividualCompanyInfo(registerCompany);
 			view.addAttribute("companyName",registerCompany.getCompanyName());
 		} catch (Exception e) {

@@ -1,10 +1,7 @@
 package com.yingjun.ssm.web;
 
 
-import com.yingjun.ssm.entity.IndividualCompanyEmployee;
-import com.yingjun.ssm.entity.LimitCompanyEmployee;
-import com.yingjun.ssm.entity.PartnerCompany;
-import com.yingjun.ssm.entity.PartnerCompanyEmployee;
+import com.yingjun.ssm.entity.*;
 import com.yingjun.ssm.service.RegisterCompanyService;
 import com.yingjun.ssm.service.UserService;
 import org.slf4j.Logger;
@@ -13,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpSession;
 
 
 /**
@@ -26,6 +25,8 @@ public class PartnerShipController {
 	private final Logger LOG = LoggerFactory.getLogger(this.getClass());
 	@Autowired
 	private RegisterCompanyService registerCompanyService;
+	@Autowired
+	private UserService userService;
 	/**
 	 * 到达合伙企业注册页面
 	 * @return
@@ -41,9 +42,13 @@ public class PartnerShipController {
 	 */
 	@RequestMapping(value = "/savePartnerCompany")
 	public String savePartnerCompany(PartnerCompany partnerCompany,
-												Model view) {
+									 Model view,
+									 HttpSession session) {
 		try {
 			LOG.info("接受到的用户ID是    ：" + partnerCompany);
+			String email = (String)session.getAttribute("email");
+			User user = userService.queryUserByEmail(email);
+			partnerCompany.setUserId(user.getId().toString().trim());
 			registerCompanyService.savePartnerCompany(partnerCompany);
 			view.addAttribute("companyName",partnerCompany.getCompanyName());
 		} catch (Exception e) {

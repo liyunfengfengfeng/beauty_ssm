@@ -45,6 +45,12 @@ public class PartnerCompany {
      */
     private String businessScope;
 
+    /**
+     * userId 表明公司是有哪些人创建注册的
+     * @return
+     */
+    private String userId;
+
     public Long getId() {
         return id;
     }
@@ -115,6 +121,15 @@ public class PartnerCompany {
 
     public void setBusinessScope(String businessScope) {
         this.businessScope = businessScope;
+    }
+
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     @Override
