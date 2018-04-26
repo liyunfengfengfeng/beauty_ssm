@@ -1,10 +1,7 @@
 package com.yingjun.ssm.service;
 import java.util.List;
 
-import com.yingjun.ssm.entity.IndividualCompanyEmployee;
-import com.yingjun.ssm.entity.LimitCompanyEmployee;
-import com.yingjun.ssm.entity.PartnerCompany;
-import com.yingjun.ssm.entity.RegisterCompany;
+import com.yingjun.ssm.entity.*;
 import org.springframework.stereotype.Service;
 
 public interface RegisterCompanyService{
@@ -99,4 +96,11 @@ public interface RegisterCompanyService{
 	 * @param partnerCompany
 	 */
     public void savePartnerCompany(PartnerCompany partnerCompany);
+
+	/**
+	 * 保存合伙公司的人员向信息
+	 * @param partnerCompanyEmployee
+	 * @param companyName
+	 */
+    public void savePartnerCompanyEmployeeInfos(PartnerCompanyEmployee partnerCompanyEmployee, String companyName);
 }

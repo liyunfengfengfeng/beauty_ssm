@@ -57,148 +57,81 @@
 				</li>
 			</ul>
 			<div class="info-content">
-				<form action="" method="post" id="" name="">
+				<form action="/partnerShip/savePartnerCompanyEmployeeInfos" method="post" id="partnerCompanyEmployeeForm" name="partnerCompanyEmployeeForm">
 					<div class="form-tit"><span>1.执行事务合伙人信息填写</span></div>
 					<ul class="list-info">
 						<li>
-							<label class="info-title case" for="">姓名：</label>
-							<input type="" class="infoList-put write-n" name="" id="" value="王不动" />
+							<label class="info-title case" for="transactionName">姓名：</label>
+							<input type="" class="infoList-put write-n" name="transactionName" id="transactionName" value="" />
 						</li>
 						<li>
-							<label class="info-title case" for="">身份证号：</label>
-							<input type="" class="infoList-put write-n" name="" id="" value="1422821821****2133" />
+							<label class="info-title case" for="transactionIdNum">身份证号：</label>
+							<input type="" class="infoList-put write-n" name="transactionIdNum" id="transactionIdNum" value="" />
 						</li>
 						<li>
-							<label class="info-title case" for="mobile">移动电话：</label>
-							<input type="text" class="infoList-put needCheck write-n" name="mobile" id="mobile" value="18238948223" placeholder="请输入移动电话"/>
+							<label class="info-title case" for="transactionMobile">移动电话：</label>
+							<input type="text" class="infoList-put needCheck write-n" name="transactionMobile" id="transactionMobile" value="18238948223" placeholder="请输入移动电话"/>
 						</li>
 						<li>
-							<label class="info-title case" for="idAddress">身份证住址：</label>
-							<input type="text" class="infoList-put needCheck write-n" name="idAddress" id="idAddress" value="" placeholder="请输入身份证住址"/>
+							<label class="info-title case" for="transactionIdAddress">身份证住址：</label>
+							<input type="text" class="infoList-put needCheck write-n" name="transactionIdAddress" id="transactionIdAddress" value="" placeholder="请输入身份证住址"/>
 						</li>
 						<li>
-							<label class="info-title case" for="mail">电子邮箱：</label>
-							<input type="text" class="infoList-put needCheck write-n" name="mail" id="mail" value="" placeholder="请输入电子邮箱"/>
+							<label class="info-title case" for="transactionMail">电子邮箱：</label>
+							<input type="text" class="infoList-put needCheck write-n" name="transactionMail" id="transactionMail" value="" placeholder="请输入电子邮箱"/>
 						</li>
 					</ul>
 					<div class="form-tit"><span>2.委派代表人信息填写</span></div>
 					<ul class="list-info">
 						<li>
-							<label class="info-title case" for="name">姓名：</label>
-							<input type="text" class="infoList-put needCheck write-n" name="name" id="name" value="" placeholder="请输入姓名"/>
+							<label class="info-title case" for="representName">姓名：</label>
+							<input type="text" class="infoList-put needCheck write-n" name="representName" id="representName" value="" placeholder="请输入姓名"/>
 						</li>
 						<li>
-							<label class="info-title case" for="idNum">身份证号：</label>
-							<input type="text" class="infoList-put needCheck write-n" name="idNum" id="idNum" value="" placeholder="请输入身份证号码"/>
+							<label class="info-title case" for="representIdNum">身份证号：</label>
+							<input type="text" class="infoList-put needCheck write-n" name="representIdNum" id="representIdNum" value="" placeholder="请输入身份证号码"/>
 						</li>
 						<li>
-							<label class="info-title case" for="mobilePhone">电话：</label>
-							<input type="text" class="infoList-put needCheck write-n" name="mobilePhone" id="mobilePhone" value="" placeholder="请输入电话号码"/>
+							<label class="info-title case" for="representMobilePhone">电话：</label>
+							<input type="text" class="infoList-put needCheck write-n" name="representMobilePhone" id="representMobilePhone" value="" placeholder="请输入电话号码"/>
 						</li>
 						<li>
-							<label class="info-title case" for="idAddress">身份证住址：</label>
-							<input type="text" class="infoList-put needCheck write-n" name="idAddress" id="idAddress" value="" placeholder="请输入身份证住址"/>
+							<label class="info-title case" for="representIdAddress">身份证住址：</label>
+							<input type="text" class="infoList-put needCheck write-n" name="representIdAddress" id="representIdAddress" value="" placeholder="请输入身份证住址"/>
 						</li>
 						<li>
-							<label class="info-title case" for="email">电子邮箱：</label>
-							<input type="text" class="infoList-put needCheck write-n" name="email" id="email" value="" placeholder="请输入电子邮箱"/>
+							<label class="info-title case" for="representEmail">电子邮箱：</label>
+							<input type="text" class="infoList-put needCheck write-n" name="representEmail" id="representEmail" value="" placeholder="请输入电子邮箱"/>
 						</li>
 					</ul>
 					
 					<div class="form-tit"><span>3.财务负责人信息填写</span></div>
 					<ul class="list-info">
 						<li>
-							<label class="info-title case" for="name3">姓名：</label>
-							<input type="text" class="infoList-put needCheck write-n" name="name3" id="name3" value="" placeholder="请输入姓名"/>
+							<label class="info-title case" for="financeName">姓名：</label>
+							<input type="text" class="infoList-put needCheck write-n" name="financeName" id="financeName" value="" placeholder="请输入姓名"/>
 						</li>
 						<li>
-							<label class="info-title case" for="idNum3">身份证号：</label>
-							<input type="text" class="infoList-put needCheck write-n" name="idNum3" id="idNum3" value="" placeholder="请输入身份证号码"/>
+							<label class="info-title case" for="financeIdNum">身份证号：</label>
+							<input type="text" class="infoList-put needCheck write-n" name="financeIdNum" id="financeIdNum" value="" placeholder="请输入身份证号码"/>
 						</li>
 						<li>
-							<label class="info-title case" for="mobilePhone3">电话：</label>
-							<input type="text" class="infoList-put needCheck write-n" name="mobilePhone3" id="mobilePhone3" value="" placeholder="请输入电话号码"/>
+							<label class="info-title case" for="financeMobilePhone">电话：</label>
+							<input type="text" class="infoList-put needCheck write-n" name="financeMobilePhone" id="financeMobilePhone" value="" placeholder="请输入电话号码"/>
 						</li>
 						<li>
-							<label class="info-title case" for="idAddress3">身份证住址：</label>
-							<input type="text" class="infoList-put needCheck write-n" name="idAddress3" id="idAddress3" value="" placeholder="请输入身份证住址"/>
+							<label class="info-title case" for="financeIdAddress">身份证住址：</label>
+							<input type="text" class="infoList-put needCheck write-n" name="financeIdAddress" id="financeIdAddress" value="" placeholder="请输入身份证住址"/>
 						</li>
 						<li>
-							<label class="info-title case" for="email3">电子邮箱：</label>
-							<input type="text" class="infoList-put needCheck write-n" name="email3" id="email3" value="" placeholder="请输入电子邮箱"/>
+							<label class="info-title case" for="financeEmail">电子邮箱：</label>
+							<input type="text" class="infoList-put needCheck write-n" name="financeEmail" id="financeEmail" value="" placeholder="请输入电子邮箱"/>
 						</li>
 					</ul>
-					
-					<div class="form-tit"><span>4.合伙人名录及出资情况</span></div>
-					<div class="table-info">
-						<div class="margin-l-40">
-							<input checked type="radio" id="radio-1" name="radio-1-set" class="regular-radio"/>  
-							<label for="radio-1"></label>  
-							<label class="inputlabel margin-r-50" for="radio-1">一人（法人独资）公司</label> 
-							
-							<input  type="radio" id="radio-2" name="radio-1-set" class="regular-radio"/>  
-							<label for="radio-2"></label>  
-							<label class="inputlabel" for="radio-2">2个及以上股东公司</label>  
-						</div>
-						<div class="principal-button margin-t-30 mar-l-37">
-							<a href="javascript:addStockholder()">增加股东</a>
-						</div>
-						<div class="stockholder-table mar-t-10">
-							<table border="0" cellspacing="0" cellpadding="0" id="1">
-								<tr>
-									<th>股东姓名或名称</th>
-									<th>证件类型</th>
-									<th>证件号码</th>
-									<th>实缴出资数额（万元）</th>
-									<th>出资时间</th>
-									<th>认缴出资数额（万元）</th>
-									<th>认缴出资时间</th>
-									<th>出资方式</th>
-								</tr>
-								<tr>
-									<td>
-										张三
-									</td>
-									<td>身份证</td>
-									<td>123412346618944816</td>
-									<td>500</td>
-									<td>2017-10-10</td>
-									<td>100</td>
-									<td>2017-10-10</td>
-									<td>实物出资</td>
-								</tr>
-								<tr>
-									<td>**投资管理公司</td>
-									<td>营业执照</td>
-									<td>123412346618944816</td>
-									<td>500</td>
-									<td>2017-10-10</td>
-									<td>100</td>
-									<td>2017-10-10</td>
-									<td>实物出资</td>
-								</tr>
-								<tr>
-									<td><input type="text" class="this-input input-name" name="" id="" value="" /></td>
-									<td>
-										<select name="" class="this-input credentials">
-											<option value="0">身份证</option>
-											<option value="1">营业执照</option>
-										</select>
-									</td>
-									<td><input type="text" class="this-input number" name="" id="" value="" /></td>
-									<td><input type="text" class="this-input factMoney" name="" id="" value="" /></td>
-									<td><input type="text" class="this-input fundDate" name="" id="" value="" /></td>
-									<td><input type="text" class="this-input factMoney" name="" id="" value="" /></td>
-									<td><input type="text" class="this-input fundDate" name="" id="" value="" /></td>
-									<td><input type="text" class="this-input fundType" name="" id="" value="" /></td>
-								</tr>
-							</table>
-						</div>
-					</div>
 				</form>
 				<div class="btnGroup margin-t-30 margin-l-130 padding-b-47">
 					<a href="#" class="">返回</a>
-					<a href="" class="">下一步</a>
+					<a id="partnerCompanyEmployeeNext" class="">下一步</a>
 				</div>
 			</div>
 		</div>
@@ -224,3 +157,9 @@
 		</footer>
 	</body>
 </html>
+<script>
+	//提交合伙企业公司信息表单
+	$('#partnerCompanyEmployeeNext').bind("click", function(){
+		$("#partnerCompanyEmployeeForm").submit();
+	});
+</script>

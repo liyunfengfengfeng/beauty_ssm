@@ -2,6 +2,7 @@ package com.yingjun.ssm.dao;
 import com.yingjun.ssm.entity.CompanyEmployee;
 import com.yingjun.ssm.entity.IndividualCompanyEmployee;
 import com.yingjun.ssm.entity.LimitCompanyEmployee;
+import com.yingjun.ssm.entity.PartnerCompanyEmployee;
 
 import java.util.List;
 public interface CompanyEmployeeDao{
@@ -112,4 +113,25 @@ public interface CompanyEmployeeDao{
 	 * @return
 	 */
     public int saveIndividualPersonInfo(IndividualCompanyEmployee individualCompanyEmployee);
+
+	/**
+	 * 保存合伙公司执行事务合伙人信息
+	 * @param partnerCompanyEmployee
+	 * @return
+	 */
+    public int saveExecuteEmployeeInfos(PartnerCompanyEmployee partnerCompanyEmployee);
+
+	/**
+	 * 保存委派代表人信息
+	 * @param partnerCompanyEmployee
+	 * @return
+	 */
+	public int saveRepresentEmployeeInfos(PartnerCompanyEmployee partnerCompanyEmployee);
+
+	/**
+	 * 保存财务负责人信息
+	 * @param partnerCompanyEmployee
+	 * @return
+	 */
+	public int saveFinanceEmployeeInfos(PartnerCompanyEmployee partnerCompanyEmployee);
 }

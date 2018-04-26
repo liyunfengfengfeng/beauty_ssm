@@ -1,8 +1,10 @@
 package com.yingjun.ssm.web;
 
 
+import com.yingjun.ssm.entity.IndividualCompanyEmployee;
 import com.yingjun.ssm.entity.LimitCompanyEmployee;
 import com.yingjun.ssm.entity.PartnerCompany;
+import com.yingjun.ssm.entity.PartnerCompanyEmployee;
 import com.yingjun.ssm.service.RegisterCompanyService;
 import com.yingjun.ssm.service.UserService;
 import org.slf4j.Logger;
@@ -48,5 +50,21 @@ public class PartnerShipController {
 			throw new RuntimeException("LimitCompanyController.saveLimitCompanyEmployeeInfos.Exception",e);
 		}
 		return "/partnership/partnership_principal";
+	}
+	/**
+	 * 保存合伙企业公司人员信息
+	 * @return
+	 */
+	@RequestMapping(value = "/savePartnerCompanyEmployeeInfos")
+	public String savePartnerCompanyEmployeeInfos(String companyName,
+												  PartnerCompanyEmployee partnerCompanyEmployee,
+												  Model view) {
+		try {
+			LOG.info("接受到的用户ID是    ：" + partnerCompanyEmployee);
+			registerCompanyService.savePartnerCompanyEmployeeInfos(partnerCompanyEmployee,companyName);
+		} catch (Exception e) {
+			throw new RuntimeException("LimitCompanyController.saveLimitCompanyEmployeeInfos.Exception",e);
+		}
+		return "/individual/inquiry";
 	}
 }
