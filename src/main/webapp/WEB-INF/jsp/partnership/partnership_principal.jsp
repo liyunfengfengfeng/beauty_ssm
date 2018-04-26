@@ -31,6 +31,11 @@
 					</ul>
 				</div>
 			</div>
+			<div class="toLogin">
+				<div class="toLoginmine">
+					<div class="mine-img">${email}</div>
+				</div>
+			</div>
 		</header>
 		
 		<div class="proprietorship-content">

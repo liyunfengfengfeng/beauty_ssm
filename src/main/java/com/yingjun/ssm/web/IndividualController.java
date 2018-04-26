@@ -66,9 +66,12 @@ public class IndividualController {
 	@RequestMapping(value = "/saveIndividualCompanyEmployeeInfos")
 	public String saveLimitCompanyEmployeeInfos(String companyName,
 												IndividualCompanyEmployee individualCompanyEmployee,
-												Model view) {
+												Model view,
+												HttpSession session) {
 		try {
 			LOG.info("接受到的用户ID是    ：" + individualCompanyEmployee);
+			String email = (String)session.getAttribute("email");
+			view.addAttribute("email",email);
 			registerCompanyService.saveIndividualCompanyEmployeeInfo(individualCompanyEmployee,companyName);
 		} catch (Exception e) {
 			throw new RuntimeException("LimitCompanyController.saveLimitCompanyEmployeeInfos.Exception",e);

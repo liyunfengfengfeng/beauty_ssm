@@ -20,14 +20,19 @@
 				<div class="logo"><span class="logo-img">集群注册平台</span></div>
 				<div class="header-menu">
 					<ul>
-						<li class="active"><a href="/user/home">首页</a></li>
+						<li><a href="/user/home">首页</a></li>
 						<li><a href="/limitCompany/toLimitCompany">有限公司</a></li>
 						<li><a href="/individual/toIndividual">个人独资</a></li>
 						<li><a href="/partnerShip/toPartnerShip">合伙企业</a></li>
 						<li><a href="/personalCenter/toPersonalCenter">个人中心</a></li>
-						<li><a href="/enterpriseCenter/toEnterpriseCenter">企业中心</a></li>
+						<li class="active"><a href="/enterpriseCenter/toEnterpriseCenter">企业中心</a></li>
 						<li><a href="/contactUs/connection">联系我们</a></li>
 					</ul>
+				</div>
+			</div>
+			<div class="toLogin">
+				<div class="toLoginmine">
+					<div class="mine-img">${email}</div>
 				</div>
 			</div>
 		</header>
