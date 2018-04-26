@@ -91,4 +91,11 @@ public interface UserDao {
 	 * @return
 	 */
 	public List<User> selectUsersByConditionNoLimit(User user);
+
+	/**
+	 * 通过邮箱查询用户信息
+	 * @param userEmail
+	 * @return
+	 */
+    public User queryUserByEmails(String userEmail);
 }

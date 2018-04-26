@@ -154,4 +154,13 @@
             <if test="name != null and name!=''"> and t_user.name = #{name}</if>
         </where>
     </select>
+
+    <!--通过邮箱查询用户信息-->
+    <select id="queryUserByEmails" parameterType="com.yingjun.ssm.entity.User" resultType="com.yingjun.ssm.entity.User">
+        select
+        <include refid="t_user_Column" />
+        from t_user
+        where
+        t_user.email = #{email}
+    </select>
 </mapper>
