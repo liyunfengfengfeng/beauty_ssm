@@ -59,6 +59,7 @@
 			<div class="info-content">
 				<form action="/partnerShip/savePartnerCompanyEmployeeInfos" method="post" id="partnerCompanyEmployeeForm" name="partnerCompanyEmployeeForm">
 					<div class="form-tit"><span>1.执行事务合伙人信息填写</span></div>
+					<input type="hidden" name="companyName" id="companyName" value="${companyName}"/>
 					<ul class="list-info">
 						<li>
 							<label class="info-title case" for="transactionName">姓名：</label>

@@ -164,6 +164,7 @@ public class RegisterCompanyServiceImpl implements RegisterCompanyService{
      * @param companyName
      */
     @Override
+    @Transactional(propagation = Propagation.REQUIRED,rollbackFor = RuntimeException.class)
     public void savePartnerCompanyEmployeeInfos(PartnerCompanyEmployee partnerCompanyEmployee, String companyName) {
         //查询当前公司的信息
         RegisterCompany registerCompany = registerCompanyDao.selectRegisterCompanyByName(companyName);
