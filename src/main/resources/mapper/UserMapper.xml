@@ -130,7 +130,7 @@
         <include refid="t_user_Column" />
         from t_user
         where
-            t_user.email = #{email}
+            t_user.name = #{email}
     </select>
 
     <!-- 获得一个TUser对象,以参数TUser对象中不为空的属性作为条件进行查询-->
