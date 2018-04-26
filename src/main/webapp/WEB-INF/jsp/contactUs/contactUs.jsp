@@ -90,7 +90,7 @@
 							</div>
 							<div class="detail">
 								<div>王经理</div>
-								<div  class="small">Marketing@sqyishi.com</div>
+								<div  class="small">Marketing@hrbust.com</div>
 							</div>
 						</div>
 					</li>
