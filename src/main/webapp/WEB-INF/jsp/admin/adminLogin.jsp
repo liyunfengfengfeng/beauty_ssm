@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>用户登录</title>
+		<title>管理员登录</title>
 		<!--其他样式-->
 		<link rel="stylesheet" type="text/css" href="/resource/css/safety.css"/>
 		<link rel="stylesheet" type="text/css" href="/resource/css/enterpriseInfo.css"/>
