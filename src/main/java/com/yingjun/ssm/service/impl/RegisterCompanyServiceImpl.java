@@ -207,6 +207,17 @@ public class RegisterCompanyServiceImpl implements RegisterCompanyService{
         return registerCompanyDao.searchCompanysListByConditionLimit(companyName, companyType, start, end);
     }
 
+    /**
+     * 通过公司id查询公司信息
+     * @param companyId
+     * @return
+     */
+    @Override
+    public RegisterCompany queryCompanyInfoById(String companyId) {
+
+        return registerCompanyDao.queryCompanyInfoById(companyId);
+    }
+
     public RegisterCompanyDao getRegisterCompanyDao() {
         return this.registerCompanyDao;
     }

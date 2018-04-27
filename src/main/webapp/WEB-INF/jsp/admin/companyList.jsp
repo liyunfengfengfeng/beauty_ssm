@@ -67,7 +67,7 @@
                     <c:if test="${company.companyType == 3}">合伙企业</c:if>
                 </td>
                 <td>${company.registerAmount}</td>
-                <td><a href="/adminUser/seeUser?companyId=${company.id}" class="tablelink">查看</a></td>
+                <td><a href="/adminCompanyManager/seeCompany?companyId=${company.id}" class="tablelink">查看</a><a href="/adminUser/auditCompany?companyId=${company.id}" class="tablelink">审核</a></td>
             </tr>
         </c:forEach>
         </tbody>

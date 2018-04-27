@@ -45,7 +45,7 @@ public class AdminCompanyManagerController {
 	}
 
 	/**
-	 * 用户登录
+	 * 根据条件查询公司信息
 	 * @return
 	 */
 	@RequestMapping(value = "/list")
@@ -78,5 +78,41 @@ public class AdminCompanyManagerController {
 			throw new RuntimeException("依据条件查询公司信息出现的异常");
 		}
 		return "/admin/companyList";
+	}
+	/**
+	 * 查询公司的详情信息
+	 */
+	@RequestMapping(value = "/seeCompany")
+	public String seeCompany(@RequestParam String companyId,
+					   Model view) {
+		try {
+			LOG.info("接受到的数据是    ：" + companyId);
+//			根据公司id查询公司信息
+			RegisterCompany registerCompany = registerCompanyService.queryCompanyInfoById(companyId);
+			switch (registerCompany.getCompanyType()){
+				//有限
+				case 1:
+
+
+					view.addAttribute("registerCompany",registerCompany);
+					break;
+				case 2:
+					//个人独资
+
+					view.addAttribute("registerCompany",registerCompany);
+					break;
+				case 3:
+					//合伙企业
+
+					view.addAttribute("registerCompany",registerCompany);
+					break;
+				default:
+					LOG.info("查询公司信息，公司类型不存在");
+					break;
+			}
+		} catch (Exception e) {
+			throw new RuntimeException("AdminCompanyManagerController.seeCompany.Exception",e);
+		}
+		return "/adminCompany/individualDetail";
 	}
 }

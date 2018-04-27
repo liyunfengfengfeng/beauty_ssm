@@ -120,4 +120,11 @@ public interface RegisterCompanyDao{
 																	@Param("companyType") Integer companyType,
 																	@Param("start") int start,
 																	@Param("end") int end);
+
+	/**
+	 * 通过公司id查询公司信息
+	 * @param companyId
+	 * @return
+	 */
+    public RegisterCompany queryCompanyInfoById(@Param("companyId") String companyId);
 }

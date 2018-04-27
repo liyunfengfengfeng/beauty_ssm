@@ -121,4 +121,11 @@ public interface RegisterCompanyService{
 	 * @return
 	 */
 	public List<RegisterCompany> searchCompanysListByConditionLimit(String companyName, Integer companyType, int start, int end);
+
+	/**
+	 * 通过公司id查询公司信息
+	 * @param companyId
+	 * @return
+	 */
+	public RegisterCompany queryCompanyInfoById(String companyId);
 }
