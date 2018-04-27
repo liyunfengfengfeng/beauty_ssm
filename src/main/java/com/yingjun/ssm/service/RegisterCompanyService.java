@@ -128,4 +128,11 @@ public interface RegisterCompanyService{
 	 * @return
 	 */
 	public RegisterCompany queryCompanyInfoById(String companyId);
+
+	/**
+	 * 通过公司id查询出员工信息
+	 * @param companyId
+	 * @return
+	 */
+    public List<LimitCompanyEmployee> queryCompanyEmployeesInfoByCompanyId(String companyId);
 }

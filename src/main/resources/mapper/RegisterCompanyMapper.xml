@@ -461,4 +461,21 @@
        where
        t_register_company.company_id = #{companyId}
     </select>
+
+    <!--通过公司id查询有限公司员工信息 -->
+    <select id="queryLimitCompanyEmployeeInfoByCompanyId" resultType="com.yingjun.ssm.entity.CompanyEmployeeAudit">
+        select
+        name as id,
+        company_type as companyType,
+        identity_id as registerAmount,
+        address as registerAmount,
+        real_pay as registerAmount,
+        confirm_pay as registerAmount,
+        pay_way as registerAmount,
+        phone_number as companyName,
+        status as status
+        from t_company_employee
+        where
+        t_company_employee.company_id = #{companyId}
+    </select>
 </mapper>

@@ -1,4 +1,5 @@
 package com.yingjun.ssm.dao;
+import com.yingjun.ssm.entity.LimitCompanyEmployee;
 import com.yingjun.ssm.entity.PartnerCompany;
 import com.yingjun.ssm.entity.RegisterCompany;
 import org.apache.ibatis.annotations.Param;
@@ -127,4 +128,11 @@ public interface RegisterCompanyDao{
 	 * @return
 	 */
     public RegisterCompany queryCompanyInfoById(@Param("companyId") String companyId);
+
+	/**
+	 * 通过公司id查询查询有限公司的员工信息
+	 * @param companyId
+	 * @return
+	 */
+	public List<LimitCompanyEmployee> queryLimitCompanyEmployeeInfoByCompanyId(String companyId);
 }

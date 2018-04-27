@@ -218,6 +218,16 @@ public class RegisterCompanyServiceImpl implements RegisterCompanyService{
         return registerCompanyDao.queryCompanyInfoById(companyId);
     }
 
+    /**
+     * 通过公司id查询出有限公司的员工信息
+     * @param companyId
+     * @return
+     */
+    @Override
+    public List<LimitCompanyEmployee> queryCompanyEmployeesInfoByCompanyId(String companyId) {
+        return registerCompanyDao.queryLimitCompanyEmployeeInfoByCompanyId(companyId);
+    }
+
     public RegisterCompanyDao getRegisterCompanyDao() {
         return this.registerCompanyDao;
     }

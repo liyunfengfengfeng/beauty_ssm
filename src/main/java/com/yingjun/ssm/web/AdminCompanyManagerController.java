@@ -2,6 +2,7 @@ package com.yingjun.ssm.web;
 
 
 import com.yingjun.ssm.dto.BaseResult;
+import com.yingjun.ssm.entity.LimitCompanyEmployee;
 import com.yingjun.ssm.entity.RegisterCompany;
 import com.yingjun.ssm.entity.TOpreatorUser;
 import com.yingjun.ssm.entity.User;
@@ -93,7 +94,8 @@ public class AdminCompanyManagerController {
 				//有限
 				case 1:
 
-
+					//根据公司id查询出员工信息
+					List<LimitCompanyEmployee> limitCompanyEmployees = registerCompanyService.queryCompanyEmployeesInfoByCompanyId(companyId);
 					view.addAttribute("registerCompany",registerCompany);
 					break;
 				case 2:
