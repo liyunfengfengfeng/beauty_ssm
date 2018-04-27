@@ -103,4 +103,22 @@ public interface RegisterCompanyService{
 	 * @param companyName
 	 */
     public void savePartnerCompanyEmployeeInfos(PartnerCompanyEmployee partnerCompanyEmployee, String companyName);
+
+	/**
+	 * 通过条件查询公司信息
+	 * @param companyName
+	 * @param companyType
+	 * @return
+	 */
+    public List<RegisterCompany> searchCompanysListByCondition(String companyName, Integer companyType);
+
+	/**
+	 * 通过条件查询公司信息 并加入分页信息
+	 * @param companyName
+	 * @param companyType
+	 * @param start
+	 * @param end
+	 * @return
+	 */
+	public List<RegisterCompany> searchCompanysListByConditionLimit(String companyName, Integer companyType, int start, int end);
 }

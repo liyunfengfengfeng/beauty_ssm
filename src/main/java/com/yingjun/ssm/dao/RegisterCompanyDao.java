@@ -98,4 +98,26 @@ public interface RegisterCompanyDao{
 	 * @return
 	 */
     public int insertPartnerCompanyInfo(PartnerCompany partnerCompany);
+
+	/**
+	 * 通过公司名称 公司类型查询公司信息
+	 * @param companyName
+	 * @param companyType
+	 * @return
+	 */
+    public List<RegisterCompany> searchCompanysListByCondition(@Param("companyName") String companyName,
+															   @Param("companyType") Integer companyType);
+
+	/**
+	 * 通过条件查询公司信息 并加入分页信息
+	 * @param companyName
+	 * @param companyType
+	 * @param start
+	 * @param end
+	 * @return
+	 */
+	public List<RegisterCompany> searchCompanysListByConditionLimit(@Param("companyName") String companyName,
+																	@Param("companyType") Integer companyType,
+																	@Param("start") int start,
+																	@Param("end") int end);
 }

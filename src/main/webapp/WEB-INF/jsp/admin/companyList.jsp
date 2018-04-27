@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>无标题文档</title>
+    <title>公司列表</title>
     <link href="/resource/css/style.css" rel="stylesheet" type="text/css"/>
     <%--<link href="/resource/js/3rd/select/select.css" rel="stylesheet" type="text/css"/>--%>
     <script type="text/javascript" src="/resource/js/kkpaper/kkpager.min.js"></script>
@@ -19,23 +19,26 @@
 
 
 <div class="rightinfo">
-    <form action="/adminUser/list" method="post" id="queryForm">
+    <form action="/adminCompanyManager/list" method="post" id="queryForm">
     <ul class="seachform">
         <li>
-            <label>姓名</label>
-            <input name="name" type="text" class="scinput"/>
+           公司名称
+            <input name="companyName" id="companyName" type="text" class="scinput"/>
         </li>
         <li>
-            <label>邮箱</label>
-            <input name="email" type="text" class="scinput"/>
+            公司类型
+            <div>
+                <select name="companyType" id="companyType">
+                    <option value="0">全部</option>
+                    <option value="1">有限公司</option>
+                    <option value="2">个人独资公司</option>
+                    <option value="3">合伙企业公司</option>
+                </select>
+            </div>
         </li>
         <li>
             <label>&nbsp;</label>
             <input name="adminQueryButton" type="submit" id="adminQueryButton" class="scbtn" value="查询"/>
-        </li>
-        <li>
-            <label>&nbsp;</label>
-            <input name="adminAddButton" type="button" id="adminAddButton" class="scbtn" value="新增"/>
         </li>
     </ul>
     </form>
@@ -46,19 +49,21 @@
             <tr>
                 <th><input name="" type="checkbox" value="" checked="checked"/></th>
                 <th>编号<i class="sort"><img src="/resource/images/px.png"/></i></th>
-                <th>姓名</th>
-                <th>邮箱</th>
+                <th>公司名称</th>
+                <th>企业类型</th>
+                <th>注册资金</th>
                 <th>操作</th>
             </tr>
         </thead>
         <tbody>
-        <c:forEach items="${userList}" var="user">
+        <c:forEach items="${companyList}" var="company">
             <tr>
                 <td><input name="" type="checkbox" value=""/></td>
-                <td>${user.id}</td>
-                <td>${user.name}</td>
-                <td>${user.email}</td>
-                <td><a href="/adminUser/seeUser?userEmail=${user.email}" class="tablelink">查看</a> <a onclick="deleteUser(${user.id});" class="tablelink"> 删除</a></td>
+                <td>${company.id}</td>
+                <td>${company.companyName}</td>
+                <td>${company.companyType}</td>
+                <td>${company.registerAmount}</td>
+                <td><a href="/adminUser/seeUser?companyId=${company.id}" class="tablelink">查看</a></td>
             </tr>
         </c:forEach>
         </tbody>
@@ -96,14 +101,4 @@
             }
         });
     });
-//    到达新增用户页面
-    $('#adminAddButton').bind("click", function(){
-        window.location.href = "/adminUser/toAddUser";
-    });
-//    删除用户信息
-    function deleteUser(userId) {
-        if(confirm("确定要删除么？")){
-            window.location.href = "/adminUser/deleteUser?userId="+userId;
-        }
-    }
 </script>
