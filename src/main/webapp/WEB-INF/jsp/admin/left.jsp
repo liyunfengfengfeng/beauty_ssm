@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>无标题文档</title>
+    <title>菜单列表</title>
     <link href="/resource/css/style.css" rel="stylesheet" type="text/css"/>
     <link href="/resource/css/font/iconfont.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="/resource/js/jquery/jquery.1.11.2.min.js"></script>
