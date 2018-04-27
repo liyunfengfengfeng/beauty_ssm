@@ -61,7 +61,11 @@
                 <td><input name="" type="checkbox" value=""/></td>
                 <td>${company.id}</td>
                 <td>${company.companyName}</td>
-                <td>${company.companyType}</td>
+                <td>
+                    <c:if test="${company.companyType == 1}">有限公司</c:if>
+                    <c:if test="${company.companyType == 2}">个人独资</c:if>
+                    <c:if test="${company.companyType == 3}">合伙企业</c:if>
+                </td>
                 <td>${company.registerAmount}</td>
                 <td><a href="/adminUser/seeUser?companyId=${company.id}" class="tablelink">查看</a></td>
             </tr>
