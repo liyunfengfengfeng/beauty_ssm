@@ -55,7 +55,7 @@
         </div>
         <ul class="menuson">
             <li><a href="/adminUser/toUserOperate" target="rightFrame">用户管理</a></li>
-            <li><a href="searchList.jsp" target="rightFrame">带搜索栏</a></li>
+            <li><a href="/adminCompanyManager/toCompanyManager" target="rightFrame">公司管理</a></li>
             <li><a href="imgtable.jsp" target="rightFrame">图片列表</a></li>
             <li><a href="imglist.jsp" target="rightFrame">图片网格</a></li>
             <li><a href="imglist1.jsp" target="rightFrame">图片自定义</a></li>
