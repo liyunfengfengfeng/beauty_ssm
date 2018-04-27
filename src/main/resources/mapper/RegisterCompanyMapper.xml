@@ -451,7 +451,7 @@
     </select>
 
     <!--通过公司id查询公司信息 -->
-    <select id="searchCompanysListByConditionLimit" resultType="com.yingjun.ssm.entity.RegisterCompany">
+    <select id="queryCompanyInfoById" resultType="com.yingjun.ssm.entity.RegisterCompany">
         select
         id as id,
         company_type as companyType,
