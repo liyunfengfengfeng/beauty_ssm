@@ -97,7 +97,8 @@ public class AdminCompanyManagerController {
 					//根据公司id查询出员工信息
 					List<LimitCompanyEmployee> limitCompanyEmployees = registerCompanyService.queryCompanyEmployeesInfoByCompanyId(companyId);
 					view.addAttribute("registerCompany",registerCompany);
-					break;
+					view.addAttribute("limitCompanyEmployees",limitCompanyEmployees);
+					return "/adminCompany/limitCompanyDetail";
 				case 2:
 					//个人独资
 

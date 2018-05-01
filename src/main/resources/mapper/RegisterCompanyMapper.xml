@@ -459,20 +459,19 @@
         company_name as companyName
         from t_register_company
        where
-       t_register_company.company_id = #{companyId}
+       t_register_company.id = #{companyId}
     </select>
 
     <!--通过公司id查询有限公司员工信息 -->
     <select id="queryLimitCompanyEmployeeInfoByCompanyId" resultType="com.yingjun.ssm.entity.CompanyEmployeeAudit">
         select
         name as id,
-        company_type as companyType,
-        identity_id as registerAmount,
-        address as registerAmount,
-        real_pay as registerAmount,
-        confirm_pay as registerAmount,
-        pay_way as registerAmount,
-        phone_number as companyName,
+        identity_id as identityId,
+        address as address,
+        real_pay as realPay,
+        confirm_pay as confirmPay,
+        pay_way as payWay,
+        phone_number as phoneNumber,
         status as status
         from t_company_employee
         where

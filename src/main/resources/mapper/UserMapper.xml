@@ -163,4 +163,13 @@
         where
         t_user.email = #{email}
     </select>
+
+    <!--通过用户名称查询用户信息-->
+    <select id="queryUserByUserName" parameterType="com.yingjun.ssm.entity.User" resultType="com.yingjun.ssm.entity.User">
+        select
+        <include refid="t_user_Column" />
+        from t_user
+        where
+        t_user.name = #{name}
+    </select>
 </mapper>

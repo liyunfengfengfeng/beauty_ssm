@@ -54,6 +54,7 @@ public class LimitCompanyController {
                                    HttpSession session) {
 		try {
 			LOG.info("接受到的用户ID是    ：" + registerCompany);
+			//email里的值是用户名
             String email = (String)session.getAttribute("email");
             User user = userService.queryUserByEmail(email);
             registerCompany.setUserId(user.getId().toString().trim());

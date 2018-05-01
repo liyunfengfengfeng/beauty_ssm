@@ -136,7 +136,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public User queryUserByEmail(String email){
-        return userDao.queryUserByEmail(email);
+        return userDao.queryUserByUserName(email);
     }
 
     /**

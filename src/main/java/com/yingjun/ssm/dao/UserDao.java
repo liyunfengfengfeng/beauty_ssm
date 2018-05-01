@@ -1,5 +1,7 @@
 package com.yingjun.ssm.dao;
 import com.yingjun.ssm.entity.User;
+import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
 /**
  * @author liyunfeng
@@ -98,4 +100,11 @@ public interface UserDao {
 	 * @return
 	 */
     public User queryUserByEmails(String userEmail);
+
+	/**
+	 * 通过用户名称查询用户信息
+	 * @param name
+	 * @return
+	 */
+	public User queryUserByUserName(@Param("name") String name);
 }
