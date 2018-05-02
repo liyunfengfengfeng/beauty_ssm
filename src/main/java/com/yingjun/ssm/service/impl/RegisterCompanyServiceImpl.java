@@ -131,7 +131,7 @@ public class RegisterCompanyServiceImpl implements RegisterCompanyService{
     }
 
     /**
-     * 保存个人独资公司的人员信息
+     * 保存个人独资公司的人员信息  只有法人
      * @param individualCompanyEmployee
      * @param companyName
      */

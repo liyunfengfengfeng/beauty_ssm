@@ -276,14 +276,16 @@
         address,
         name,
         identity_id,
-        phone_number)
+        phone_number,
+        employee_type)
         values
         (#{companyId},
         #{legalPersonMail},
         #{legalPersonAddress},
         #{legalPersonName},
         #{legalPersonCard},
-        #{legalPersonMobile})
+        #{legalPersonMobile},
+        1)
     </insert>
 
     <!-- 有限公司保存财务负责人信息 -->
@@ -294,13 +296,15 @@
         name,
         identity_id,
         phone_number,
-        email)
+        email,
+        employee_type)
         values
         (#{companyId},
         #{financePersonName},
         #{financePersonIdNum},
         #{financePersonMobilePhone},
-        #{financePersonEmail})
+        #{financePersonEmail},
+        2)
     </insert>
 
     <!-- 有限公司保存股东信息 -->
@@ -313,7 +317,8 @@
         identity_id,
         real_pay,
         confirm_pay,
-        pay_way)
+        pay_way,
+        employee_type)
         values
         (#{companyId},
         #{gdName},
@@ -321,7 +326,8 @@
         #{gdCardNum},
         #{gdRealPay},
         #{gdConfirmPay},
-        #{gdPayWay}
+        #{gdPayWay},
+        3
         )
     </insert>
     <!-- 有限公司保存经理信息 -->
@@ -331,13 +337,15 @@
         company_id,
         name,
         identity_type,
-        identity_id
+        identity_id,
+        employee_type
         )
         values
         (#{companyId},
         #{managerName},
         #{managerCardType},
-        #{managerIdNum}
+        #{managerIdNum},
+        7
         )
     </insert>
     <!-- 有限公司保存董事信息 -->
@@ -347,13 +355,15 @@
         company_id,
         name,
         identity_type,
-        identity_id
+        identity_id,
+        employee_type
         )
         values
         (#{companyId},
         #{dsName},
         #{dsCardType},
-        #{dsIdNum}
+        #{dsIdNum},
+        8
         )
     </insert>
 
@@ -364,17 +374,19 @@
         company_id,
         name,
         identity_type,
-        identity_id
+        identity_id,
+        employee_type
         )
         values
         (#{companyId},
         #{jsName},
         #{jsCardType},
-        #{jsIdNum}
+        #{jsIdNum},
+        9
         )
     </insert>
 
-    <!-- 个人独资公司保存职员信息 -->
+    <!-- 个人独资公司保存职员信息  法人信息 -->
     <insert id="saveIndividualPersonInfo" parameterType="com.yingjun.ssm.entity.IndividualCompanyEmployee">
         insert into t_company_employee
         (
@@ -383,14 +395,16 @@
         address,
         name,
         identity_id,
-        phone_number)
+        phone_number,
+        employee_type)
         values
         (#{companyId},
         #{legalMail},
         #{legalIdAddress},
         #{legalName},
         #{legalIdNum},
-        #{legalMobile})
+        #{legalMobile},
+        1)
     </insert>
 
     <!-- 合伙企业公司保存执行事务合伙人信息 -->
@@ -402,14 +416,16 @@
         address,
         name,
         identity_id,
-        phone_number)
+        phone_number,
+        employee_type)
         values
         (#{companyId},
         #{transactionMail},
         #{transactionIdAddress},
         #{transactionName},
         #{transactionIdNum},
-        #{transactionMobile})
+        #{transactionMobile},
+        5)
     </insert>
 
     <!-- 合伙企业公司保存执行委派代表人信息 -->
@@ -421,14 +437,16 @@
         address,
         name,
         identity_id,
-        phone_number)
+        phone_number,
+        employee_type)
         values
         (#{companyId},
         #{representEmail},
         #{representIdAddress},
         #{representName},
         #{representIdNum},
-        #{representMobilePhone})
+        #{representMobilePhone},
+        6)
     </insert>
 
     <!-- 合伙企业公司保存财务负责人信息 -->
@@ -440,13 +458,15 @@
         address,
         name,
         identity_id,
-        phone_number)
+        phone_number,
+        employee_type)
         values
         (#{companyId},
         #{financeEmail},
         #{financeIdAddress},
         #{financeName},
         #{financeIdNum},
-        #{financeMobilePhone})
+        #{financeMobilePhone},
+        2)
     </insert>
 </mapper>

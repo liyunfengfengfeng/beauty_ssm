@@ -14,7 +14,10 @@ public enum CompanyEmployeeTypeEnum {
 	GUDONGCHUZIREN(3, "股东及出资人"),
 	DONGSHIHUI(4, "董事会"),
 	ZHIXINGSHIWUHEHUOREN(5, "执行事务合伙人"),
-	WEIPAIDAIBIAOFUZEREN(6, "委派代表负责人");
+	WEIPAIDAIBIAOFUZEREN(6, "委派代表负责人"),
+	JINGLI(7, "经理"),
+	DONGSHI(8, "董事"),
+	JIANSHI(9, "监事");
 
 	private int state;
 
