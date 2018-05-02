@@ -157,4 +157,13 @@ public class AdminCompanyManagerController {
 		}
 		return "/adminCompany/individualDetail";
 	}
+
+
+
+
+
+
+
+
+
 }

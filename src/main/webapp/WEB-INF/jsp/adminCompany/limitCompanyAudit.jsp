@@ -83,9 +83,9 @@
     </c:forEach>
             <li style="width: 100%">
                 <label>&nbsp;</label>
-                <input name="" type="button" class="btn" onClick="doBack();" value="通过"/>
+                <input name="" type="button" class="btn" onClick="passBtn('${registerCompany.companyName}');" value="通过"/>
                 <label>&nbsp;</label>
-                <input name="" type="button" class="btn" onClick="doBack();" value="驳回"/>
+                <input name="" type="button" class="btn" onClick="rejectBtn('${registerCompany.companyName}');" value="驳回"/>
                 <label>&nbsp;</label>
                 <input name="" type="button" class="btn" onClick="doBack();" value="返回"/>
             </li>
@@ -104,6 +104,14 @@
     //返回上一层
     function doBack() {
         window.location.href="/adminCompanyManager/toCompanyManager";
+    }
+    //审核通过
+    function passBtn(companyName) {
+        alert(companyName);
+    }
+    //审核驳回
+    function rejectBtn(companyName) {
+        alert(companyName);
     }
 </script>
 
