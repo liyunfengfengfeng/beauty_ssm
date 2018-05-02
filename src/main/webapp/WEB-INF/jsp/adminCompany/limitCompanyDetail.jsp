@@ -83,7 +83,7 @@
     </c:forEach>
             <li style="width: 100%">
                 <label>&nbsp;</label>
-                <input name="" type="submit" class="btn" onClick="javascript :history.back(-1);" value="返回"/>
+                <input name="" type="button" class="btn" onClick="doBack();" value="返回"/>
             </li>
         </ul>
     </form>
@@ -96,6 +96,11 @@
             width: 100
         });
     });
+
+    //返回上一层
+    function doBack() {
+        window.location.href="/adminCompanyManager/toCompanyManager";
+    }
 </script>
 
 </body>
