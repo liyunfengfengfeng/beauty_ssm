@@ -118,4 +118,43 @@ public class AdminCompanyManagerController {
 		}
 		return "/adminCompany/individualDetail";
 	}
+
+	/**
+	 * 审核公司的信息
+	 */
+	@RequestMapping(value = "/auditCompany")
+	public String auditCompany(@RequestParam String companyId,
+							   Model view) {
+		try {
+			LOG.info("接受到的数据是    ：" + companyId);
+//			根据公司id查询公司信息
+			RegisterCompany registerCompany = registerCompanyService.queryCompanyInfoById(companyId);
+			switch (registerCompany.getCompanyType()){
+				//有限
+				case 1:
+
+					//根据公司id查询出员工信息
+					List<LimitCompanyEmployee> limitCompanyEmployees = registerCompanyService.queryCompanyEmployeesInfoByCompanyId(companyId);
+					view.addAttribute("registerCompany",registerCompany);
+					view.addAttribute("limitCompanyEmployees",limitCompanyEmployees);
+					return "/adminCompany/limitCompanyAudit";
+				case 2:
+					//个人独资
+
+					view.addAttribute("registerCompany",registerCompany);
+					break;
+				case 3:
+					//合伙企业
+
+					view.addAttribute("registerCompany",registerCompany);
+					break;
+				default:
+					LOG.info("查询公司信息，公司类型不存在");
+					break;
+			}
+		} catch (Exception e) {
+			throw new RuntimeException("AdminCompanyManagerController.seeCompany.Exception",e);
+		}
+		return "/adminCompany/individualDetail";
+	}
 }
