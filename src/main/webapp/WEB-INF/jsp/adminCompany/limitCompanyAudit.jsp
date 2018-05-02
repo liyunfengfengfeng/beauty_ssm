@@ -108,10 +108,35 @@
     //审核通过
     function passBtn(companyName) {
         alert(companyName);
+        $.ajax({
+            type: 'POST',
+            data: {"companyName":companyName},
+            dataType: "json",
+            url: '/adminCompanyManager/companyPass',
+            success: function (data) {
+                if(data.success){
+                    return;
+                }else{
+                    alert(data.error);
+                }
+            }
+        });
     }
     //审核驳回
     function rejectBtn(companyName) {
-        alert(companyName);
+        $.ajax({
+            type: 'POST',
+            data: {"companyName":companyName},
+            dataType: "json",
+            url: '/adminCompanyManager/companyReject',
+            success: function (data) {
+                if(data.success){
+                    return;
+                }else{
+                    alert(data.error);
+                }
+            }
+        });
     }
 </script>
 

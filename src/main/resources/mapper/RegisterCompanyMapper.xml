@@ -478,4 +478,21 @@
         where
         t_company_employee.company_id = #{companyId}
     </select>
+
+
+
+
+    <!-- 审核公司 更新状态为通过状态-->
+    <update id="companyPass">
+        update t_register_company set
+          approve_status = 1
+        where company_name = #{companyName}
+    </update>
+
+    <!-- 审核公司 更新状态为通过状态-->
+    <update id="companyReject">
+        update t_register_company set
+        approve_status = 2
+        where company_name = #{companyName}
+    </update>
 </mapper>

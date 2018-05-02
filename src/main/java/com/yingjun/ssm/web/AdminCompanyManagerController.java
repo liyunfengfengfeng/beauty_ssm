@@ -159,10 +159,44 @@ public class AdminCompanyManagerController {
 	}
 
 
+	/**
+	 * 审核公司通过
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value = "/companyPass",produces = {"application/json;charset=UTF-8"})
+	public BaseResult<Object> companyPass(String companyName,
+										HttpSession session) {
+		try {
+			registerCompanyService.companyPass(companyName);
+
+		} catch (BizException e) {
+			return new BaseResult<>(false, e.getMessage());
+		} catch (Exception e) {
+			return new BaseResult<>(false, ResultEnum.OPERATION_FAIL.getMsg());
+		}
+		return new BaseResult<>(true, "登陆成功");
+	}
 
 
+	/**
+	 * 审核公司驳回
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value = "/companyReject",produces = {"application/json;charset=UTF-8"})
+	public BaseResult<Object> companyReject(String companyName,
+										  HttpSession session) {
+		try {
+			registerCompanyService.companyReject(companyName);
 
-
+		} catch (BizException e) {
+			return new BaseResult<>(false, e.getMessage());
+		} catch (Exception e) {
+			return new BaseResult<>(false, ResultEnum.OPERATION_FAIL.getMsg());
+		}
+		return new BaseResult<>(true, "登陆成功");
+	}
 
 
 

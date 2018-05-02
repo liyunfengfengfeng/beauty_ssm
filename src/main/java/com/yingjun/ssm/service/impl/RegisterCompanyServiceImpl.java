@@ -228,6 +228,28 @@ public class RegisterCompanyServiceImpl implements RegisterCompanyService{
         return registerCompanyDao.queryLimitCompanyEmployeeInfoByCompanyId(companyId);
     }
 
+    /**
+     * 审核公司通过
+     * @param companyName
+     */
+    @Override
+    public void companyPass(String companyName) {
+        if(1 != registerCompanyDao.companyPass(companyName)){
+            throw new RuntimeException("审核公司通过影响行数不唯一");
+        }
+    }
+
+    /**
+     * 公司审核驳回
+     * @param companyName
+     */
+    @Override
+    public void companyReject(String companyName) {
+        if(1 != registerCompanyDao.companyReject(companyName)){
+            throw new RuntimeException("审核公司通过影响行数不唯一");
+        }
+    }
+
     public RegisterCompanyDao getRegisterCompanyDao() {
         return this.registerCompanyDao;
     }

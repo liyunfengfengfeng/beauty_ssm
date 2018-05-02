@@ -135,4 +135,16 @@ public interface RegisterCompanyService{
 	 * @return
 	 */
     public List<LimitCompanyEmployee> queryCompanyEmployeesInfoByCompanyId(String companyId);
+
+	/**
+	 * 公司审核通过
+	 * @param companyName
+	 */
+    public void companyPass(String companyName);
+
+	/**
+	 * 公司审核驳回
+	 * @param companyName
+	 */
+    public void companyReject(String companyName);
 }

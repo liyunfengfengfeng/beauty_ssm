@@ -23,7 +23,11 @@ public enum ResultEnum {
 	INVALID_USER(1001001, "无效用户"),
 	USER_REGISTER_SUCCESS(1001002, "注册成功"),
 	//工商注册
-	REPEATE_USER(10123456, "用户名重复");
+	REPEATE_USER(10123456, "用户名重复"),
+
+	//公司在线审核
+	OPERATION_SUCCESS(9538236, "操作成功"),
+	OPERATION_FAIL(4566585, "操作失败");
 
 	private int state;
 

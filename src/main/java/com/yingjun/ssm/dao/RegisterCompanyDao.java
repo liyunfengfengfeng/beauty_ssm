@@ -135,4 +135,18 @@ public interface RegisterCompanyDao{
 	 * @return
 	 */
 	public List<LimitCompanyEmployee> queryLimitCompanyEmployeeInfoByCompanyId(String companyId);
+
+	/**
+	 * 审核公司通过
+	 * @param companyName
+	 * @return
+	 */
+    public int companyPass(@Param("companyName") String companyName);
+
+	/**
+	 * 审核公司驳回
+	 * @param companyName
+	 * @return
+	 */
+	public int companyReject(@Param("companyName") String companyName);
 }
