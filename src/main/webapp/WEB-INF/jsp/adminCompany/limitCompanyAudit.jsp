@@ -84,12 +84,8 @@
             <li style="width: 100%">
                 <label>&nbsp;</label>
                 <input name="" type="button" class="btn" onClick="doBack();" value="通过"/>
-            </li>
-            <li style="width: 100%">
                 <label>&nbsp;</label>
                 <input name="" type="button" class="btn" onClick="doBack();" value="驳回"/>
-            </li>
-            <li style="width: 100%">
                 <label>&nbsp;</label>
                 <input name="" type="button" class="btn" onClick="doBack();" value="返回"/>
             </li>
