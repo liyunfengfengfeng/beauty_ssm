@@ -47,6 +47,9 @@ public class PartnerShipController {
 		try {
 			LOG.info("接受到的用户ID是    ：" + partnerCompany);
 			String email = (String)session.getAttribute("email");
+			if(email == null){
+				return "/user/userLogin";
+			}
 			User user = userService.queryUserByEmail(email);
 			partnerCompany.setUserId(user.getId().toString().trim());
 			registerCompanyService.savePartnerCompany(partnerCompany);
@@ -63,9 +66,14 @@ public class PartnerShipController {
 	@RequestMapping(value = "/savePartnerCompanyEmployeeInfos")
 	public String savePartnerCompanyEmployeeInfos(String companyName,
 												  PartnerCompanyEmployee partnerCompanyEmployee,
-												  Model view) {
+												  Model view,
+												  HttpSession session) {
 		try {
 			LOG.info("接受到的用户ID是    ：" + partnerCompanyEmployee);
+			String email = (String)session.getAttribute("email");
+			if(email == null){
+				return "/user/userLogin";
+			}
 			registerCompanyService.savePartnerCompanyEmployeeInfos(partnerCompanyEmployee,companyName);
 		} catch (Exception e) {
 			throw new RuntimeException("LimitCompanyController.saveLimitCompanyEmployeeInfos.Exception",e);

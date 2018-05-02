@@ -55,7 +55,11 @@ public class LimitCompanyController {
 		try {
 			LOG.info("接受到的用户ID是    ：" + registerCompany);
 			//email里的值是用户名
-            String email = (String)session.getAttribute("email");
+
+			String email = (String)session.getAttribute("email");
+			if(email == null){
+				return "/user/userLogin";
+			}
             User user = userService.queryUserByEmail(email);
             registerCompany.setUserId(user.getId().toString().trim());
 			registerCompanyService.saveLimitCompanyInfo(registerCompany);
@@ -72,9 +76,14 @@ public class LimitCompanyController {
 	@RequestMapping(value = "/saveLimitCompanyEmployeeInfos")
 	public String saveLimitCompanyEmployeeInfos(String limitCompanyName,
 												LimitCompanyEmployee limitCompanyEmployee,
-												Model view) {
+												Model view,
+												HttpSession session) {
 		try {
 			LOG.info("接受到的用户ID是    ：" + limitCompanyEmployee);
+			String email = (String)session.getAttribute("email");
+			if(email == null){
+				return "/user/userLogin";
+			}
 			registerCompanyService.saveLimitCompanyEmployeeInfo(limitCompanyEmployee,limitCompanyName);
 		} catch (Exception e) {
 			throw new RuntimeException("LimitCompanyController.saveLimitCompanyEmployeeInfos.Exception",e);

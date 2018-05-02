@@ -50,6 +50,9 @@ public class IndividualController {
 		try {
 			LOG.info("接受到的用户ID是    ：" + registerCompany);
 			String email = (String)session.getAttribute("email");
+			if(email == null){
+				return "/user/userLogin";
+			}
 			User user = userService.queryUserByEmail(email);
 			registerCompany.setUserId(user.getId().toString().trim());
 			registerCompanyService.saveIndividualCompanyInfo(registerCompany);
@@ -71,6 +74,9 @@ public class IndividualController {
 		try {
 			LOG.info("接受到的用户ID是    ：" + individualCompanyEmployee);
 			String email = (String)session.getAttribute("email");
+			if(email == null){
+				return "/user/userLogin";
+			}
 			view.addAttribute("email",email);
 			registerCompanyService.saveIndividualCompanyEmployeeInfo(individualCompanyEmployee,companyName);
 		} catch (Exception e) {
