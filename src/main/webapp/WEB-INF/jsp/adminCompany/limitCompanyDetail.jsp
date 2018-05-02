@@ -59,20 +59,28 @@
 
     <form action="/adminUser/list" method="post">
         <ul class="forminfo short">
+    <c:forEach var="limitCompanyEmployee" items="${limitCompanyEmployees}">
             <li>
-                <label>公司名称<b>*</b></label>
-                ${registerCompany.companyName}
+                <label>员工名称<b>*</b></label>
+                    ${limitCompanyEmployee.name}
             </li>
             <li>
-                <label>公司注册资金<b>*</b></label>
-                ${registerCompany.registerAmount}
+                <label>身份证号码<b>*</b></label>
+                    ${limitCompanyEmployee.identityId}
             </li>
             <li>
-                <label>公司类型<b>*</b></label>
-                <c:if test="${company.companyType == 1}">有限公司</c:if>
-                <c:if test="${company.companyType == 2}">个人独资</c:if>
-                <c:if test="${company.companyType == 3}">合伙企业</c:if>
+                <label>住址<b>*</b></label>
+                    ${limitCompanyEmployee.address}
             </li>
+            <li>
+                <label>实缴金额<b>*</b></label>
+                    ${limitCompanyEmployee.realPay}
+            </li>
+            <li>
+                <label>认缴金额<b>*</b></label>
+                    ${limitCompanyEmployee.confirmPay}
+            </li>
+    </c:forEach>
             <li style="width: 100%">
                 <label>&nbsp;</label>
                 <input name="" type="submit" class="btn" onClick="javascript :history.back(-1);" value="返回"/>

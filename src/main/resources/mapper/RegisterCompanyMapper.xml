@@ -465,7 +465,7 @@
     <!--通过公司id查询有限公司员工信息 -->
     <select id="queryLimitCompanyEmployeeInfoByCompanyId" resultType="com.yingjun.ssm.entity.CompanyEmployeeAudit">
         select
-        name as id,
+        name as name,
         identity_id as identityId,
         address as address,
         real_pay as realPay,
