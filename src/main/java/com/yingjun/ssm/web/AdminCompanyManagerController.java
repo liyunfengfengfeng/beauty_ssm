@@ -102,13 +102,19 @@ public class AdminCompanyManagerController {
 				case 2:
 					//个人独资
 
+					//根据公司id查询出员工信息
+					List<LimitCompanyEmployee> individualCompanyEmployees = registerCompanyService.queryCompanyEmployeesInfoByCompanyId(companyId);
 					view.addAttribute("registerCompany",registerCompany);
-					break;
+					view.addAttribute("limitCompanyEmployees",individualCompanyEmployees);
+					return "/adminCompany/individualDetail";
 				case 3:
 					//合伙企业
 
+					//根据公司id查询出员工信息
+					List<LimitCompanyEmployee> partnerCompanyEmployees = registerCompanyService.queryCompanyEmployeesInfoByCompanyId(companyId);
 					view.addAttribute("registerCompany",registerCompany);
-					break;
+					view.addAttribute("limitCompanyEmployees",partnerCompanyEmployees);
+					return "/adminCompany/partnerCompanyDetail";
 				default:
 					LOG.info("查询公司信息，公司类型不存在");
 					break;
@@ -141,13 +147,19 @@ public class AdminCompanyManagerController {
 				case 2:
 					//个人独资
 
+					//根据公司id查询出员工信息
+					List<LimitCompanyEmployee> individualCompanyEmployees = registerCompanyService.queryCompanyEmployeesInfoByCompanyId(companyId);
 					view.addAttribute("registerCompany",registerCompany);
-					break;
+					view.addAttribute("limitCompanyEmployees",individualCompanyEmployees);
+					return "/adminCompany/individualAudit";
 				case 3:
 					//合伙企业
 
+					//根据公司id查询出员工信息
+					List<LimitCompanyEmployee> partnerCompanyEmployees = registerCompanyService.queryCompanyEmployeesInfoByCompanyId(companyId);
 					view.addAttribute("registerCompany",registerCompany);
-					break;
+					view.addAttribute("limitCompanyEmployees",partnerCompanyEmployees);
+					return "/adminCompany/partnerCompanyAudit";
 				default:
 					LOG.info("查询公司信息，公司类型不存在");
 					break;
