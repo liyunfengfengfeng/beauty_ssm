@@ -107,7 +107,6 @@
     }
     //审核通过
     function passBtn(companyName) {
-        alert(companyName);
         $.ajax({
             type: 'POST',
             data: {"companyName":companyName},
@@ -115,6 +114,7 @@
             url: '/adminCompanyManager/companyPass',
             success: function (data) {
                 if(data.success){
+                    alert("操作成功");
                     return;
                 }else{
                     alert(data.error);
@@ -131,6 +131,7 @@
             url: '/adminCompanyManager/companyReject',
             success: function (data) {
                 if(data.success){
+                    alert("操作成功");
                     return;
                 }else{
                     alert(data.error);
