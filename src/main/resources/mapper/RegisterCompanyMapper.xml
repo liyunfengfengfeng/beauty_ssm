@@ -472,7 +472,8 @@
         confirm_pay as confirmPay,
         pay_way as payWay,
         phone_number as phoneNumber,
-        status as status
+        status as status,
+        employee_type as employeeType
         from t_company_employee
         where
         t_company_employee.company_id = #{companyId}

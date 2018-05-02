@@ -40,6 +40,10 @@ public class CompanyEmployeeAudit {
      * 状态
      */
     private Integer status;
+    /**
+     * 员工类型
+     */
+    private String employeeType;
 
     public String getName() {
         return name;
@@ -111,5 +115,13 @@ public class CompanyEmployeeAudit {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public String getEmployeeType() {
+        return employeeType;
+    }
+
+    public void setEmployeeType(String employeeType) {
+        this.employeeType = employeeType;
     }
 }
