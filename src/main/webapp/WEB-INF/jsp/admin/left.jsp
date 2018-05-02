@@ -56,8 +56,8 @@
         <ul class="menuson">
             <li><a href="/adminUser/toUserOperate" target="rightFrame">用户管理</a></li>
             <li><a href="/adminCompanyManager/toCompanyManager" target="rightFrame">公司管理</a></li>
-            <li><a href="imgtable.jsp" target="rightFrame">图片列表</a></li>
-            <li><a href="imglist.jsp" target="rightFrame">图片网格</a></li>
+            <li><a href="/picture/logoManager" target="rightFrame">logo管理</a></li>
+            <li><a href="imglist.jsp" target="rightFrame">系统名称管理</a></li>
             <li><a href="imglist1.jsp" target="rightFrame">图片自定义</a></li>
             <li><a href="tools.jsp" target="rightFrame">常用工具</a></li>
             <li><a href="filelist.jsp" target="rightFrame">文件管理</a></li>
