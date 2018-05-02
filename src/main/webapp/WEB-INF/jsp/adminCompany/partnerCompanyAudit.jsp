@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>合伙企业审核</title>
+    <title>审核有限公司</title>
     <link href="/resource/css/style.css" rel="stylesheet" type="text/css"/>
     <link href="/resource/js/3rd/select/select.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="/resource/js/jquery/jquery.1.11.2.min.js"></script>
@@ -17,7 +17,7 @@
 
 
     <%--公司的基本信息--%>
-    <div class="formtitle"><span>合伙企业信息</span></div>
+    <div class="formtitle"><span>有限公司信息</span></div>
     <form action="/adminUser/list" method="post">
         <ul class="forminfo short">
             <li>
@@ -83,6 +83,10 @@
     </c:forEach>
             <li style="width: 100%">
                 <label>&nbsp;</label>
+                <input name="" type="button" class="btn" onClick="passBtn('${registerCompany.companyName}');" value="通过"/>
+                <label>&nbsp;</label>
+                <input name="" type="button" class="btn" onClick="rejectBtn('${registerCompany.companyName}');" value="驳回"/>
+                <label>&nbsp;</label>
                 <input name="" type="button" class="btn" onClick="doBack();" value="返回"/>
             </li>
         </ul>
@@ -100,6 +104,39 @@
     //返回上一层
     function doBack() {
         window.location.href="/adminCompanyManager/toCompanyManager";
+    }
+    //审核通过
+    function passBtn(companyName) {
+        alert(companyName);
+        $.ajax({
+            type: 'POST',
+            data: {"companyName":companyName},
+            dataType: "json",
+            url: '/adminCompanyManager/companyPass',
+            success: function (data) {
+                if(data.success){
+                    return;
+                }else{
+                    alert(data.error);
+                }
+            }
+        });
+    }
+    //审核驳回
+    function rejectBtn(companyName) {
+        $.ajax({
+            type: 'POST',
+            data: {"companyName":companyName},
+            dataType: "json",
+            url: '/adminCompanyManager/companyReject',
+            success: function (data) {
+                if(data.success){
+                    return;
+                }else{
+                    alert(data.error);
+                }
+            }
+        });
     }
 </script>
 
