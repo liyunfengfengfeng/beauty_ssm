@@ -30,6 +30,13 @@ import javax.servlet.http.HttpSession;
 public class PictureController {
 
 	private final Logger LOG = LoggerFactory.getLogger(this.getClass());
-
+    /**
+     * 到达系统logo管理界面
+     * @return
+     */
+    @RequestMapping(value = "/toLogoManager")
+    public String login() {
+        return "/adminPicture/logoManager";
+    }
 
 }
