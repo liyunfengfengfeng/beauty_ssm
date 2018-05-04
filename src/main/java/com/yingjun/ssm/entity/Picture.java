@@ -6,20 +6,8 @@ public class Picture {
     private java.util.Date creatTime;
     private String picRemark;
     private String createUser;
-    private String url;
-    public Picture() {
-        super();
-    }
-    public Picture(Integer id,java.util.Date updateTime,String updateUser,java.util.Date creatTime,String picRemark,String createUser,String url) {
-        super();
-        this.id = id;
-        this.updateTime = updateTime;
-        this.updateUser = updateUser;
-        this.creatTime = creatTime;
-        this.picRemark = picRemark;
-        this.createUser = createUser;
-        this.url = url;
-    }
+    private byte[] url;
+
     public Integer getId() {
         return this.id;
     }
@@ -68,12 +56,11 @@ public class Picture {
         this.createUser = createUser;
     }
 
-    public String getUrl() {
-        return this.url;
+    public byte[] getUrl() {
+        return url;
     }
 
-    public void setUrl(String url) {
+    public void setUrl(byte[] url) {
         this.url = url;
     }
-
 }
