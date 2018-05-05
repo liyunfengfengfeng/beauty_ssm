@@ -18,7 +18,7 @@
 		<!--首页头部-->
 		<header>
 			<div class="header-content">
-				<div class="logo"><span class="logo-img">集群注册平台</span></div>
+				<div><img src="/picture/getLogo" width="20px" height="20px"/>集群注册平台</div>
 				<div class="header-menu">
 					<ul>
 						<li><a href="/user/home">首页</a></li>

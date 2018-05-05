@@ -77,8 +77,7 @@ public class PictureController {
      */
 
     @RequestMapping(value="/getLogo",method= RequestMethod.GET)
-
-    public void getPhotoById(@RequestParam(required=true)Long id, final HttpServletResponse response){
+    public void getPhotoById(final HttpServletResponse response){
 
         try{
 
@@ -146,13 +145,13 @@ public class PictureController {
 
             }else{
 
-                LOG.info("查询发布内容图片信息不存在，广告Id=" + id);
+                LOG.info("查询发布内容图片信息不存在，广告Id=" + 1);
 
             }
 
         }catch(Exception e){
 
-            LOG.error("查询发布内容图片信息异常id=" + id , e);
+            LOG.error("查询发布内容图片信息异常id=" + 1 , e);
 
         }
 
