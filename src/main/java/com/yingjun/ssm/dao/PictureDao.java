@@ -62,4 +62,11 @@ public interface PictureDao{
 	 * @return
 	 */
     int updateNonEmptyPictureById(Picture enti);
+
+	/**
+	 * 更新logo图片信息
+	 * @param picture
+	 * @return
+	 */
+    public int updateLogoPicture(Picture picture);
 }

@@ -140,4 +140,14 @@
         where id=#{id}
     </update>
 
+
+
+
+    <!-- 更新logo图片信息-->
+    <update id="updateLogoPicture" parameterType="com.yingjun.ssm.entity.Picture">
+        update t_picture
+          SET
+          url = #{url}
+        where id = 1
+    </update>
 </mapper>

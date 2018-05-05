@@ -1,5 +1,6 @@
 package com.yingjun.ssm.service;
 import com.yingjun.ssm.entity.Picture;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 public interface PictureService{
@@ -61,4 +62,10 @@ public interface PictureService{
 	 * @return
 	 */
     int updateNonEmptyPictureById(Picture enti);
+
+	/**
+	 * 更新logo图片
+	 * @param file
+	 */
+    public void updateLogoPicture(MultipartFile file);
 }

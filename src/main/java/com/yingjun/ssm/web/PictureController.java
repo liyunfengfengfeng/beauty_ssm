@@ -41,7 +41,7 @@ public class PictureController {
     @RequestMapping(value = "/updateLogoPicture")
     public String updateLogoPicture(@RequestParam MultipartFile file, Model view) {
         try {
-            //pictureService.save(file);
+            pictureService.updateLogoPicture(file);
             view.addAttribute("MSG", "保存成功");
         } catch (Exception e) {
             LOG.error("PictureController.updateLogoPicture.Exception", e);
