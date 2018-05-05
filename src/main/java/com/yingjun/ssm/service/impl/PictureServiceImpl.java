@@ -90,6 +90,17 @@ public class PictureServiceImpl implements PictureService{
         }
     }
 
+    /**
+     * 通过id查询logo图片信息
+     * @param id logo id
+     * @return
+     */
+    @Override
+    public Picture findPictureById(int id) {
+
+        return pictureDao.selectPictureById(1);
+    }
+
     public PictureDao getPictureDao() {
         return this.pictureDao;
     }

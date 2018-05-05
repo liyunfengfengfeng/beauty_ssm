@@ -68,4 +68,11 @@ public interface PictureService{
 	 * @param file
 	 */
     public void updateLogoPicture(MultipartFile file);
+
+	/**
+	 * 通过id查询logo图片信息
+	 * @param id
+	 * @return
+	 */
+	public Picture findPictureById(int id);
 }
