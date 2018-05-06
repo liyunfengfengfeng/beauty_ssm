@@ -115,4 +115,15 @@ public class NewsController {
 		}
 		return "/adminNews/newList";
 	}
+
+	/**
+	 * 管理员查看新闻详情信息
+	 * @return
+	 */
+	@RequestMapping(value = "/seeNews")
+	public String seeNews(@RequestParam Integer newsId,Model view) {
+		News news = newsService.selectNewsById(newsId);
+		view.addAttribute("news",news);
+		return "/adminNews/newsDetail";
+	}
 }
