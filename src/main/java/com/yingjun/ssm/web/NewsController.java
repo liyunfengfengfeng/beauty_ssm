@@ -2,15 +2,20 @@ package com.yingjun.ssm.web;
 
 
 import com.yingjun.ssm.entity.News;
+import com.yingjun.ssm.entity.RegisterCompany;
 import com.yingjun.ssm.service.NewsService;
 import com.yingjun.ssm.service.RegisterCompanyService;
 import com.yingjun.ssm.service.UserService;
+import com.yingjun.ssm.util.Page;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
 
 
 /**
@@ -94,5 +99,20 @@ public class NewsController {
 		News news = newsService.selectNewsById(7);
 		view.addAttribute("news",news);
 		return "/news/news7";
+	}
+
+	/**
+	 * 根据条件查询首页需要展示的新闻信息
+	 * @return
+	 */
+	@RequestMapping(value = "/list")
+	public String list(Model view) {
+		try {
+			List<News> newsList= newsService.selectNews();
+			view.addAttribute("newsList",newsList);
+		} catch (Exception e) {
+			throw new RuntimeException("NewsController.list.Exception",e);
+		}
+		return "/adminNews/newList";
 	}
 }
