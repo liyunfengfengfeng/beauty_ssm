@@ -40,7 +40,9 @@ public class NewsController {
 	 * @return
 	 */
 	@RequestMapping(value = "/news2")
-	public String toNews2() {
+	public String toNews2(Model view) {
+		News news = newsService.selectNewsById(2);
+		view.addAttribute("news",news);
 		return "/news/news2";
 	}
 	/**
@@ -48,7 +50,9 @@ public class NewsController {
 	 * @return
 	 */
 	@RequestMapping(value = "/news3")
-	public String toNews3() {
+	public String toNews3(Model view) {
+		News news = newsService.selectNewsById(3);
+		view.addAttribute("news",news);
 		return "/news/news3";
 	}
 	/**
@@ -56,7 +60,9 @@ public class NewsController {
 	 * @return
 	 */
 	@RequestMapping(value = "/news4")
-	public String toNews4() {
+	public String toNews4(Model view) {
+		News news = newsService.selectNewsById(4);
+		view.addAttribute("news",news);
 		return "/news/news4";
 	}
 	/**
@@ -64,7 +70,9 @@ public class NewsController {
 	 * @return
 	 */
 	@RequestMapping(value = "/news5")
-	public String toNews5() {
+	public String toNews5(Model view) {
+		News news = newsService.selectNewsById(5);
+		view.addAttribute("news",news);
 		return "/news/news5";
 	}
 	/**
@@ -72,7 +80,9 @@ public class NewsController {
 	 * @return
 	 */
 	@RequestMapping(value = "/news6")
-	public String toNews6() {
+	public String toNews6(Model view) {
+		News news = newsService.selectNewsById(6);
+		view.addAttribute("news",news);
 		return "/news/news6";
 	}
 	/**
@@ -80,7 +90,9 @@ public class NewsController {
 	 * @return
 	 */
 	@RequestMapping(value = "/news7")
-	public String toNews7() {
+	public String toNews7(Model view) {
+		News news = newsService.selectNewsById(7);
+		view.addAttribute("news",news);
 		return "/news/news7";
 	}
 }
