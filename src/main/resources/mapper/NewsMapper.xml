@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yingjun.ssm.dao.NewsDao">
+    <!-- News的resultMap,column是给数据库列起的别名,它对应property类的属性-->
+    <resultMap id="result_News_Map" type="com.yingjun.ssm.entity.News">
+        <id column="id" property="id" />
+        <result column="update_time" property="updateTime" />
+        <result column="update_user" property="updateUser" />
+        <result column="create_time" property="createTime" />
+        <result column="create_user" property="createUser" />
+        <result column="title" property="title" />
+        <result column="content" property="content" />
+    </resultMap>
+
+    <!-- 数据库中表名为:t_news的列名,as前是数据库的列明,as后是列的别名用于映射成实体类中的属性,需要注意的是别名必须与resultMap中的column别名一致 -->
+    <sql id="t_news_Column">
+        t_news.id as id
+        ,t_news.update_time as update_time
+        ,t_news.update_user as update_user
+        ,t_news.create_time as create_time
+        ,t_news.create_user as create_user
+        ,t_news.title as title
+        ,t_news.content as content
+    </sql>
+
+    <!--获得类名为:News对应的数据库表的数据总行数 -->
+    <select id="getNewsRowCount" resultType="java.lang.Long">
+        select count(id) from t_news
+    </select>
+    <!-- 获得类名为:News对应数据库中表的数据集合 -->
+    <select id="selectNews" resultMap="result_News_Map">
+        select 
+        <include refid="t_news_Column" /> 
+        from t_news
+    </select> 
+
+    <!-- 获得一个News对象,以参数News对象中不为空的属性作为条件进行查询-->
+    <select id="selectNewsByObj" parameterType="com.yingjun.ssm.entity.News" resultMap="result_News_Map">
+        select 
+            <include refid="t_news_Column" /> 
+        from t_news
+        <where>
+            <if test="content != null "> and t_news.content = #{content}</if>
+            <if test="title != null "> and t_news.title = #{title}</if>
+            <if test="createUser != null "> and t_news.create_user = #{createUser}</if>
+            <if test="createTime != null "> and t_news.create_time = #{createTime}</if>
+            <if test="updateUser != null "> and t_news.update_user = #{updateUser}</if>
+            <if test="updateTime != null "> and t_news.update_time = #{updateTime}</if>
+            <if test="id != null "> and t_news.id = #{id}</if>
+        </where>
+    </select> 
+
+    <!-- 通过News的id获得对应数据库中表的数据对象-->
+    <select id="selectNewsById" parameterType="java.lang.Integer" resultMap="result_News_Map">
+        select 
+            <include refid="t_news_Column" /> 
+        from t_news
+        where t_news.id = #{id}
+    </select> 
+
+    <!-- 将News插入到对应数据库的表中,包括属性值为null的数据-->
+
+    <insert id="insertNews" parameterType="com.yingjun.ssm.entity.News">
+        insert into t_news(id,update_time,update_user,create_time,create_user,title,content) 
+        values(#{id},#{updateTime},#{updateUser},#{createTime},#{createUser},#{title},#{content})
+    </insert>
+
+    <!-- 将News中属性值不为null的数据,插入到对应数据库的表中-->
+    <insert id="insertNonEmptyNews" parameterType="com.yingjun.ssm.entity.News">
+        insert into t_news
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="updateUser != null">update_user,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="createUser != null">create_user,</if>
+            <if test="title != null">title,</if>
+            <if test="content != null">content,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null"> #{id},</if>
+            <if test="updateTime != null"> #{updateTime},</if>
+            <if test="updateUser != null"> #{updateUser},</if>
+            <if test="createTime != null"> #{createTime},</if>
+            <if test="createUser != null"> #{createUser},</if>
+            <if test="title != null"> #{title},</if>
+            <if test="content != null"> #{content},</if>
+        </trim>
+    </insert>
+
+    <!-- 将News批量插入到对应数据库的表中-->
+    <insert id="insertNewsByBatch" parameterType="ArrayList">
+        insert into t_news(id,update_time,update_user,create_time,create_user,title,content) values
+        <foreach collection="list" item="item" index="index" separator="," >
+            (#{item.id},#{item.updateTime},#{item.updateUser},#{item.createTime},#{item.createUser},#{item.title},#{item.content})
+        </foreach>
+    </insert>
+
+    <!-- 通过News的id将数据库表中对应的数据删除-->
+    <delete id="deleteNewsById" parameterType="java.lang.Integer">
+        delete from t_news
+        where id = #{id}
+    </delete>
+
+    <!-- 通过News的id将News的数据更新到数据库中对应的表,包括值null的数据-->
+    <update id="updateNewsById" parameterType="com.yingjun.ssm.entity.News">
+        update t_news set
+            update_time=#{updateTime}
+            ,update_user=#{updateUser}
+            ,create_time=#{createTime}
+            ,create_user=#{createUser}
+            ,title=#{title}
+            ,content=#{content}
+        where id=#{id}
+    </update>
+
+    <!-- 通过News的id将News中属性值不为null的数据更新到数据库对应的表中-->
+    <update id="updateNonEmptyNewsById" parameterType="com.yingjun.ssm.entity.News">
+        update t_news
+        <set>
+            <if test="updateTime != null">
+                update_time=#{updateTime},
+            </if>
+            <if test="updateUser != null">
+                update_user=#{updateUser},
+            </if>
+            <if test="createTime != null">
+                create_time=#{createTime},
+            </if>
+            <if test="createUser != null">
+                create_user=#{createUser},
+            </if>
+            <if test="title != null">
+                title=#{title},
+            </if>
+            <if test="content != null">
+                content=#{content},
+            </if>
+        </set>
+        where id=#{id}
+    </update>
+
+</mapper>

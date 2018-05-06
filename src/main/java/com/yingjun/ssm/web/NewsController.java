@@ -1,11 +1,15 @@
 package com.yingjun.ssm.web;
 
 
+import com.yingjun.ssm.entity.News;
+import com.yingjun.ssm.service.NewsService;
+import com.yingjun.ssm.service.RegisterCompanyService;
 import com.yingjun.ssm.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
@@ -18,13 +22,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class NewsController {
 
 	private final Logger LOG = LoggerFactory.getLogger(this.getClass());
+	@Autowired
+	private NewsService newsService;
 	/**
 	 * news1
 	 * @return
 	 */
 	@RequestMapping(value = "/news1")
-	public String toNews1() {
+	public String toNews1(Model view) {
+		News news = newsService.selectNewsById(1);
+		view.addAttribute("news",news);
 		return "/news/news1";
+
 	}
 	/**
 	 * news2
