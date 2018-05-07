@@ -66,18 +66,18 @@
 						-->
 						<li class="margin-b-19">
 							<label class="infoName" for="name">姓名：</label>
-							<input class="infoShow" type="text" name="name" id="name" value="" placeholder=""/>
+							<input class="infoShow" type="text" name="name" id="name" value="李云峰" placeholder=""/>
 						</li>
 						<li class="margin-b-19">
 							<label class="infoName" for="telphone">证件类型：</label>
-							<input class="infoShow" type="text" name="telphone" id="telphone" value="" placeholder=""/>
+							<input class="infoShow" type="text" name="telphone" id="telphone" value="18746046951" placeholder=""/>
 						</li>
 						<li class="margin-b-19">
 							<label class="infoName">证件号码：</label>
-							<input class="infoShow" type="text" name="telphone" id="telphone" value="" placeholder=""/>
+							<input class="infoShow" type="text" name="telphone" id="telphone2" value="152323199602272713" placeholder=""/>
 						</li>
 						<li>
-							<label class="infoName" for="addrdetail">CA证书：</label>
+							<label class="infoName" for="telphone1">CA证书：</label>
 							<!--
 								*说明：
 								* 认证通过时
@@ -85,7 +85,7 @@
 								* input去掉“hide”
 							-->
 							<span class="self-state green-state ">已领取证书</span>
-							<input class="infoShow" type="text" name="telphone" id="telphone" value="" placeholder=""/>
+							<input class="infoShow" type="text" name="telphone" id="telphone1" value="" placeholder=""/>
 						</li>
 					</ul>
 				</div>
@@ -98,8 +98,8 @@
 					<span class="tit-desctibe">可以使用登录密码登录</span>
 					<span class="self-state green-state">保护中</span>
 					<div class="btngroup">
-						<a href="changePwd.html" class="btn margin-r-15">修改</a>
-						<a href="findPwd.html" class="btn">找回密码</a>
+						<a href="/find/updatePwd" class="btn margin-r-15">修改</a>
+						<a href="/find/toFindPwd" class="btn">找回密码</a>
 					</div>
 				</div>
 				<div class="subHead border-dot margin-t-30 padding-b-30">

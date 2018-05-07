@@ -33,7 +33,7 @@ public class FindPwdController {
 	@Autowired
 	private UserService userService;
 	/**
-	 * 到达用户登录页面
+	 * 到达用户找回密码页面
 	 * @return
 	 */
 	@RequestMapping(value = "/toFindPwd")
@@ -58,5 +58,14 @@ public class FindPwdController {
 			return new BaseResult<>(false, ResultEnum.INVALID_USER.getMsg());
 		}
 		return new BaseResult<>(true, "修改成功");
+	}
+
+	/**
+	 * 到达用户找回密码页面
+	 * @return
+	 */
+	@RequestMapping(value = "/updatePwd")
+	public String updatePwd() {
+		return "/user/findPwd";
 	}
 }
