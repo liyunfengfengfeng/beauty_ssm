@@ -126,4 +126,30 @@ public class NewsController {
 		view.addAttribute("news",news);
 		return "/adminNews/newsDetail";
 	}
+
+	/**
+	 * 管理员查看新闻详情信息
+	 * @return
+	 */
+	@RequestMapping(value = "/editNews")
+	public String editNews(@RequestParam Integer newsId,Model view) {
+		News news = newsService.selectNewsById(newsId);
+		view.addAttribute("news",news);
+		return "/adminNews/newsEdit";
+	}
+
+	/**
+	 * 管理员更新新闻页面展示的文章信息
+	 * @return
+	 */
+	@RequestMapping(value = "/updateNews")
+	public String updateNews(@RequestParam String content,
+							 @RequestParam Integer newsId,
+							 Model view) {
+		LOG.info(content);
+		newsService.updateNews(newsId,content);
+		News news = newsService.selectNewsById(newsId);
+		view.addAttribute("news",news);
+		return "/adminNews/newsEdit";
+	}
 }

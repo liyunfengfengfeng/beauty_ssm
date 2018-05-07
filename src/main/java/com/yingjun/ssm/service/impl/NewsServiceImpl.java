@@ -54,6 +54,21 @@ public class NewsServiceImpl implements NewsService{
         return newsDao.updateNonEmptyNewsById(enti);
     }
 
+    /**
+     * 通过新闻id更新新闻内容
+     * @param newsId
+     * @param content
+     */
+    @Override
+    public void updateNews(Integer newsId, String content) {
+        News news = new News();
+        news.setId(newsId);
+        news.setContent(content);
+        if(1 != newsDao.updateNonEmptyNewsById(news)){
+            throw new RuntimeException("更新新闻内容影响行数不唯一");
+        }
+    }
+
     public NewsDao getNewsDao() {
         return this.newsDao;
     }

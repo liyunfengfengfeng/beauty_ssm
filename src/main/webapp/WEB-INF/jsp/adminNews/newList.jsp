@@ -42,7 +42,7 @@
                 <td>${news.updateUser}</td>
                 <td>${news.createTime}</td>
                 <td>${news.updateTime}</td>
-                <td><a href="/news/seeNews?newsId=${news.id}" class="tablelink">查看</a><a href="/news/editNews?newId=${news.id}" class="tablelink">编辑</a></td>
+                <td><a href="/news/seeNews?newsId=${news.id}" class="tablelink">查看</a><a href="/news/editNews?newsId=${news.id}" class="tablelink">编辑</a></td>
             </tr>
         </c:forEach>
         </tbody>

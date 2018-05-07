@@ -64,4 +64,11 @@ public interface NewsService{
 	 * @return
 	 */
     int updateNonEmptyNewsById(News enti);
+
+	/**
+	 * 通过新闻id更新新闻内容
+	 * @param newsId
+	 * @param content
+	 */
+    public void updateNews(Integer newsId, String content);
 }
