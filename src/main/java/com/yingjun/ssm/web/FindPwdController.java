@@ -66,6 +66,6 @@ public class FindPwdController {
 	 */
 	@RequestMapping(value = "/updatePwd")
 	public String updatePwd() {
-		return "/user/findPwd";
+		return "/user/changePwd";
 	}
 }
