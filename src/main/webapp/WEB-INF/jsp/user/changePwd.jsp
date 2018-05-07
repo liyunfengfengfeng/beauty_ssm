@@ -4,17 +4,17 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>个人中心-修改密码</title>
-		<link rel="stylesheet" type="text/css" href="css/safety.css"/>
+		<link rel="stylesheet" type="text/css" href="/resource/css/safety.css"/>
 		<!--其他样式-->
-		<link rel="stylesheet" type="text/css" href="css/enterpriseInfo.css"/>
-		<link rel="stylesheet" type="text/css" href="css/proprietorship.css"/>
-		<link rel="stylesheet" type="text/css" href="css/buyService.css"/>
-		<link rel="stylesheet" type="text/css" href="css/home.css"/>
-		<link rel="stylesheet" type="text/css" href="css/news.css"/>
-		<link rel="stylesheet" type="text/css" href="css/registration.css"/>
-		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/changePwd.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/function.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="/resource/css/enterpriseInfo.css"/>
+		<link rel="stylesheet" type="text/css" href="/resource/css/proprietorship.css"/>
+		<link rel="stylesheet" type="text/css" href="/resource/css/buyService.css"/>
+		<link rel="stylesheet" type="text/css" href="/resource/css/home.css"/>
+		<link rel="stylesheet" type="text/css" href="/resource/css/news.css"/>
+		<link rel="stylesheet" type="text/css" href="/resource/css/registration.css"/>
+		<script src="/resource/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/resource/js/changePwd.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/resource/js/function.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body class="grayBg">
 		<!--首页头部-->
@@ -23,11 +23,11 @@
 				<div><img src="/picture/getLogo" width="20px" height="20px"/>集群注册平台</div>
 				<div class="header-menu">
 					<ul>
-						<li class="active"><a href="/user/home">首页</a></li>
+						<li><a href="/user/home">首页</a></li>
 						<li><a href="/limitCompany/toLimitCompany">有限公司</a></li>
 						<li><a href="/individual/toIndividual">个人独资</a></li>
 						<li><a href="/partnerShip/toPartnerShip">合伙企业</a></li>
-						<li><a href="/personalCenter/toPersonalCenter">个人中心</a></li>
+						<li class="active"><a href="/personalCenter/toPersonalCenter">个人中心</a></li>
 						<li><a href="/enterpriseCenter/toEnterpriseCenter">企业中心</a></li>
 						<li><a href="/contactUs/connection">联系我们</a></li>
 					</ul>
