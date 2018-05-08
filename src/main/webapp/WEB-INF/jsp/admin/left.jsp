@@ -40,11 +40,11 @@
         </div>
         <ul class="menuson">
             <li class="active">
-                <a href="index.jsp" target="rightFrame">简洁模板</a>
+                <a href="/admin/jianjiemoban" target="rightFrame">简洁模板</a>
                 <i></i>
             </li>
             <li>
-                <a href="default.jsp" target="rightFrame">区块模板</a>
+                <a href="/admin/qukuaimoban" target="rightFrame">区块模板</a>
                 <i></i>
             </li>
         </ul>
@@ -58,8 +58,8 @@
             <li><a href="/adminCompanyManager/toCompanyManager" target="rightFrame">公司管理</a></li>
             <li><a href="/picture/toLogoManager" target="rightFrame">logo管理</a></li>
             <li><a href="/news/list" target="rightFrame">新闻内容管理</a></li>
-            <li><a href="imglist1.jsp" target="rightFrame">图片自定义</a></li>
-            <li><a href="tools.jsp" target="rightFrame">常用工具</a></li>
+            <li><a href="imglist1.jsp" target="rightFrame">banner图片管理</a></li>
+            <li><a href="tools.jsp" target="rightFrame">newsPicture管理</a></li>
             <li><a href="filelist.jsp" target="rightFrame">文件管理</a></li>
             <li><a href="computer.jsp" target="rightFrame">我的电脑</a></li>
         </ul>
@@ -69,8 +69,8 @@
             <span class="iconfont icon-wodebiaodan"></span>表单
         </div>
         <ul class="menuson">
-            <li><a href="form.jsp" target="rightFrame">添加编辑</a></li>
-            <li><a href="tab.jsp" target="rightFrame">Tab页</a></li>
+            <li><a href="/admin/tianjiabianji" target="rightFrame">添加编辑</a></li>
+            <li><a href="/admin/tab" target="rightFrame">Tab页</a></li>
         </ul>
     </dd>
     <dd>
@@ -78,8 +78,8 @@
             <span class="iconfont icon-qita1"></span>其他设置
         </div>
         <ul class="menuson">
-            <li><a href="error.jsp" target="rightFrame">404页面</a></li>
-            <li><a href="login.jsp" target="rightFrame">登陆页面</a></li>
+            <li><a href="/admin/error" target="rightFrame">404页面</a></li>
+            <li><a href="/admin/loginPage" target="rightFrame">登陆页面</a></li>
         </ul>
     </dd>
     <div class="bq">版权所有文字<br/>这里是第二行如果有的话</div>
