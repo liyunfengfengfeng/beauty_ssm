@@ -76,4 +76,10 @@ public interface PictureDao{
 	 * @return
 	 */
     public int updateBannerPicture(Picture picture);
+	/**
+	 * 更新new图片信息
+	 * @param picture
+	 * @return
+	 */
+	public int updateNewPicture(Picture picture);
 }

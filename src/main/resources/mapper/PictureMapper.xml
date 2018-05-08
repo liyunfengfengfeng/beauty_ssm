@@ -157,4 +157,12 @@
         url = #{url}
         where id = 2
     </update>
+
+    <!-- 更新banner图片信息-->
+    <update id="updateNewPicture" parameterType="com.yingjun.ssm.entity.Picture">
+        update t_picture
+        SET
+        url = #{url}
+        where id = 3
+    </update>
 </mapper>

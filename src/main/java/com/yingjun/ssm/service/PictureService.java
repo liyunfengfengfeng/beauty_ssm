@@ -81,4 +81,10 @@ public interface PictureService{
 	 * @param file
 	 */
 	public void updateBannerPicture(MultipartFile file);
+
+	/**
+	 * 更新new图片
+	 * @param file
+	 */
+	public void updateNewPicture(MultipartFile file);
 }
