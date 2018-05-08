@@ -37,6 +37,8 @@
 			<div class="toLogin">
 				<div class="toLoginmine">
 					<div class="mine-img">${email}</div>
+					<c:if test="${! empty email}"><a href="/user/loginOut">退出</a></c:if>
+
 				</div>
 			</div>
 		</header>
