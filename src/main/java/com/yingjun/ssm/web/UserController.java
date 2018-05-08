@@ -96,7 +96,7 @@ public class UserController {
 		try {
 			String code = CodeUtil.rand();
 			System.out.println("code is " + code);
-			//MailUtil.sendMail(email,code);
+			MailUtil.sendMail(email,code);
 			session.setAttribute("code",code);
 		} catch (BizException e) {
 			return new BaseResult<>(false, e.getMessage());
