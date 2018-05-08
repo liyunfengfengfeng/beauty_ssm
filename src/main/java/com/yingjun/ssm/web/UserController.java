@@ -116,4 +116,14 @@ public class UserController {
 		view.addAttribute("email",email);
 		return "/common/home";
 	}
+
+	/**
+	 * 到达用户登录页面
+	 * @return
+	 */
+	@RequestMapping(value = "/loginOut")
+	public String loginOut(HttpSession session) {
+		session.invalidate();
+		return "/user/userLogin";
+	}
 }

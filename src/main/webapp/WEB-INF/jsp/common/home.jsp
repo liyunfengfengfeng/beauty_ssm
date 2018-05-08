@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -36,9 +37,13 @@
 			<div class="toLogin">
 					<div class="toLoginmine">
 					<div class="mine-img">${email}</div>
+						<c:if test="${! empty email}"><a href="/user/loginOut">退出</a></c:if>
+
 					</div>
 			</div>
+
 		</header>
+
 		<div class="home-content">
 			<!--轮播-->
 			<div id="sliderBox" class="slider-box">
