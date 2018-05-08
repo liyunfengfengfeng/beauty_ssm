@@ -495,4 +495,13 @@
         approve_status = 2
         where company_name = #{companyName}
     </update>
+
+
+    <!-- 通过UserId查询用户的注册所有公司-->
+    <select id="queryCompanyInfoByUserId" resultMap="result_RegisterCompany_Map">
+        select
+        <include refid="t_register_company_Column" />
+        from t_register_company
+        where t_register_company.user_id = #{userId}
+    </select>
 </mapper>

@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -41,60 +42,30 @@
 			<h3 class="tit tit-l">企业中心</h3>
 			<div class="projectList">
 				<ul>
+<c:forEach var="registerCompany" items="${registerCompanyList}">
 					<li>
 						<a href="#">
 							<div class="list">
 								<div class="title">
 									<div class="describe">
-										<span class="project">京东小易-创新实验室创新实验室验室室验室</span>
-										<span class="type">个人独资公司</span>
+										<span class="project">${registerCompany.companyName}</span>
+										<span class="type">
+											<c:if test="${registerCompany.companyType == 1}">有限公司</c:if>
+                							<c:if test="${registerCompany.companyType == 2}">个人独资</c:if>
+                							<c:if test="${registerCompany.companyType == 3}">合伙企业</c:if>
+										</span>
 									</div>
 									<span class="right-btn registration">注册中</span>
 								</div>
 								<div class="info">
-									<span class="legal-per">法人：张芳</span>
-									<span class="money">注册资金：500万人民币</span>
-									<span class="addr" title="注册地址：京东大厦总部">注册地址：京东大厦总部</span>
+									<span class="legal-per">法人：李云峰</span>
+									<span class="money">注册资金：${registerCompany.registerAmount}万人民币</span>
+									<span class="addr" title="注册地址：京东大厦总部">注册地址：江苏省-宿迁市-宿豫区</span>
 								</div>
 							</div>
 						</a>
 					</li>
-					<li>
-						<a href="#">
-							<div class="list">
-								<div class="title">
-									<div class="describe">
-										<span class="project">京东小易-创新实验室</span>
-										<span class="type">有限合伙企业</span>
-									</div>
-									<span class="right-btn check">审核中</span>
-								</div>
-								<div class="info">
-									<span class="legal-per">法人：张芳</span>
-									<span class="money">注册资金：500万人民币</span>
-									<span class="addr" title="注册地址：京东大厦总部">注册地址：京东大厦总部</span>
-								</div>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<div class="list">
-								<div class="title">
-									<div class="describe">
-										<span class="project">京东小易-创新实验室</span>
-										<span class="type">个人独资公司</span>
-									</div>
-									<span class="right-btn business">存续，在业</span>
-								</div>
-								<div class="info">
-									<span class="legal-per">法人：张芳</span>
-									<span class="money">注册资金：500万人民币</span>
-									<span class="addr" title="注册地址：京东大厦总部">注册地址：京东大厦总部</span>
-								</div>
-							</div>
-						</a>
-					</li>
+	</c:forEach>
 				</ul>
 				<div class="btn margin-t-30">
 					<a href="#" class="toCenter">注册新公司</a>

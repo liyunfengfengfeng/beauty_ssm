@@ -149,4 +149,11 @@ public interface RegisterCompanyDao{
 	 * @return
 	 */
 	public int companyReject(@Param("companyName") String companyName);
+
+	/**
+	 * 通过UserId查询用户的注册所有公司
+	 * @param userId
+	 * @return
+	 */
+    public List<RegisterCompany> queryCompanyInfoByUserId(@Param("userId") Long userId);
 }

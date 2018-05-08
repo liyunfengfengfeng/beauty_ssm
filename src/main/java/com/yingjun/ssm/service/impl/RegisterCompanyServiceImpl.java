@@ -250,6 +250,17 @@ public class RegisterCompanyServiceImpl implements RegisterCompanyService{
         }
     }
 
+    /**
+     * 通过UserId查询用户的注册所有公司
+     * @param userId
+     * @return
+     */
+    @Override
+    public List<RegisterCompany> queryCompanyInfoByUserId(Long userId) {
+
+        return registerCompanyDao.queryCompanyInfoByUserId(userId);
+    }
+
     public RegisterCompanyDao getRegisterCompanyDao() {
         return this.registerCompanyDao;
     }

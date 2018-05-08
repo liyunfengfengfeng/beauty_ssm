@@ -147,4 +147,11 @@ public interface RegisterCompanyService{
 	 * @param companyName
 	 */
     public void companyReject(String companyName);
+
+	/**
+	 * 通过UserId查询用户的注册所有公司
+	 * @param id
+	 * @return
+	 */
+    public List<RegisterCompany> queryCompanyInfoByUserId(Long id);
 }
