@@ -79,7 +79,7 @@
 						</li>
 						<li>
 							<label class="info-title case" for="transactionMobile">移动电话：</label>
-							<input type="text" class="infoList-put needCheck write-n" name="transactionMobile" id="transactionMobile" value="18238948223" placeholder="请输入移动电话"/>
+							<input type="text" class="infoList-put needCheck write-n" name="transactionMobile" id="transactionMobile" value="" placeholder="请输入移动电话"/>
 						</li>
 						<li>
 							<label class="info-title case" for="transactionIdAddress">身份证住址：</label>

@@ -50,8 +50,8 @@ public class AdminCompanyManagerController {
 	 * @return
 	 */
 	@RequestMapping(value = "/list")
-	public String list(@RequestParam String companyName,
-					   @RequestParam Integer companyType,
+	public String list(@RequestParam(required = false) String companyName,
+					   @RequestParam(required = false) Integer companyType,
 					   @RequestParam(value="pno", defaultValue="1") int pno,
 					   Model view) {
 		try {
