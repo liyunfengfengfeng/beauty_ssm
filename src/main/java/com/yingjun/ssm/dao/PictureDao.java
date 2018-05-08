@@ -1,6 +1,7 @@
 package com.yingjun.ssm.dao;
 
 import com.yingjun.ssm.entity.Picture;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 public interface PictureDao{
@@ -25,7 +26,7 @@ public interface PictureDao{
 	 * @param id
 	 * @return
 	 */
-    Picture selectPictureById(Integer id);
+    Picture selectPictureById(@Param("id") Integer id);
 	/**
 	 * 插入Picture到数据库,包括null值
 	 * @param value

@@ -98,7 +98,7 @@ public class PictureServiceImpl implements PictureService{
     @Override
     public Picture findPictureById(int id) {
 
-        return pictureDao.selectPictureById(1);
+        return pictureDao.selectPictureById(id);
     }
 
     /**
