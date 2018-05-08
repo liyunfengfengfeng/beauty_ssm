@@ -12,9 +12,9 @@
 		<link rel="stylesheet" type="text/css" href="/resource/css/home.css"/>
 		<link rel="stylesheet" type="text/css" href="/resource/css/news.css"/>
 		<link rel="stylesheet" type="text/css" href="/resource/css/registration.css"/>
-		<script src="/resource/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="/resource/js/changePwd.js" type="text/javascript" charset="utf-8"></script>
-		<script src="/resource/js/function.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/resource/script/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/resource/script/changePwd.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/resource/script/function.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body class="grayBg">
 		<!--首页头部-->
@@ -65,8 +65,8 @@
 							<input class="info write-n" type="text" name="pwdA" id="pwdA" value="" placeholder=""/>
 						</li>
 					</ul>
-					<div class="btn-bounce" onclick="sure()">
-						<a class="width-206" href="javascript:void(0)">确定</a>
+					<div class="btn-bounce">
+						<a class="width-206" onclick="sure()">确定</a>
 					</div>
 					<div class="hint toCenter width-525 padding-b-20">
 						<div class="hint-tit"><span>提示：</span></div>

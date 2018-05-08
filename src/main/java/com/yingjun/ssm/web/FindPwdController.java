@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
@@ -84,9 +86,15 @@ public class FindPwdController {
 	public BaseResult<Object> updateOldPwd(@RequestParam String oldPwd,
 										   @RequestParam String newPwd,
 										   @RequestParam String pwdA,
-										   HttpSession session) {
+										   HttpSession session,
+										   HttpServletRequest request,
+										   HttpServletResponse response) {
 		try {
-			LOG.info("用户执行修改密码操作");
+			String email = (String)session.getAttribute("email");
+			if(email == null){
+				response.sendRedirect("/user/login");
+			}
+			//userService.updatePasswordByName(email,newPwd);
 		} catch (BizException e) {
 			return new BaseResult<>(false, e.getMessage());
 		} catch (Exception e) {
