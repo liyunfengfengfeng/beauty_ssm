@@ -32,7 +32,12 @@ public class PartnerShipController {
 	 * @return
 	 */
 	@RequestMapping(value = "/toPartnerShip")
-	public String toPartnerShip() {
+	public String toPartnerShip(HttpSession session,
+								Model view) {
+		String email = (String)session.getAttribute("email");
+		if(email == null){
+			return "redirect:/user/login";
+		}
 		return "/partnership/partnership";
 	}
 

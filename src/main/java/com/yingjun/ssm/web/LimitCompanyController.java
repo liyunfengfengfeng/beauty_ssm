@@ -41,7 +41,12 @@ public class LimitCompanyController {
 	 * @return
 	 */
 	@RequestMapping(value = "/toLimitCompany")
-	public String toLimitCompany() {
+	public String toLimitCompany(HttpSession session,
+								 Model view) {
+		String email = (String)session.getAttribute("email");
+		if(email == null){
+			return "redirect:/user/login";
+		}
 		return "/limitCompany/limitCompany";
 	}
 	/**

@@ -35,7 +35,11 @@ public class IndividualController {
 	 * @return
 	 */
 	@RequestMapping(value = "/toIndividual")
-	public String toIndividual() {
+	public String toIndividual(HttpSession session,Model view) {
+		String email = (String)session.getAttribute("email");
+		if(email == null){
+			return "redirect:/user/login";
+		}
 		return "/individual/individual";
 	}
 
