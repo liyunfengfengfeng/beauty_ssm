@@ -65,7 +65,12 @@ public class FindPwdController {
 	 * @return
 	 */
 	@RequestMapping(value = "/updatePwd")
-	public String updatePwd() {
-		return "/user/changePwd";
+	public String updatePwd(HttpSession session,
+                            Model view) {
+        String email = (String)session.getAttribute("email");
+        if(email == null){
+            return "redirect:/user/login";
+        }
+	    return "/user/changePwd";
 	}
 }
