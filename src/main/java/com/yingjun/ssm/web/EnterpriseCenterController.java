@@ -27,6 +27,9 @@ public class EnterpriseCenterController {
 	public String toEnterpriseCenter(HttpSession session,
 									 Model view) {
 		String email = (String)session.getAttribute("email");
+		if(email == null){
+			return "redirect:/user/login";
+		}
 		view.addAttribute("email",email);
 		return "/common/enterprise";
 	}
