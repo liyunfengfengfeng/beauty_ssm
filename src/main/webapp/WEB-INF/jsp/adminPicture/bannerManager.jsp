@@ -45,7 +45,7 @@
                 liyunfeng
             </li>
             <li>
-                <label>上传logo图片<b>*</b></label>
+                <label>上传banner图片<b>*</b></label>
                 <input type="file" name="file" id="file" value=""/>
             </li>
             <li style="width: 100%">

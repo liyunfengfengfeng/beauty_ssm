@@ -183,6 +183,6 @@ public class PictureController {
             LOG.error("PictureController.updateBannerPicture.Exception", e);
             view.addAttribute("MSG", "保存失败");
         }
-        return "/adminPicture/logoManager";
+        return "/adminPicture/bannerManager";
     }
 }
