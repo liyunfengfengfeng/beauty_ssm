@@ -61,7 +61,7 @@ public class FindPwdController {
 	}
 
 	/**
-	 * 到达用户找回密码页面
+	 * 到达用户修改密码页面
 	 * @return
 	 */
 	@RequestMapping(value = "/updatePwd")
@@ -71,6 +71,27 @@ public class FindPwdController {
         if(email == null){
             return "redirect:/user/login";
         }
+        view.addAttribute("email",email);
 	    return "/user/changePwd";
+	}
+
+	/**
+	 * 用户修改密码
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value = "/updateOldPwd",produces = {"application/json;charset=UTF-8"})
+	public BaseResult<Object> updateOldPwd(@RequestParam String oldPwd,
+										   @RequestParam String newPwd,
+										   @RequestParam String pwdA,
+										   HttpSession session) {
+		try {
+			LOG.info("用户执行修改密码操作");
+		} catch (BizException e) {
+			return new BaseResult<>(false, e.getMessage());
+		} catch (Exception e) {
+			return new BaseResult<>(false, ResultEnum.INVALID_USER.getMsg());
+		}
+		return new BaseResult<>(true, "修改成功");
 	}
 }

@@ -44,12 +44,13 @@
 			<div class="myHeader">
 				<h1>修改密码</h1>
 			</div>
+            <form id="updatePwd" name="updatePwd" action="#" method="post">
 			<div class="findPwd">
 				<div class="contentInfo">
 					<ul class="getInfo margin-t-49 margin-l-40">
 						<li class="margin-b-19">
-							<label class="infoName1 inputDes" for="tel">登录手机号：</label>
-							<input class="showInfo" type="text" name="tel" id="tel" readonly="readonly" value="139****2345" placeholder=""/>
+							<label class="infoName1 inputDes" for="tel">登录用户名：</label>
+							<input class="showInfo" type="text" name="tel" id="tel" readonly="readonly" value="${email}" placeholder=""/>
 						</li>
 						<li class="margin-b-19">
 							<label class="infoName1 inputDes" for="oldPwd">原登录密码：</label>
@@ -60,8 +61,8 @@
 							<input class="info write-n" type="text" name="newPwd" id="newPwd" value="" placeholder=""/>
 						</li>
 						<li class="margin-b-19">
-							<label class="infoName1 inputDes" for="pwd-a">再次输入新密码：</label>
-							<input class="info write-n" type="text" name="pwd-a" id="pwd-a" value="" placeholder=""/>
+							<label class="infoName1 inputDes" for="pwdA">再次输入新密码：</label>
+							<input class="info write-n" type="text" name="pwdA" id="pwdA" value="" placeholder=""/>
 						</li>
 					</ul>
 					<div class="btn-bounce" onclick="sure()">
@@ -79,6 +80,7 @@
 					</div>
 				</div>
 			</div>
+                </form>
 		</div>
 		
 		<footer>
@@ -102,3 +104,28 @@
 		</footer>
 	</body>
 </html>
+<script>
+    function sure(){
+        var $newPwd = $("#newPwd").val();
+        var $pwda = $("#pwdA").val();
+        if($pwda != $newPwd) {
+            $("#pwdA").next().remove();
+            $("#pwdA").addClass('noPass')
+            $("#pwdA").after('<span class="noPassImg-bounce"><img src="/resource/img/refuse.png"/>输入不一致</span>')
+            return;
+        }
+        $.ajax({
+            type: 'POST',
+            data: $('#updatePwd').serialize(),
+            dataType: "json",
+            url: '/find/updateOldPwd',
+            success: function (data) {
+                if(data.success){
+                    alert("修改成功");
+                }else{
+                    alert("原密码错误");
+                }
+            }
+        });
+    }
+</script>
