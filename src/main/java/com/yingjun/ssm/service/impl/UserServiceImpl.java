@@ -235,7 +235,11 @@ public class UserServiceImpl implements UserService {
      * @param newPwd
      */
     @Override
-    public void updatePasswordByName(String email, String newPwd) {
+    public void updatePasswordByName(String email, String newPwd,String oldPassword) {
+        String oldPwd = Md5Util.md5Password(oldPassword);
+        if(1 != userDao.selectPasswordByName(email,oldPwd)){
+            throw new RuntimeException("原密码错误");
+        }
         String password = Md5Util.md5Password(newPwd);
         if(1 != userDao.updatePasswordByName(email,newPwd)){
             throw new RuntimeException("更新密码通过用户名称即email，更新影响行数不唯一");

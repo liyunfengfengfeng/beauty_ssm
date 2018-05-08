@@ -115,4 +115,12 @@ public interface UserDao {
 	 * @return
 	 */
     public int updatePasswordByName(@Param("name") String email, @Param("password") String newPwd);
+
+	/**
+	 * 检查原密码是否正确
+	 * @param email
+	 * @param newPwd
+	 * @return
+	 */
+	public int selectPasswordByName(@Param("name") String email, @Param("password") String newPwd);
 }

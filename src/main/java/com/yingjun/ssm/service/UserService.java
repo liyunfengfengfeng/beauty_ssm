@@ -135,5 +135,5 @@ public interface UserService {
 	 * @param email
 	 * @param newPwd
 	 */
-    public void updatePasswordByName(String email, String newPwd);
+    public void updatePasswordByName(String email, String newPwd,String oldPassword);
 }
