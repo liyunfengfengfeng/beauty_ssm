@@ -129,4 +129,11 @@ public interface UserService {
 	 * @return
 	 */
 	public User queryUserById(String userEmail);
+
+	/**
+	 * 更新密码通过用户名称即email
+	 * @param email
+	 * @param newPwd
+	 */
+    public void updatePasswordByName(String email, String newPwd);
 }

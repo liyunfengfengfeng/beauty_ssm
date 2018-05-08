@@ -107,4 +107,12 @@ public interface UserDao {
 	 * @return
 	 */
 	public User queryUserByUserName(@Param("name") String name);
+
+	/**
+	 * 更新密码通过用户名称即email
+	 * @param email
+	 * @param newPwd
+	 * @return
+	 */
+    public int updatePasswordByName(@Param("name") String email, @Param("password") String newPwd);
 }

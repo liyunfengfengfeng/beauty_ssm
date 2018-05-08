@@ -229,4 +229,17 @@ public class UserServiceImpl implements UserService {
         return userDao.queryUserByEmails(userEmail);
     }
 
+    /**
+     * 更新密码通过用户名称即email
+     * @param email
+     * @param newPwd
+     */
+    @Override
+    public void updatePasswordByName(String email, String newPwd) {
+        String password = Md5Util.md5Password(newPwd);
+        if(1 != userDao.updatePasswordByName(email,newPwd)){
+            throw new RuntimeException("更新密码通过用户名称即email，更新影响行数不唯一");
+        }
+    }
+
 }

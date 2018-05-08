@@ -172,4 +172,11 @@
         where
         t_user.name = #{name}
     </select>
+
+    <!-- 更新密码通过用户名称即email-->
+    <update id="updatePasswordByName">
+        update t_user set
+        password=#{password}
+        where name = #{name}
+    </update>
 </mapper>

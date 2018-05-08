@@ -94,7 +94,7 @@ public class FindPwdController {
 			if(email == null){
 				response.sendRedirect("/user/login");
 			}
-			//userService.updatePasswordByName(email,newPwd);
+			userService.updatePasswordByName(email,newPwd);
 		} catch (BizException e) {
 			return new BaseResult<>(false, e.getMessage());
 		} catch (Exception e) {
