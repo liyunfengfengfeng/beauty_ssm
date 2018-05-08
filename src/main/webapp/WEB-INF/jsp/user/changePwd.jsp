@@ -54,15 +54,15 @@
 						</li>
 						<li class="margin-b-19">
 							<label class="infoName1 inputDes" for="oldPwd">原登录密码：</label>
-							<input class="info write-n" type="text" name="oldPwd" id="oldPwd" value="" placeholder=""/>
+							<input class="info write-n" type="password" name="oldPwd" id="oldPwd" value="" placeholder=""/>
 						</li>
 						<li class="margin-b-19">
 							<label class="infoName1 inputDes" for="newPwd">新登录密码：</label>
-							<input class="info write-n" type="text" name="newPwd" id="newPwd" value="" placeholder=""/>
+							<input class="info write-n" type="password" name="newPwd" id="newPwd" value="" placeholder=""/>
 						</li>
 						<li class="margin-b-19">
 							<label class="infoName1 inputDes" for="pwdA">再次输入新密码：</label>
-							<input class="info write-n" type="text" name="pwdA" id="pwdA" value="" placeholder=""/>
+							<input class="info write-n" type="password" name="pwdA" id="pwdA" value="" placeholder=""/>
 						</li>
 					</ul>
 					<div class="btn-bounce">

@@ -39,4 +39,7 @@ public class Md5Util {
         }
 
     }
+    public static void main(String[]args){
+        System.out.println(Md5Util.md5Password("123456"));
+    }
 }

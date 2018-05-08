@@ -180,9 +180,9 @@
         where name = #{name}
     </update>
     <!--通过用户名称查询用户信息-->
-    <select id="queryUserByUserName" resultType="java.lang.Integer">
+    <select id="selectPasswordByName" resultType="java.lang.Integer">
         select
-        <include refid="t_user_Column" />
+        COUNT(*)
         from t_user
         where
         t_user.name = #{name}

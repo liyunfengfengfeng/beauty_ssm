@@ -241,7 +241,7 @@ public class UserServiceImpl implements UserService {
             throw new RuntimeException("原密码错误");
         }
         String password = Md5Util.md5Password(newPwd);
-        if(1 != userDao.updatePasswordByName(email,newPwd)){
+        if(1 != userDao.updatePasswordByName(email,password)){
             throw new RuntimeException("更新密码通过用户名称即email，更新影响行数不唯一");
         }
     }
