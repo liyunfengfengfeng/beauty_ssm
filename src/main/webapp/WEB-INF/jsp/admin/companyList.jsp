@@ -96,7 +96,7 @@
             //总数据条数
             totalRecords : totalRecords,
             //链接前部
-            hrefFormer : '/adminUser/list',
+            hrefFormer : '/adminCompanyManager/list',
             isGoPage : false,
             isShowTotalPage : false,
             isShowTotalRecords : false,
