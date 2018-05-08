@@ -119,7 +119,7 @@
         <include refid="t_user_Column" />
         from t_user
         <where>
-            <if test="name != null "> and t_user.name = #{name}</if>
+            <if test="name != null "> and t_user.name = #{email}</if>
             <if test="password != null "> and t_user.password = #{password}</if>
         </where>
     </select>

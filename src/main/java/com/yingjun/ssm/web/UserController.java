@@ -50,6 +50,7 @@ public class UserController {
 										HttpSession session) {
 		try {
 			userService.checkUserLogin(user);
+			//页面是以name="email" 接受用户名称的
 			session.setAttribute("email",user.getEmail());
 		} catch (BizException e) {
 			return new BaseResult<>(false, e.getMessage());
