@@ -101,6 +101,40 @@ public class PictureServiceImpl implements PictureService{
         return pictureDao.selectPictureById(1);
     }
 
+    /**
+     * 更新banner图片
+     * @param file
+     */
+    @Override
+    public void updateBannerPicture(MultipartFile file) {
+        try{
+//MultipartFile转换file
+            CommonsMultipartFile cf= (CommonsMultipartFile)file;
+            //           DiskFileItem fi = (DiskFileItem)cf.getFileItem();
+            //           File tempFile = fi.getStoreLocation();
+            if(file != null){
+                //原始资源名字
+                String fileFileName = cf.getOriginalFilename();
+                //判断文件类型
+                String allowType = "gif,jpg,bmp,png";
+                if (!fileFileName.trim().equals("") && fileFileName.length() > 0) {
+                    String ex = fileFileName.substring(fileFileName.lastIndexOf(".") + 1, fileFileName.length());
+                    if(allowType.toString().indexOf(ex.toLowerCase()) < 0){
+                        throw new RuntimeException("对不起,只能上传gif,jpg,bmp,png格式的图片！");
+                    }
+                }
+            }
+            Picture picture = new Picture();
+            picture.setUrl(file.getBytes());
+            if(1 != pictureDao.updateBannerPicture(picture)){
+                throw new RuntimeException("保存logo图片信息影响行数不为1");
+            }
+        }catch(Exception e){
+            LOG.error("保存logo图片信息异常",e);
+            throw new RuntimeException(e);
+        }
+    }
+
     public PictureDao getPictureDao() {
         return this.pictureDao;
     }

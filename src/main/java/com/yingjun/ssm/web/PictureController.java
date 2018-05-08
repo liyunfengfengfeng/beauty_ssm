@@ -159,4 +159,30 @@ public class PictureController {
 
     }
 
+
+
+    /**
+     * 到达轮播图片管理管理界面
+     * @return
+     */
+    @RequestMapping(value = "/toBannerManager")
+    public String toBannerManager() {
+        return "/adminPicture/bannerManager";
+    }
+
+    /**
+     * 更新系统banner显示的banner图片
+     * @return
+     */
+    @RequestMapping(value = "/updateBannerPicture")
+    public String updateBannerPicture(@RequestParam MultipartFile file, Model view) {
+        try {
+            pictureService.updateBannerPicture(file);
+            view.addAttribute("MSG", "保存成功");
+        } catch (Exception e) {
+            LOG.error("PictureController.updateBannerPicture.Exception", e);
+            view.addAttribute("MSG", "保存失败");
+        }
+        return "/adminPicture/logoManager";
+    }
 }

@@ -69,4 +69,11 @@ public interface PictureDao{
 	 * @return
 	 */
     public int updateLogoPicture(Picture picture);
+
+	/**
+	 * 更新logo图片信息
+	 * @param picture
+	 * @return
+	 */
+    public int updateBannerPicture(Picture picture);
 }

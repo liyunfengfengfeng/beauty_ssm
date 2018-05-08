@@ -50,7 +50,6 @@
 			    <div class="content">
 			        <ul>
 			            <li><img src="/resource/img/banner.jpg"/></li>
-			            <li><img src="/resource/img/banner.jpg"/></li>
 			        </ul>
 			    </div>
 			</div>

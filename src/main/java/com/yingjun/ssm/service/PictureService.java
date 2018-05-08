@@ -75,4 +75,10 @@ public interface PictureService{
 	 * @return
 	 */
 	public Picture findPictureById(int id);
+
+	/**
+	 * 更新banner图片
+	 * @param file
+	 */
+	public void updateBannerPicture(MultipartFile file);
 }
