@@ -49,14 +49,14 @@
 			<div id="sliderBox" class="slider-box">
 			    <div class="content">
 			        <ul>
-			            <li><img src="/resource/img/banner.jpg"/></li>
+			            <li><img src="/picture/getBannerPicture"/></li>
 			        </ul>
 			    </div>
 			</div>
 			<div class="homeList">
 				<div class="list-content">
 					<div class="homeImg">
-						<img src="/resource/img/new.png"/>
+						<img src="/picture/getNewPicture"/>
 						<div class="homeTit"><span></span></div>
 					</div>
 					<div class="list">

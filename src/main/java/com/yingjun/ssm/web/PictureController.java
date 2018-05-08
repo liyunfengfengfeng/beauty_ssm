@@ -196,7 +196,7 @@ public class PictureController {
     }
 
     /**
-     * 更新系统banner显示的banner图片
+     * 更新系统news显示的new图片
      * @return
      */
     @RequestMapping(value = "/updateNewPicture")
@@ -209,5 +209,205 @@ public class PictureController {
             view.addAttribute("MSG", "保存失败");
         }
         return "/adminPicture/newManager";
+    }
+
+
+    /**
+
+     * 获取图片展示
+
+     *@author liyunfeng
+
+     * 2017年11月10日
+
+     * @paramid
+
+     * @paramresponse
+
+     *@throws
+
+     */
+
+    @RequestMapping(value="/getBannerPicture",method= RequestMethod.GET)
+    public void getBannerPicture(final HttpServletResponse response){
+
+        try{
+
+            int width = 800;
+
+            int height = 300;
+
+            Picture picture = pictureService.findPictureById(2);
+
+            if(picture != null){
+
+                byte[] data = picture.getUrl();
+
+                if (width != 0 && height != 0){
+
+                    BufferedImage buffered_oldImage = ImageIO.read(new ByteArrayInputStream(data));
+
+                    int imageOldWidth =buffered_oldImage.getWidth();
+
+                    int imageOldHeight =buffered_oldImage.getHeight();
+
+                    double scale_x = (double) width /imageOldWidth;
+
+                    double scale_y = (double) height /imageOldHeight;
+
+                    double scale_xy = Math.min(scale_x,scale_y);
+
+                    int imageNewWidth = (int)(imageOldWidth * scale_xy);
+
+                    int imageNewHeight = (int)(imageOldHeight * scale_xy);
+
+                    BufferedImage buffered_newImage =new BufferedImage(imageNewWidth, imageNewHeight,BufferedImage.TYPE_INT_RGB);
+
+                    buffered_newImage.getGraphics().drawImage(buffered_oldImage.getScaledInstance(imageNewWidth,imageNewHeight, BufferedImage.SCALE_SMOOTH), 0, 0, null);
+
+                    buffered_newImage.getGraphics().dispose();
+
+                    ByteArrayOutputStream outPutStream= new ByteArrayOutputStream();
+
+                    ImageIO.write(buffered_newImage,"jpeg", outPutStream);
+
+                    data =outPutStream.toByteArray();
+
+                }
+
+                response.setContentType("image/jpeg");
+
+                response.setCharacterEncoding("UTF-8");
+
+                OutputStream outputSream =response.getOutputStream();
+
+                InputStream in = new ByteArrayInputStream(data);
+
+                int len = 0;
+
+                byte[] buf = new byte[1024];
+
+                while ((len = in.read(buf, 0, 1024)) !=-1) {
+
+                    outputSream.write(buf, 0,len);
+
+                }
+
+                outputSream.close();
+
+            }else{
+
+                LOG.info("查询发布内容图片信息不存在，广告Id=" + 1);
+
+            }
+
+        }catch(Exception e){
+
+            LOG.error("查询发布内容图片信息异常id=" + 1 , e);
+
+        }
+
+
+
+    }
+
+
+    /**
+
+     * 获取图片展示
+
+     *@author liyunfeng
+
+     * 2017年11月10日
+
+     * @paramid
+
+     * @paramresponse
+
+     *@throws
+
+     */
+
+    @RequestMapping(value="/getNewPicture",method= RequestMethod.GET)
+    public void getNewPicture(final HttpServletResponse response){
+
+        try{
+
+            int width = 800;
+
+            int height = 300;
+
+            Picture picture = pictureService.findPictureById(3);
+
+            if(picture != null){
+
+                byte[] data = picture.getUrl();
+
+                if (width != 0 && height != 0){
+
+                    BufferedImage buffered_oldImage = ImageIO.read(new ByteArrayInputStream(data));
+
+                    int imageOldWidth =buffered_oldImage.getWidth();
+
+                    int imageOldHeight =buffered_oldImage.getHeight();
+
+                    double scale_x = (double) width /imageOldWidth;
+
+                    double scale_y = (double) height /imageOldHeight;
+
+                    double scale_xy = Math.min(scale_x,scale_y);
+
+                    int imageNewWidth = (int)(imageOldWidth * scale_xy);
+
+                    int imageNewHeight = (int)(imageOldHeight * scale_xy);
+
+                    BufferedImage buffered_newImage =new BufferedImage(imageNewWidth, imageNewHeight,BufferedImage.TYPE_INT_RGB);
+
+                    buffered_newImage.getGraphics().drawImage(buffered_oldImage.getScaledInstance(imageNewWidth,imageNewHeight, BufferedImage.SCALE_SMOOTH), 0, 0, null);
+
+                    buffered_newImage.getGraphics().dispose();
+
+                    ByteArrayOutputStream outPutStream= new ByteArrayOutputStream();
+
+                    ImageIO.write(buffered_newImage,"jpeg", outPutStream);
+
+                    data =outPutStream.toByteArray();
+
+                }
+
+                response.setContentType("image/jpeg");
+
+                response.setCharacterEncoding("UTF-8");
+
+                OutputStream outputSream =response.getOutputStream();
+
+                InputStream in = new ByteArrayInputStream(data);
+
+                int len = 0;
+
+                byte[] buf = new byte[1024];
+
+                while ((len = in.read(buf, 0, 1024)) !=-1) {
+
+                    outputSream.write(buf, 0,len);
+
+                }
+
+                outputSream.close();
+
+            }else{
+
+                LOG.info("查询发布内容图片信息不存在，广告Id=" + 1);
+
+            }
+
+        }catch(Exception e){
+
+            LOG.error("查询发布内容图片信息异常id=" + 1 , e);
+
+        }
+
+
+
     }
 }
