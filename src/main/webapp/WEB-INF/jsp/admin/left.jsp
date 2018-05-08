@@ -60,8 +60,8 @@
             <li><a href="/news/list" target="rightFrame">新闻内容管理</a></li>
             <li><a href="imglist1.jsp" target="rightFrame">banner图片管理</a></li>
             <li><a href="tools.jsp" target="rightFrame">newsPicture管理</a></li>
-            <li><a href="filelist.jsp" target="rightFrame">文件管理</a></li>
-            <li><a href="computer.jsp" target="rightFrame">我的电脑</a></li>
+            <%--<li><a href="filelist.jsp" target="rightFrame">文件管理</a></li>--%>
+            <%--<li><a href="computer.jsp" target="rightFrame">我的电脑</a></li>--%>
         </ul>
     </dd>
     <dd>

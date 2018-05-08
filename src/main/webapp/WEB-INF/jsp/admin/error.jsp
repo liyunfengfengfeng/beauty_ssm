@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>无标题文档</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/resource/css/style.css"/>
 </head>
 <body style="background:#edf6fa;">
 <div class="error">
@@ -12,7 +12,7 @@
 </div>
 </body>
 </html>
-<script type="text/javascript" src="js/jquery/jquery.1.11.2.min.js"></script>
+<script type="text/javascript" src="/resource/js/jquery/jquery.1.11.2.min.js"></script>
 <script language="javascript">
     $(function () {
         $('.error').css({'position': 'absolute', 'left': ($(window).width() - 490) / 2});

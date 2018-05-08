@@ -4,12 +4,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>无标题文档</title>
-    <link href="css/style.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="js/jquery/jquery.1.11.2.min.js"></script>
+    <link href="/resource/css/style.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="/resource/js/jquery/jquery.1.11.2.min.js"></script>
     <!-- 数据统计部分 -->
-    <script type="text/javascript" src="js/jsapi.js"></script>
-    <script type="text/javascript" src="js/format+zh_CN,default,corechart.I.js"></script>
-    <script type="text/javascript" src="js/jquery/jquery.gvChart-1.0.1.min.js"></script>
+    <script type="text/javascript" src="/resource/js/jsapi.js"></script>
+    <script type="text/javascript" src="/resource/js/format+zh_CN,default,corechart.I.js"></script>
+    <script type="text/javascript" src="/resource/js/jquery/jquery.gvChart-1.0.1.min.js"></script>
 </head>
 
 <body>
@@ -79,13 +79,13 @@
             <div class="inforight">
                 <div class="listtitle"><a href="#" class="more1">添加</a>常用工具</div>
                 <ul class="tooli">
-                    <li><span><img src="images/d01.png"/></span><p><a href="#">信息资料</a></p></li>
-                    <li><span><img src="images/d02.png"/></span><p><a href="#">编辑</a></p></li>
-                    <li><span><img src="images/d03.png"/></span><p><a href="#">记事本</a></p></li>
-                    <li><span><img src="images/d04.png"/></span><p><a href="#">任务日历</a></p></li>
-                    <li><span><img src="images/d05.png"/></span><p><a href="#">图片管理</a></p></li>
-                    <li><span><img src="images/d06.png"/></span><p><a href="#">交易</a></p></li>
-                    <li><span><img src="images/d07.png"/></span><p><a href="#">档案袋</a></p></li>
+                    <li><span><img src="/resource/images/d01.png"/></span><p><a href="#">信息资料</a></p></li>
+                    <li><span><img src="/resource/images/d02.png"/></span><p><a href="#">编辑</a></p></li>
+                    <li><span><img src="/resource/images/d03.png"/></span><p><a href="#">记事本</a></p></li>
+                    <li><span><img src="/resource/images/d04.png"/></span><p><a href="#">任务日历</a></p></li>
+                    <li><span><img src="/resource/images/d05.png"/></span><p><a href="#">图片管理</a></p></li>
+                    <li><span><img src="/resource/images/d06.png"/></span><p><a href="#">交易</a></p></li>
+                    <li><span><img src="/resource/images/d07.png"/></span><p><a href="#">档案袋</a></p></li>
                 </ul>
             </div>
         </div>

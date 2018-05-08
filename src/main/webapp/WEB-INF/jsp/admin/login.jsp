@@ -4,8 +4,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>欢迎登录后台管理系统</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
-    <link href="js/3rd/validate/validationEngine.jquery.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="/resource/css/style.css"/>
+    <link href="/resource/js/3rd/validate/validationEngine.jquery.css" rel="stylesheet" type="text/css"/>
 </head>
 <body id="loginBody">
 <div id="mainBody">
@@ -34,11 +34,11 @@
 <div class="loginbm">© 2005-2017 <a href="http://www.xuanner.com">Xuanner.com</a> 版权所有</div>
 </body>
 </html>
-<script type="text/javascript" src="js/jquery/jquery.1.11.2.min.js"></script>
-<script type="text/javascript" src="js/cloud.js"></script>
+<script type="text/javascript" src="/resource/js/jquery/jquery.1.11.2.min.js"></script>
+<script type="text/javascript" src="/resource/js/cloud.js"></script>
 <!--表单验证插件-->
-<script type="text/javascript" src="js/3rd/validate/jquery.validationEngine.js"></script>
-<script type="text/javascript" src="js/3rd/validate/jquery.validationEngine-zh_CN.js"></script>
+<script type="text/javascript" src="/resource/js/3rd/validate/jquery.validationEngine.js"></script>
+<script type="text/javascript" src="/resource/js/3rd/validate/jquery.validationEngine-zh_CN.js"></script>
 <script language="javascript">
     $(function () {
         //position
