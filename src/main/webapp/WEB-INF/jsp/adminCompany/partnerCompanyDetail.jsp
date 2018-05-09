@@ -99,7 +99,7 @@
 
     //返回上一层
     function doBack() {
-        window.location.href="/adminCompanyManager/toCompanyManager";
+        window.location.href="/adminCompanyManager/list";
     }
 </script>
 

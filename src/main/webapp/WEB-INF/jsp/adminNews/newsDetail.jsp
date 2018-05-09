@@ -48,6 +48,10 @@
                 <label>更新时间<b>*</b></label>
                 ${news.updateTime}
             </li>
+            <li style="width: 100%">
+                <label>&nbsp;</label>
+                <input name="" type="button" class="btn" onClick="doBack();" value="返回"/>
+            </li>
         </ul>
     </form>
 </div>
@@ -62,7 +66,7 @@
 
     //返回上一层
     function doBack() {
-        window.location.href="/adminCompanyManager/toCompanyManager";
+        window.location.href="/news/list";
     }
 </script>
 

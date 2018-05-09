@@ -103,7 +103,7 @@
 
     //返回上一层
     function doBack() {
-        window.location.href="/adminCompanyManager/toCompanyManager";
+        window.location.href="/adminCompanyManager/list";
     }
     //审核通过
     function passBtn(companyName) {
