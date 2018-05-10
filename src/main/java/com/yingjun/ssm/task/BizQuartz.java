@@ -43,7 +43,7 @@ public class BizQuartz {
 	 */
 	@Scheduled(cron = "0/5 * * * * ? ")
 	public void redisTest() {
-		LOG.info("@Scheduled-------cacheClear()");
+		LOG.info("@Scheduled-------redisTest()");
 		String userName = redisCache.getCache("name",String.class);
 		LOG.info("登录的用户名称是 ：" + userName);
 	}
@@ -52,6 +52,7 @@ public class BizQuartz {
 	 */
 	@Scheduled(cron = "0 0/5 * * * ? ")
 	public void cacheClear() {
+		LOG.info("@Scheduled-------cacheClear()");
 		redisCache.clearCache();
 	}
 }
