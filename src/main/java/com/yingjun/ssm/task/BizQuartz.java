@@ -48,11 +48,11 @@ public class BizQuartz {
 		LOG.info("登录的用户名称是 ：" + userName);
 	}
 	/**
-	 * 间隔5分钟执行
+	 * 间隔1分钟执行
 	 */
-	@Scheduled(cron = "0 0/5 * * * ? ")
+	@Scheduled(cron = "0 0/1 * * * ? ")
 	public void cacheClear() {
 		LOG.info("@Scheduled-------cacheClear()");
-		redisCache.clearCache();
+		redisCache.deleteCache("name");
 	}
 }
