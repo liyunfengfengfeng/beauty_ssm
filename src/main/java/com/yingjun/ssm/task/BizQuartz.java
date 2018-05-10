@@ -1,6 +1,7 @@
 package com.yingjun.ssm.task;
 
 
+import com.yingjun.ssm.cache.RedisCache;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,13 +37,15 @@ public class BizQuartz {
 
 	private final Logger LOG = LoggerFactory.getLogger(this.getClass());
 	@Autowired
-	private UserDao userDao;
+	private RedisCache redisCache;
 	/**
 	 * 间隔5秒执行
 	 */
 	@Scheduled(cron = "0/5 * * * * ? ")
 	public void cacheClear() {
 		LOG.info("@Scheduled-------cacheClear()");
+		String userName = redisCache.getCache("name",String.class);
+		LOG.info("登录的用户名称是 ：" + userName);
 	}
 	
 }

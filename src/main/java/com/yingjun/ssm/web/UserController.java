@@ -2,6 +2,7 @@ package com.yingjun.ssm.web;
 
 
 import com.google.gson.Gson;
+import com.yingjun.ssm.cache.RedisCache;
 import com.yingjun.ssm.dto.BaseResult;
 import com.yingjun.ssm.entity.User;
 import com.yingjun.ssm.enums.ResultEnum;
@@ -31,6 +32,8 @@ public class UserController {
 	private final Logger LOG = LoggerFactory.getLogger(this.getClass());
 	@Autowired
 	private UserService userService;
+	@Autowired
+	private RedisCache redisCache;
 	/**
 	 * 到达用户登录页面
 	 * @return
@@ -52,6 +55,7 @@ public class UserController {
 			userService.checkUserLogin(user);
 			//页面是以name="email" 接受用户名称的
 			session.setAttribute("email",user.getEmail());
+			redisCache.putCache("name",user.getEmail());
 		} catch (BizException e) {
 			return new BaseResult<>(false, e.getMessage());
 		} catch (Exception e) {
