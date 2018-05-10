@@ -42,10 +42,16 @@ public class BizQuartz {
 	 * 间隔5秒执行
 	 */
 	@Scheduled(cron = "0/5 * * * * ? ")
-	public void cacheClear() {
+	public void redisTest() {
 		LOG.info("@Scheduled-------cacheClear()");
 		String userName = redisCache.getCache("name",String.class);
 		LOG.info("登录的用户名称是 ：" + userName);
 	}
-	
+	/**
+	 * 间隔5分钟执行
+	 */
+	@Scheduled(cron = "0 0/5 * * * ? ")
+	public void cacheClear() {
+		redisCache.clearCache();
+	}
 }
