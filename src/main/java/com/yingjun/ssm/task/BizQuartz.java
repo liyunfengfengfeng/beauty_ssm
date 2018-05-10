@@ -38,12 +38,11 @@ public class BizQuartz {
 	@Autowired
 	private UserDao userDao;
 	/**
-	 * 每隔1分钟定时清理缓存
+	 * 间隔5秒执行
 	 */
-	@Scheduled(cron = "0 0/1 * * * ? ")
-	public void cacheClear(HttpSession session) {
+	@Scheduled(cron = "0/5 * * * * ? ")
+	public void cacheClear() {
 		LOG.info("@Scheduled-------cacheClear()");
-		session.invalidate();
 	}
 	
 }
