@@ -57,7 +57,11 @@
                 							<c:if test="${registerCompany.companyType == 3}">合伙企业</c:if>
 										</span>
 									</div>
-									<span class="right-btn registration">注册中</span>
+									<span class="right-btn registration">
+											<c:if test="${registerCompany.approveStatus == 1}">审核通过</c:if>
+                							<c:if test="${registerCompany.approveStatus == 2}">审核驳回</c:if>
+                							<c:if test="${registerCompany.approveStatus == 3}">待审核</c:if>
+									</span>
 								</div>
 								<div class="info">
 									<span class="legal-per">法人：李云峰</span>
