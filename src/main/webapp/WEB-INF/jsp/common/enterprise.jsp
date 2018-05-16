@@ -60,7 +60,7 @@
 									<span class="right-btn registration">
 											<c:if test="${registerCompany.approveStatus == 1}">审核通过</c:if>
                 							<c:if test="${registerCompany.approveStatus == 2}">审核驳回</c:if>
-                							<c:if test="${registerCompany.approveStatus == 3}">待审核</c:if>
+                							<c:if test="${registerCompany.approveStatus == 0}">待审核</c:if>
 									</span>
 								</div>
 								<div class="info">
