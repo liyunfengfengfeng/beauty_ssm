@@ -144,6 +144,31 @@
 <script>
 	//提交有限公司信息表单
 	$('#partnerCompanyNext').bind("click", function(){
+		var companyName = $("#companyName").val();
+		var registerAmount = $("#registerAmount").val();
+		if (companyName !== null || companyName !== undefined || companyName !== '') {
+			alert("公司名称不能为空");
+			return;
+		}
+		if (registerAmount !== null || registerAmount !== undefined || registerAmount !== '') {
+			alert("注册资本不能为空");
+			return;
+		}
+		var limitTime = $("#limitTime").val();
+		var personNum = $("#personNum").val();
+		if (limitTime !== null || limitTime !== undefined || limitTime !== '') {
+			alert("公司名称不能为空");
+			return;
+		}
+		if (personNum !== null || personNum !== undefined || personNum !== '') {
+			alert("注册资本不能为空");
+			return;
+		}
+		var validityNum = $("#validityNum").val();
+		if (validityNum !== null || validityNum !== undefined || validityNum !== '') {
+			alert("公司名称不能为空");
+			return;
+		}
 		$("#partnerCompanyForm").submit();
 	});
 	//异步检查公司名称是否为空
