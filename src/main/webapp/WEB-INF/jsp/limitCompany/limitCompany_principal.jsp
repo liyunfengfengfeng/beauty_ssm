@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -21,12 +22,12 @@
 				<div><img src="/picture/getLogo" width="20px" height="20px"/>集群注册平台</div>
 				<div class="header-menu">
 					<ul>
-						<li class="active"><a href="/user/home">首页</a></li>
+						<li><a href="/user/home">首页</a></li>
 						<li><a href="/limitCompany/toLimitCompany">有限公司</a></li>
-						<li><a href="/individual/toIndividual">个人独资</a></li>
+						<li class="active"><a href="/individual/toIndividual">个人独资</a></li>
 						<li><a href="/partnerShip/toPartnerShip">合伙企业</a></li>
-						<li><a href="#">个人中心</a></li>
-						<li><a href="enterprise.html">企业中心</a></li>
+						<li><a href="/personalCenter/toPersonalCenter">个人中心</a></li>
+						<li><a href="/enterpriseCenter/toEnterpriseCenter">企业中心</a></li>
 						<li><a href="/contactUs/connection">联系我们</a></li>
 					</ul>
 				</div>
