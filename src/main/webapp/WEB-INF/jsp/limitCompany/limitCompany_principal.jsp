@@ -193,7 +193,7 @@
 					</div>
 				</form>
 				<div class="btnGroup margin-t-30 margin-l-130 padding-b-47">
-					<a href="#" class="">返回</a>
+					<a  href="/limitCompany/toLimitCompany">返回</a>
 					<a id="limitCompanyEmployeeNext" class="">下一步</a>
 				</div>
 			</div>

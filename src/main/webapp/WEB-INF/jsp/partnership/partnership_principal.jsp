@@ -139,7 +139,7 @@
 					</ul>
 				</form>
 				<div class="btnGroup margin-t-30 margin-l-130 padding-b-47">
-					<a href="#" class="">返回</a>
+					<a  href="/partnerShip/toPartnerShip">返回</a>
 					<a id="partnerCompanyEmployeeNext" class="">下一步</a>
 				</div>
 			</div>
