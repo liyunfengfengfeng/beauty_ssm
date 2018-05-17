@@ -133,11 +133,11 @@
 	$('#limitCompanyNext').bind("click", function(){
 		var companyName = $("#companyName").val();
 		var registerAmount = $("#registerAmount").val();
-		if (companyName !== null || companyName !== undefined || companyName !== '') {
+		if (companyName == null || companyName == undefined || companyName == '') {
 			alert("公司名称不能为空");
 			return;
 		}
-		if (registerAmount !== null || registerAmount !== undefined || registerAmount !== '') {
+		if (registerAmount == null || registerAmount == undefined || registerAmount == '') {
 			alert("注册资本不能为空");
 			return;
 		}
