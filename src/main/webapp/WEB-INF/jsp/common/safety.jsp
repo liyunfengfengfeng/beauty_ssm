@@ -57,7 +57,7 @@
 					-->
 					<span class="self-state gray">未认证</span>
 					<div class="btngroup">
-						<a href="realName.html" class="btn">实名认证</a>
+						<a href="#" class="btn" >实名认证</a>
 					</div>
 				</div>
 				<div class="contentInfo margin-t-20 padding-b-30 border-dot">
